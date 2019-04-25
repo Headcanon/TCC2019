@@ -51,22 +51,22 @@ public class ActivePlatform : MonoBehaviour
     //VEM
     public void Volta(Vector3 dis, float vel)
     {
-        if (transformer.position.x > start.position.x )
+        if (transformer.position.x > start.position.x - dis.x)
         {
             transformer.Translate(Vector3.right * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.y > start.position.y )
+        if (transformer.position.y > start.position.y - dis.y)
         {
             transformer.Translate(Vector3.up * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.z > start.position.z )
+        if (transformer.position.z > start.position.z - dis.z)
         {
             transformer.Translate(Vector3.forward * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.x <= start.position.x  && transformer.position.y <= start.position.y  && transformer.position.z <= start.position.z )
+        if (transformer.position.x <= start.position.x - dis.x && transformer.position.y <= start.position.y - dis.y && transformer.position.z <= start.position.z - dis.z)
         {
             Foi = false;
         }
