@@ -24,13 +24,16 @@ public class followCamera : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate ()
     {
-        Vector3 desiredPosition;
+        if (target != null)
+        {
+            Vector3 desiredPosition;
 
-        Offset = Vector3.Lerp(Offset, newOffset, smoothSpeed);
-        desiredPosition = target.position + Offset;      
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            Offset = Vector3.Lerp(Offset, newOffset, smoothSpeed);
+            desiredPosition = target.position + Offset;
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        lookAtOffset = Vector3.Lerp(lookAtOffset, newLookAtOffset, smoothSpeed);
-        transform.LookAt(target.position + lookAtOffset);
+            lookAtOffset = Vector3.Lerp(lookAtOffset, newLookAtOffset, smoothSpeed);
+            transform.LookAt(target.position + lookAtOffset);
+        }
 	}
 }

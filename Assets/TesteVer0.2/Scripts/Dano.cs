@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Dano : MonoBehaviour
 {
-    Movimento move;
+    public float dano;
+
+    Player move;
 
     private void OnTriggerEnter(Collider other)
     {
-        move = other.GetComponent<Movimento>();
+        move = other.GetComponent<Player>();
         if(move != null)
         {
-            move.Respawn();
+            move.Damage(dano);
         }
     }
 }

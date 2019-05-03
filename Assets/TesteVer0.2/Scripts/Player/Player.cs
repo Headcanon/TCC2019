@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Movimento : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    #region Variaveis
-    bool pulou = false;
-    Transform paiTransform;
+      #region Variaveis
 
-    public float velocidade;
-    public float jumpForce;
-    public bool ddd;
+      #region Movimento
+      bool pulou = false;
+      Transform paiTransform;
 
-    public JetPack jet;
-    public Slider tanque;
+      public float velocidade;
+      public float jumpForce;
+      public bool ddd;
+      #endregion
 
-    public Transform spawnPoint;
+      #region JetPack
+      public JetPack jet;
+      public Slider tanque;
+      #endregion
+
+      #region Vida&Morte
+      public float vida = 100;
+      public Slider barraVida;
+      public Transform spawnPoint;
+      #endregion
+
     #endregion
 
     Rigidbody rb;
@@ -48,6 +58,8 @@ public class Movimento : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * jumpForce);
         }
 
+        barraVida.value = vida / 100;
+
         #region Jet Pack
         if (jet != null)
         {
@@ -57,8 +69,21 @@ public class Movimento : MonoBehaviour
         #endregion
     }
 
-    public void Respawn()
+    public void Damage(float dano)
     {
-        this.transform.position = spawnPoint.position;
+        vida -= dano;
+        if (vida > 0 && spawnPoint!=null)
+        {
+            this.transform.position = spawnPoint.position;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }

@@ -68,8 +68,8 @@ public class JetPack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Movimento currentJet;
-        currentJet = other.GetComponent<Movimento>();
+        Player currentJet;
+        currentJet = other.GetComponent<Player>();
         currentJet.jet = this;
     }
 }

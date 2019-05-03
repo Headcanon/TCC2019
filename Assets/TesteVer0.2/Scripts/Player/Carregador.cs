@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Carregador : MonoBehaviour {
 
-    Movimento move;
+    Player move;
 
     private void OnTriggerEnter(Collider other)
     {
-        move = other.GetComponent<Movimento>();
+        move = other.GetComponent<Player>();
         if (move.jet != null)
         {
             move.jet.carregavel = true;

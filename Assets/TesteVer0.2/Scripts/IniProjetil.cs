@@ -5,7 +5,7 @@ using UnityEngine;
 public class IniProjetil : MonoBehaviour
 {
     Rigidbody rb;
-    Movimento target;
+    Player target;
     Inimigo spawner;
     Vector3 moveDirection;
 
@@ -13,7 +13,7 @@ public class IniProjetil : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = FindObjectOfType<Movimento>();
+        target = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Inimigo>();
 
         moveDirection = (target.transform.position - transform.position).normalized * 7f;

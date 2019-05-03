@@ -9,7 +9,7 @@ public class Centralizador : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.GetComponent<Movimento>() != null && !centralizado)
+        if (other.GetComponent<Player>() != null && !centralizado)
         {
             if (other.transform.position.z < this.transform.position.z && !centralizado)
             {

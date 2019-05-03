@@ -2,7 +2,7 @@
 
 public class Inimigo : MonoBehaviour
 {
-    Movimento axel;
+    Player axel;
     float nextFire;
 
     public GameObject projetil;
@@ -17,7 +17,7 @@ public class Inimigo : MonoBehaviour
     private void Start()
     {
         nextFire = Time.time;
-        axel = FindObjectOfType<Movimento>();
+        axel = FindObjectOfType<Player>();
     }
 
     private void Update()

@@ -7,7 +7,7 @@ public class AtiProjetil : MonoBehaviour
     Rigidbody rb;
     Inimigo target;
     //Atirador spawner;
-    Movimento axel;
+    Player axel;
     Vector3 moveDirection;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class AtiProjetil : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         target = FindObjectOfType<Inimigo>();
         //spawner = FindObjectOfType<Atirador>();
-        axel = FindObjectOfType<Movimento>();
+        axel = FindObjectOfType<Player>();
 
         moveDirection = (target.transform.position - transform.position).normalized * 7f;
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
