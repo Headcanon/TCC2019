@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finais/POC.unity
     guid: 8b32e050f45f3e843960b6d02a174fad
+  - enabled: 1
+    path: Assets/Scenes/Finais/GameWon.unity
+    guid: f84bb28b9e866de40a5784e5d6e59311
   m_configObjects: {}
