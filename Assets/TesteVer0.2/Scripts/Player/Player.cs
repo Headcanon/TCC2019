@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
+        if(vida <= 0)
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }
