@@ -16,5 +16,14 @@ EditorBuildSettings:
     guid: 8b32e050f45f3e843960b6d02a174fad
   - enabled: 1
     path: Assets/Scenes/Finais/GameWon.unity
-    guid: f84bb28b9e866de40a5784e5d6e59311
+    guid: d2f6b45f95ba91341af7d271248719dd
+  - enabled: 1
+    path: Assets/Scenes/Finais/Lab.unity
+    guid: e600964ba7fefce4f807b574e8a9d125
+  - enabled: 1
+    path: Assets/Scenes/Finais/Lago.unity
+    guid: e66a8592515adf944bcbff91bb3cf1fc
+  - enabled: 1
+    path: Assets/Scenes/Finais/Floresta.unity
+    guid: 055bbd7a4711a674287b26ec3a3f5b9e
   m_configObjects: {}

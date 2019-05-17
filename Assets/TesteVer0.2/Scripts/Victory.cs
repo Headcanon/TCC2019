@@ -9,7 +9,6 @@ public class Victory : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         completeLevelUI.SetActive(true);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameWon");
         Debug.Log("You Win!");
     }
 }
