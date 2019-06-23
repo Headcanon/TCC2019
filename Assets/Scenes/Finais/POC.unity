@@ -810,6 +810,14 @@ PrefabInstance:
       propertyPath: sceneName
       value: GameWon
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 114143543609969470, guid: 814a088f303ebff4588d059ac846f7bc,
+        type: 3}
+      propertyPath: prefabToLoad
+      value: Game_Style
+      objectReference: {fileID: 0}
+>>>>>>> 6e81e070617fea4cd09e366dc22bfb661c5a9767
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814a088f303ebff4588d059ac846f7bc, type: 3}
 --- !u!1 &1065364511
