@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Finais/MenuInicial.unity
+    guid: 413428105e936f44d94e57183c985219
+  - enabled: 1
+    path: Assets/Scenes/Finais/GameOver.unity
+    guid: b6f2b75f28704e24ea0ab0cdcf3f58d8
+  - enabled: 1
+    path: Assets/Scenes/Finais/GameWon.unity
+    guid: d2f6b45f95ba91341af7d271248719dd
+  - enabled: 1
+    path: Assets/Scenes/Finais/Lab.unity
+    guid: e600964ba7fefce4f807b574e8a9d125
+  - enabled: 1
+    path: Assets/Scenes/Finais/Floresta.unity
+    guid: 055bbd7a4711a674287b26ec3a3f5b9e
+  - enabled: 1
+    path: Assets/Scenes/Finais/Lago.unity
+    guid: e66a8592515adf944bcbff91bb3cf1fc
   m_configObjects: {}

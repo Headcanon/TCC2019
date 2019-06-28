@@ -5,23 +5,26 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-      #region Variaveis
+    #region Variaveis
 
-      #region Movimento
-      bool pulou = false;
-      Transform paiTransform;
+    #region Movimento
+    bool pulou = false;
+    Transform paiTransform;
 
-      public float velocidade;
-      public float jumpForce;
-      public bool ddd;
-      #endregion
+    public float velocidade;
+    public float jumpForce;
+    public bool ddd;
 
-      #region JetPack
+    public GameObject ashModel;
+    Animator anim;
+    #endregion
+
+    #region JetPack
       public JetPack jet;
       public Slider tanque;
       #endregion
 
-      #region Vida&Morte
+    #region Vida&Morte
       public float vida = 100;
       public Slider barraVida;
       public Transform spawnPoint;
@@ -34,7 +37,9 @@ public class Player : MonoBehaviour
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-	}
+        anim = ashModel.GetComponent<Animator>();
+
+    }
 	
 	void Update ()
     {
@@ -43,6 +48,8 @@ public class Player : MonoBehaviour
         {
             float horizontal = Input.GetAxis("Horizontal");
             transform.Translate(transform.TransformDirection(transform.right) * Time.deltaTime * velocidade * horizontal);
+            ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
+            //anim.SetFloat("Speed", horizontal);
         }
         else if(ddd)
         {
