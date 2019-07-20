@@ -3,7 +3,7 @@
 public class followCamera : MonoBehaviour {
 
     public bool sideScrolling;
-    private float smoothSpeed =  0.125f;
+    public float smoothSpeed =  0.125f;
 
     private Vector3 Offset;
     private Vector3 lookAtOffset;
