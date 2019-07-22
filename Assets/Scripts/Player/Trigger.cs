@@ -5,16 +5,16 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
     Player eixos;
-    followCamera camera;
+    followCamera cm;
     public Vector3 novoOffset;
     public Vector3 novoLookAtOffset;
 
     private void OnTriggerEnter(Collider target)
     {
         eixos = target.GetComponent<Player>();
-        camera = Camera.main.GetComponent<followCamera>();       
+        cm = Camera.main.GetComponent<followCamera>();       
         
-        camera.newOffset = novoOffset;
-        camera.newLookAtOffset = novoLookAtOffset;
+        cm.newOffset = novoOffset;
+        cm.newLookAtOffset = novoLookAtOffset;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivePlatform : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    Rigidbody rb;
     Transform transformer;
     Transform start;
 
@@ -15,7 +15,7 @@ public class ActivePlatform : MonoBehaviour
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         transformer = GetComponent<Transform>();
         start = new GameObject().transform;
         start.position = transformer.position;
