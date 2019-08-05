@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     bool pulou = false;
     Transform paiTransform;
 
+    [Header("Movimento")]
     public float velocidade;
     public float jumpForce;
     public bool ddd;
@@ -20,15 +21,17 @@ public class Player : MonoBehaviour
     #endregion
 
     #region JetPack
-      public JetPack jet;
-      public Slider tanque;
-      #endregion
+    [Header("JetPack")]
+    public JetPack jet;
+    public Slider tanque;
+    #endregion
 
     #region Vida&Morte
-      public float vida = 100;
-      public Slider barraVida;
-      public Transform spawnPoint;
-      #endregion
+    [Header("Vida&Morte")]
+    public float vida = 100;
+    public Slider barraVida;
+    public Transform spawnPoint;
+    #endregion
 
     #endregion
 
@@ -38,19 +41,18 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = ashModel.GetComponent<Animator>();
-
     }
 	
 	void Update ()
     {
-
+        // Movimento 2.5D
         if (!ddd)
         {
             float horizontal = Input.GetAxis("Horizontal");
             transform.Translate(transform.TransformDirection(transform.right) * Time.deltaTime * velocidade * horizontal);
             ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
-            //anim.SetFloat("Speed", horizontal);
         }
+        // Movimento 3D
         else if(ddd)
         {
             float horizontal = Input.GetAxis("Horizontal");
@@ -60,12 +62,17 @@ public class Player : MonoBehaviour
             transform.Translate(transform.TransformDirection(transform.right) * Time.deltaTime * velocidade * vertical);
         }
 
+        // Pulo
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < .01)
         {
             rb.AddRelativeForce(Vector3.up * jumpForce);
         }
 
-        barraVida.value = vida / 100;
+        // Atualiza a barra de vida
+        if (barraVida != null)
+        {
+            barraVida.value = vida / 100;
+        }
 
         #region Jet Pack
         if (jet != null)
@@ -75,7 +82,8 @@ public class Player : MonoBehaviour
         }
         #endregion
     }
-
+    
+    // Reduz a vida e mata player quando chega a 0
     public void Damage(float dano)
     {
         vida -= dano;
@@ -89,6 +97,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Da um GameOver quando destroi Player
     private void OnDestroy()
     {
         if(vida <= 0)

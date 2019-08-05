@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Script colocado em todos os itens que dão dano quando entram em contato com player*/
 public class Dano : MonoBehaviour
 {
-    public float dano;
-
     Player move;
+    public float dano;
 
     private void OnTriggerEnter(Collider other)
     {
