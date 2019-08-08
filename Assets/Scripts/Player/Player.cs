@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             transform.Translate(transform.TransformDirection(transform.right) * Time.deltaTime * velocidade * horizontal);
             ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
+            anim.SetFloat("Vel", Mathf.Abs(horizontal));
         }
         // Movimento 3D
         else if(ddd)
@@ -63,9 +64,14 @@ public class Player : MonoBehaviour
         }
 
         // Pulo
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < .01)
+        if (Mathf.Abs(rb.velocity.y) < .01)
         {
-            rb.AddRelativeForce(Vector3.up * jumpForce);
+            anim.SetBool("Pulano", false);
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.AddRelativeForce(Vector3.up * jumpForce);
+                anim.SetBool("Pulano", true);
+            }
         }
 
         // Atualiza a barra de vida
