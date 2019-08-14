@@ -51,7 +51,10 @@ public class Player : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             transform.Translate(transform.TransformDirection(transform.right) * Time.deltaTime * velocidade * horizontal);
             ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
-            anim.SetFloat("Vel", Mathf.Abs(horizontal));
+            if (anim != null)
+            {
+                anim.SetFloat("Vel", Mathf.Abs(horizontal));
+            }
         }
         // Movimento 3D
         else if(ddd)
@@ -66,11 +69,11 @@ public class Player : MonoBehaviour
         // Pulo
         if (Mathf.Abs(rb.velocity.y) < .01)
         {
-            anim.SetBool("Pulano", false);
+            //anim.SetBool("Pulano", false);
             if (Input.GetButtonDown("Jump"))
             {
                 rb.AddRelativeForce(Vector3.up * jumpForce);
-                anim.SetBool("Pulano", true);
+                //anim.SetBool("Pulano", true);
             }
         }
 

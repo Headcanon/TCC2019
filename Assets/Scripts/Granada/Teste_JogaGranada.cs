@@ -12,7 +12,7 @@ public class Teste_JogaGranada : MouseFollower
     public Transform posicao;
 
     // Força do arremesso
-    public float throwForce = 40f;
+    public float throwSpeed = 40f;
 
     // Update is called once per frame
     void Update()
@@ -30,7 +30,7 @@ public class Teste_JogaGranada : MouseFollower
             // Cria um arco seguindo o mouse
             Debug.Log("Arco = " + AnguloRotacao(transform).z * 100);
             Debug.Log("Seta = " + AnguloRotacao(seta.transform).z * 100);
-            RenderArco(lr, 20, AnguloRotacao(transform).z * 100, throwForce, Mathf.Abs(Physics.gravity.y), transform);
+            RenderArco(lr, 20, AnguloRotacao(transform).z * 100, throwSpeed, Mathf.Abs(Physics.gravity.y), posicao);
 
             // Se clicar com o mouse joga a granada
             if (Input.GetMouseButtonDown(0))
@@ -52,7 +52,7 @@ public class Teste_JogaGranada : MouseFollower
     {
         GameObject grenade = Instantiate(grenadePrefab, posicao.position, rot);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(posicao.right * throwForce);
+        rb.velocity = posicao.right * throwSpeed;
     }
 
     

@@ -73,6 +73,8 @@ public class MouseFollower : MonoBehaviour
         // Magia da física que usa o ângulo, a velocidade e a distância do ponto determinado para descobrir a sua altura
         float y = x * Mathf.Tan(radAngulo) - ((gravidade * x * x) / (2 * velocidade * velocidade * Mathf.Cos(radAngulo) * Mathf.Cos(radAngulo)));
 
+        //y -= transform.position.y;
+
         // Retorna o ponto resultante
         return new Vector3(x, y);
     }
