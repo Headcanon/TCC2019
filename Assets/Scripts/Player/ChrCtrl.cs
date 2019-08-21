@@ -44,13 +44,12 @@ public class ChrCtrl : MonoBehaviour
                 moveDirection.y = jumpSpeed;
             }
         }
-        //else if (!characterController.isGrounded)
-        //{
+        else
+        {
+            moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
 
-        //    moveDirection = transform.right * horizontal;
-
-        //    moveDirection *= speed;
-        //}
+            moveDirection.x *= speed;
+        }
 
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
