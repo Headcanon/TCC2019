@@ -7,8 +7,11 @@ public class NovaPlataforma : MonoBehaviour
     public Vector3 dis;
     public float vaiVelocidade, voltaVelocidade;
 
+    float currentVel;
+
     Transform start;
     bool foi = false;
+    ChrCtrl chrctrl;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class NovaPlataforma : MonoBehaviour
     {
         if (!foi)
         {
+            currentVel = vaiVelocidade;
             if(transform.position.x < start.position.x + dis.x)
             {
                 transform.Translate(Vector3.right * Time.deltaTime * vaiVelocidade);
@@ -43,6 +47,7 @@ public class NovaPlataforma : MonoBehaviour
         }
         else if (foi)
         {
+            currentVel = voltaVelocidade;
 
             if (transform.position.x > start.position.x - dis.x)
             {
@@ -66,5 +71,15 @@ public class NovaPlataforma : MonoBehaviour
         }
 
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        chrctrl = other.GetComponent<ChrCtrl>();
+        if (chrctrl != null)
+        {
+            chrctrl.speed += currentVel;
+        }
     }
 }
