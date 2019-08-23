@@ -71,4 +71,13 @@ public class ActivePlatform : MonoBehaviour
             Foi = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        chrctrl = other.GetComponent<ChrCtrl>();
+        if (chrctrl != null)
+        {
+            chrctrl += vel;
+        }
+    }
 }

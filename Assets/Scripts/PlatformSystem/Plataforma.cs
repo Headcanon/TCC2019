@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour {
 
+    ChrCtrl chrctrl;
+
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.parent = transform;
+        chrctrl = other.GetComponent<ChrCtrl>();
+        if(chrctrl != null)
+        {
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
