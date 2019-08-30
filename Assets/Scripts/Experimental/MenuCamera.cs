@@ -7,6 +7,7 @@ public class MenuCamera : MonoBehaviour
     followCamera cm;
     public GameObject menuScreen, ui;
     bool activeMenu;
+    ChrCtrl player;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class MenuCamera : MonoBehaviour
         PauseCamera();
 
         menuScreen = GameObject.Find("Menu");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl>();
         //ui = GameObject.Find("UI");
     }
 
@@ -35,6 +37,7 @@ public class MenuCamera : MonoBehaviour
 
     public void PauseCamera()
     {
+        player.enableMove = false;
         cm.newOffset = new Vector3(0, 2, -4);
         cm.newLookAtOffset = new Vector3(1, 3, 0);
         activeMenu = true;
@@ -42,6 +45,7 @@ public class MenuCamera : MonoBehaviour
 
     public void PlayCamera()
     {
+        player.enableMove = true;
         cm.newOffset = new Vector3(5, 3, -20);
         cm.newLookAtOffset = new Vector3(5, -3, 0);
         activeMenu = false;
