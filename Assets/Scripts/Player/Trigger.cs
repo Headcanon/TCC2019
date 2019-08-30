@@ -15,8 +15,9 @@ public class Trigger : MonoBehaviour
         {
             cm = Camera.main.GetComponent<followCamera>();
 
-            cm.newOffset = novoOffset;
-            cm.newLookAtOffset = novoLookAtOffset;
+            cm.TrocaOffset(novoOffset, novoLookAtOffset);
+            //cm.newOffset = novoOffset;
+            //cm.newLookAtOffset = novoLookAtOffset;
         }
     }
 }

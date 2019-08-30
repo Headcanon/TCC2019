@@ -10,7 +10,7 @@ public class ChrCtrl : MonoBehaviour
     public float highSpeed = 9.0f;
     public float gravity = 20.0f;
 
-    public bool enableMove = false;
+    public bool enableMove = true;
 
     #region Pulo
     [Header("Pulo")]
@@ -37,6 +37,7 @@ public class ChrCtrl : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         anim = ashModel.GetComponent<Animator>();
+        ashModel.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
     
 

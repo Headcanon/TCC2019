@@ -5,11 +5,11 @@ public class followCamera : MonoBehaviour {
     public bool sideScrolling;
     public float smoothSpeed =  0.125f;
 
-    private Vector3 Offset;
-    private Vector3 lookAtOffset;
+    private Vector3 desiredOffset;
+    private Vector3 desiredLookAtOffset;
 
-    public Vector3 newOffset;
-    public Vector3 newLookAtOffset;
+    private Vector3 newOffset;
+    private Vector3 newLookAtOffset;
 
     public Transform target;
 
@@ -17,8 +17,8 @@ public class followCamera : MonoBehaviour {
     {
         sideScrolling = true;
 
-        Offset = newOffset;
-        lookAtOffset = newLookAtOffset;
+        desiredOffset = newOffset;
+        desiredLookAtOffset = newLookAtOffset;
     }
 
     // Update is called once per frame
@@ -26,14 +26,29 @@ public class followCamera : MonoBehaviour {
     {
         if (target != null)
         {
+            // Posição desejada
             Vector3 desiredPosition;
 
-            Offset = Vector3.Lerp(Offset, newOffset, smoothSpeed);
-            desiredPosition = target.position + Offset;
+            // Interpola o offset atual desejado e o novo
+            desiredOffset = Vector3.Lerp(desiredOffset, newOffset, smoothSpeed);
+            // Descobre a possição desejada baseada na posição atual e no offset desejado
+            desiredPosition = target.position + desiredOffset;
+            // Interpola a posição atual e a posição desejada
             transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-            lookAtOffset = Vector3.Lerp(lookAtOffset, newLookAtOffset, smoothSpeed);
-            transform.LookAt(target.position + lookAtOffset);
+            // Interpola o lookt desejado atual e o novo
+            desiredLookAtOffset = Vector3.Lerp(desiredLookAtOffset, newLookAtOffset, smoothSpeed);
+            // Olha para o lookat desejado atual
+            transform.LookAt(target.position + desiredLookAtOffset);
         }
 	}
+
+    public void TrocaOffset(Vector3 offset, Vector3 lookAtOffset)
+    {
+        //desiredOffset = newOffset;
+        //desiredLookAtOffset = newLookAtOffset;
+
+        newOffset = offset;
+        newLookAtOffset = lookAtOffset;
+    }
 }
