@@ -8,8 +8,8 @@ public class followCamera : MonoBehaviour {
     private Vector3 desiredOffset;
     private Vector3 desiredLookAtOffset;
 
-    private Vector3 newOffset;
-    private Vector3 newLookAtOffset;
+    public Vector3 newOffset;
+    public Vector3 newLookAtOffset;
 
     public Transform target;
 
