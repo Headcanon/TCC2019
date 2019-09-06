@@ -32,7 +32,7 @@ public class GanchoDeEscalada : MonoBehaviour
                 if (Input.GetButton("Fire1"))
                 {
                     dj3d.enabled = true;
-                    dj3d.ConnectedRigidbody = hit.collider.gameObject.GetComponent<Rigidbody>().transform;
+                    dj3d.penduradoEm = hit.collider.gameObject.GetComponent<Rigidbody>().transform;
                 }
             }
         }

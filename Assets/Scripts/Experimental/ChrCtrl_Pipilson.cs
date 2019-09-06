@@ -23,7 +23,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     #endregion
 
     public int pulosDados; //Pipilson
-    public int puloLimite = 1; //Pipilson
+    public int puloLimite = 2; //Pipilson
 
     #region Aceleracao
     [Header("Aceleracao")]
