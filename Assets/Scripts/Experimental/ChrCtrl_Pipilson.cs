@@ -5,28 +5,29 @@ using UnityEngine.UI;
 
 public class ChrCtrl_Pipilson : MonoBehaviour
 {
-    CharacterController characterController;
-
-    public float speed = 6.0f;
-    public float highSpeed = 9.0f;
-    public float gravity = 20.0f;
-
- 
-
+    CharacterController characterController;  
+    
     #region Pulo
     [Header("Pulo")]
+    public float gravity = 20.0f;
+
     public float jumpTime = 1.0f;
     float jumpTimeCounter;
     public float jumpSpeed = 10.0f;
     public float jumpHighSpeed = 15f;
     bool isJumping;
-    #endregion
 
     public int pulosDados; //Pipilson
     public int puloLimite = 2; //Pipilson
 
+    public bool noChao;
+    #endregion
+
     #region Aceleracao
     [Header("Aceleracao")]
+    public float speed = 6.0f;
+    public float highSpeed = 9.0f;
+
     float timer = 0.0f;
     bool fast;
     #endregion
@@ -48,8 +49,13 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        #region CharCtrl
-        if (characterController.isGrounded)
+
+        // A bool noChao é igual ao idGrounded do CharacterController
+        // Isso é só pra que eu possa acessar o noChao em outros scripts
+        noChao = characterController.isGrounded;
+
+        // Se Ash está no chão...
+        if (noChao)
         {
             // We are grounded, so recalculate
             // move direction directly from axes
@@ -132,6 +138,6 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         {
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
         }
-        #endregion
     }
+
 }
