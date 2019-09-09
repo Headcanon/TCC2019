@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GanchoDeEscalada : MonoBehaviour
 {
-    DistanceJoint3D dj3d;
+    DistanceJoint3D_Gravity dj3d;
     Vector3 targetPos;
     RaycastHit hit;
     public float distancia = 10f;
@@ -12,7 +12,7 @@ public class GanchoDeEscalada : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dj3d = GetComponent<DistanceJoint3D>();
+        dj3d = GetComponent<DistanceJoint3D_Gravity>();
         dj3d.enabled = false;
     }
 
