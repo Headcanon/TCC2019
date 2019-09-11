@@ -18,7 +18,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     bool isJumping;
 
     public int pulosDados; //Pipilson
-    public int puloLimite = 2; //Pipilson
+    public int puloLimite = 1; //Mudei pra 1, já que é assim que ela deve começar. Precisa ser 2 só quando ela está com o jetpack -Pipilson
 
     public bool noChao;
     #endregion
@@ -78,40 +78,40 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 timer = 0.0f;
             }
             #endregion
-
+            anim.SetBool("Pulano", false);
         }
         else
         {
             moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
+            anim.SetBool("Pulano", true);
         }
 
         // Se ainda não for atingido o limite de pulos permitir pular denovo
         if (Input.GetButtonDown("Jump") && pulosDados < puloLimite) //Alterei esse if -Pipilson
         {
+
             moveDirection.y = jumpHighSpeed;
             pulosDados++;
         }
 
-        //Comentei toda essa region -Pipilson
         #region Pulo Adaptável
-        //if (Input.GetButton("Jump"))
-        //{
-        //    if (isJumping && pulos < 2)
-        //    {
-        //        moveDirection.y = jumpHighSpeed;
-        //        pulos++;
-        //        jumpTimeCounter -= Time.deltaTime;
-        //    }
-        //    else
-        //    {
-        //        isJumping = false;
-        //    }
-        //}
+        if (Input.GetButton("Jump"))
+        {
+            if (isJumping && pulosDados < 1)
+            {
+                moveDirection.y = jumpHighSpeed;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
 
-        //if (Input.GetButtonUp("Jump"))
-        //{
-        //    isJumping = false;
-        //}
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
         #endregion
 
         #region Aceleracao
@@ -139,5 +139,4 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
         }
     }
-
 }
