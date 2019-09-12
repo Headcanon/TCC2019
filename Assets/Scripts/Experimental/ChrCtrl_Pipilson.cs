@@ -37,6 +37,8 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     public GameObject ashModel;
     Animator anim;
 
+    public bool sobControle = true;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -54,81 +56,84 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         // Isso é só pra que eu possa acessar o noChao em outros scripts
         noChao = characterController.isGrounded;
 
-        // Se Ash está no chão...
-        if (noChao)
+        if (sobControle)
         {
-            // We are grounded, so recalculate
-            // move direction directly from axes
-            moveDirection = transform.right * horizontal;
-            pulosDados = 0;
-            gravity = 20f;
+            // Se Ash está no chão...
+            if (noChao)
+            {
+                // We are grounded, so recalculate
+                // move direction directly from axes
+                moveDirection = transform.right * horizontal;
+                pulosDados = 0;
+                gravity = 20f;
 
-            #region Aceleracao
-            if (Input.GetButton("Horizontal") && timer >= 1.5f)
-            {
-                fast = true;
-            }
-            else if (Input.GetButton("Horizontal"))
-            {
-                timer += Time.deltaTime;
+                #region Aceleracao
+                if (Input.GetButton("Horizontal") && timer >= 1.5f)
+                {
+                    fast = true;
+                }
+                else if (Input.GetButton("Horizontal"))
+                {
+                    timer += Time.deltaTime;
+                }
+                else
+                {
+                    fast = false;
+                    timer = 0.0f;
+                }
+                #endregion
+                anim.SetBool("Pulano", false);
             }
             else
             {
-                fast = false;
-                timer = 0.0f;
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
+                anim.SetBool("Pulano", true);
             }
-            #endregion
-            anim.SetBool("Pulano", false);
-        }
-        else
-        {
-            moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
-            anim.SetBool("Pulano", true);
-        }
 
-        // Se ainda não for atingido o limite de pulos permitir pular denovo
-        if (Input.GetButtonDown("Jump") && pulosDados < puloLimite) //Alterei esse if -Pipilson
-        {
-
-            moveDirection.y = jumpHighSpeed;
-            pulosDados++;
-        }
-
-        #region Pulo Adaptável
-        if (Input.GetButton("Jump"))
-        {
-            if (isJumping && pulosDados < 1)
+            // Se ainda não for atingido o limite de pulos permitir pular denovo
+            if (Input.GetButtonDown("Jump") && pulosDados < puloLimite) //Alterei esse if -Pipilson
             {
+
                 moveDirection.y = jumpHighSpeed;
-                jumpTimeCounter -= Time.deltaTime;
+                pulosDados++;
             }
-            else
+
+            #region Pulo Adaptável
+            if (Input.GetButton("Jump"))
+            {
+                if (isJumping && pulosDados < 1)
+                {
+                    moveDirection.y = jumpHighSpeed;
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
+            }
+
+            if (Input.GetButtonUp("Jump"))
             {
                 isJumping = false;
             }
-        }
+            #endregion
 
-        if (Input.GetButtonUp("Jump"))
-        {
-            isJumping = false;
-        }
-        #endregion
+            #region Aceleracao
+            if (fast)
+            {
+                moveDirection.x *= highSpeed;
+            }
+            else
+            {
+                moveDirection.x *= speed;
+            }
+            #endregion
 
-        #region Aceleracao
-        if (fast)
-        {
-            moveDirection.x *= highSpeed;
+            // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
+            // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
+            // as an acceleration (ms^-2)
+            moveDirection.y -= gravity * Time.deltaTime;
         }
-        else
-        {
-            moveDirection.x *= speed;
-        }
-        #endregion
-
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
-        moveDirection.y -= gravity * Time.deltaTime;
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
