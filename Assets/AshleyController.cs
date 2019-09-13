@@ -22,7 +22,6 @@ public class AshleyController : MonoBehaviour
             cc.enabled = false;
             hj = gameObject.AddComponent<HingeJoint>();
             hj.axis = new Vector3(0, 0, 1);
-            //hj.anchor = new Vector3(0, 0.2f);
             hj.connectedBody = conectadoEm;
         }
         else if(!joint && rb != null && hj != null)
