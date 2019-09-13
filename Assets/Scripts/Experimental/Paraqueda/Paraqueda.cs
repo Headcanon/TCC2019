@@ -21,9 +21,9 @@ public class Paraqueda : MonoBehaviour
     public Slider barraCombustivel;
     #endregion
 
-    public Vector3 corrente;
+    //public Vector3 corrente;
     public Vector3 newMoveDirection;
-    public float dragX, dragY, dragZ;
+    public Vector3 drag;
 
     // Força da gravidade quando em estado de jetpack
     //public float novaGravidade = 0.8f;    
@@ -51,9 +51,7 @@ public class Paraqueda : MonoBehaviour
             ashCtrl.sobControle = false;
             // Substitui a gravidade da Ash, fazendo ela cair mais devagar
 
-            newMoveDirection.x -= dragX * Time.deltaTime;
-            newMoveDirection.y -= dragY * Time.deltaTime;
-            newMoveDirection.z -= dragZ * Time.deltaTime;
+            newMoveDirection -= drag * Time.deltaTime;
             ashCtrl.moveDirection = newMoveDirection;
             // Diminui o combustível a cada frame
             combustivelAtual--;
@@ -61,9 +59,10 @@ public class Paraqueda : MonoBehaviour
         }
         else
         {
-            newMoveDirection = corrente;
+
+            newMoveDirection = ashCtrl.moveDirection;
         }
-               
+
 
         // Se o combusível tiver acabado...
         if (combustivelAtual <= 0.0f)
