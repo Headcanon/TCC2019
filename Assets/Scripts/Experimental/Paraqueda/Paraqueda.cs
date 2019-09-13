@@ -31,6 +31,8 @@ public class Paraqueda : MonoBehaviour
 
     void Start()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
+
         // Pega o controle da Ash no mesmo GameObject
         ashCtrl = GetComponent<ChrCtrl_Pipilson>();
 

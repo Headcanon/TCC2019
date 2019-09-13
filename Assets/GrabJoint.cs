@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabJoint : MonoBehaviour
 {
     ChrCtrl_Pipilson ash;
+    AshleyController ac;
 
     private void FixedUpdate()
     {
@@ -14,11 +15,14 @@ public class GrabJoint : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ash = other.GetComponent<ChrCtrl_Pipilson>();
+        ac = other.GetComponent<AshleyController>();
 
-        if (ash !=null)
+        if (ash !=null && ac != null)
         {
             ash.moveDirection = Vector3.zero;
             ash.sobControle = false;
+            ac.conectadoEm = GetComponent<Rigidbody>();
+            ac.joint = true;
             ash.transform.parent = transform;
         }
     }
