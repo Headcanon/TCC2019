@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* Insipirado no vídeo Convert 2D Joint in 3D Joints: https://www.youtube.com/watch?v=ft6s09cq7DM */
-public class DistanceJoint3D_Gravity : MonoBehaviour
+public class DistanceJoint3D : MonoBehaviour
 {
     // Transform onde esse objeto vai se pendurar
     public Transform penduradoEm;

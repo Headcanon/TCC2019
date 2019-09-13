@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class GanchoDeEscalada : MonoBehaviour
 {
-    DistanceJoint3D_Gravity dj3d;
+    // Joint de conexão da ash com o objeto
+    //HingeJoint hj;
+    DistanceJoint3D dj3d;
+
+    // Posição em que a corda é mirada
     Vector3 targetPos;
-    RaycastHit hit;
-    public float distancia = 10f;
-    public LayerMask mask;
+
+    // Alcance da corda
+    public float alcance = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
-        dj3d = GetComponent<DistanceJoint3D_Gravity>();
+        // O joint já é colocado na Ash desde o começo
+        // Essa parte deixa ele desativado até ser chamado
+        dj3d = GetComponent<DistanceJoint3D>();
         dj3d.enabled = false;
     }
 
@@ -21,16 +28,22 @@ public class GanchoDeEscalada : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Q))
         {
+            // Mira na posição do mouse
             targetPos = Input.mousePosition;
             targetPos.z = 0;
 
+            // Desenha um raio da Ash até a posição da mira
             Debug.DrawRay(transform.position, targetPos - transform.position, Color.green);
-            Physics.Raycast(transform.position, targetPos - transform.position, out hit, distancia);
+            RaycastHit hit;
+            Physics.Raycast(transform.position, targetPos - transform.position, out hit, alcance);
 
+            // Se o raio encostou em alguma coisa com um RigidBody...
             if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody>() != null)
             {
+                // Se atirar...
                 if (Input.GetButton("Fire1"))
                 {
+                    //hj.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody>();
                     dj3d.enabled = true;
                     dj3d.penduradoEm = hit.collider.gameObject.GetComponent<Rigidbody>().transform;
                 }
