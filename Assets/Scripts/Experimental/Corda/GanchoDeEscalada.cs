@@ -104,12 +104,4 @@ public class GanchoDeEscalada : MonoBehaviour
         #endregion
     }
 
-    private void FixedUpdate()
-    {
-        if (jointado && rb != null && hj != null)
-        {
-            float horizontal = Input.GetAxis("Horizontal");
-            rb.AddForce(new Vector3(horizontal * 1, 0, 0));
-        }
-    }
 }
