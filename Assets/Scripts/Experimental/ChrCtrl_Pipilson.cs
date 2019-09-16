@@ -136,7 +136,10 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         }
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
+        if (characterController.enabled)
+        {
+            characterController.Move(moveDirection * Time.deltaTime);
+        }
 
         ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
         if (anim != null)

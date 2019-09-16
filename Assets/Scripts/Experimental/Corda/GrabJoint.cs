@@ -4,50 +4,51 @@ using UnityEngine;
 
 public class GrabJoint : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
+    public ListaJoints paiDeTodos;
 
     ChrCtrl_Pipilson ash;
-    GanchoDeEscalada ge;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate()
-    {
-        // Se tiver uma Ash e um Gancho...
-        if (ash != null && ge != null)
-        {
-            // Adiciona força de acordo com o eixo horizontal
-            float horizontal = Input.GetAxis("Horizontal");
-            rb.AddForce(new Vector3(horizontal * 2, 0, 0));
-
-            float vertical = Input.GetAxis("Vertical");
-            ash.transform.Translate(new Vector3(0, vertical, 0));
-        }
-    }
+    CharacterController cc;    
 
     // Quando a Ashley entra no trigger...
     private void OnTriggerEnter(Collider other)
     {
         // Pega o controlador e o Gancho
         ash = other.GetComponent<ChrCtrl_Pipilson>();
-        ge = other.GetComponent<GanchoDeEscalada>();
+        cc = other.GetComponent<CharacterController>();
 
         // Se nenhum dos dois for nulo...
-        if (ash !=null && ge != null)
+        if (ash !=null && cc != null)
         {
             // Reseta o momento dela
             ash.moveDirection = Vector3.zero;
             // Tira o controle do Player
             ash.sobControle = false;
-            // Conecta o Gancho nesse Rigidbody
-            ge.conectadoEm = rb;
-            // Avisa o Gancho que ele está jointado
-            // O que faz ele criar o Hinjejoint no lugar correspondente
-            // E desativar o CharacterController
-            //ge.jointado = true;
+            // Desativa o CharacterController
+            cc.enabled = false;
+
+            // Avisa o paiDeTodos pra funcionar
+            paiDeTodos.naAtiva = true;
+        }
+    }
+
+    public void Abortar()
+    {
+        // Se nenhum dos dois for nulo...
+        if (ash != null && cc != null)
+        {
+            // Reseta o momento dela
+            ash.moveDirection = Vector3.zero;
+            // Tira o controle do Player
+            ash.sobControle = true;
+            // Desativa o CharacterController
+            cc.enabled = true;
+
+            // Avisa o paiDeTodos pra funcionar
+            paiDeTodos.naAtiva = false;
+
+            ash = null;
+            cc = null;
         }
     }
 }
