@@ -113,6 +113,7 @@ public class ChrCtrl : MonoBehaviour
             }
             #endregion
 
+            // Corrige o eixo Z
             if (transform.position.z != 0)
             {
                 moveDirection.z = (0 - transform.position.z) * 0.5f;

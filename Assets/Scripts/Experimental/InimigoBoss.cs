@@ -3,7 +3,7 @@
 public class InimigoBoss : MonoBehaviour
 {
     #region Parametros
-    Player axel;
+    Transform axel;
     float nextFire;
 
     // Prefab do projétil que será lançado
@@ -28,7 +28,7 @@ public class InimigoBoss : MonoBehaviour
     private void Start()
     {
         nextFire = Time.time;
-        axel = FindObjectOfType<Player>();
+        axel = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

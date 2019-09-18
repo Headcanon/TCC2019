@@ -8,7 +8,9 @@ public class ListaJoints : MonoBehaviour
     // Lista de todos os joints na corda
     private List<Transform> listaJoints;
     // Transform de player
-    private Transform ash;
+    private GameObject ash;
+    public ChrCtrl_Pipilson ashCtrl;
+    public CharacterController ashCC;
 
     // bool que define se a corda está ativada
     public bool naAtiva = false;
@@ -17,9 +19,13 @@ public class ListaJoints : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // Cria a lista e acha a Ashley
+        // Cria a lista
         listaJoints = new List<Transform>();
-        ash = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // Acha a coisas da Ashley
+        ash = GameObject.FindGameObjectWithTag("Player");
+        ashCtrl = ash.GetComponent<ChrCtrl_Pipilson>();
+        ashCC = ash.GetComponent<CharacterController>();
 
         // Pega o filho desse objeto
         Transform child = transform.GetChild(0);
@@ -31,6 +37,9 @@ public class ListaJoints : MonoBehaviour
             GrabJoint gj = child.gameObject.AddComponent<GrabJoint>();
             // Define o parametro rb como o Rigidbody dele mesmo
             gj.rb = child.gameObject.GetComponent<Rigidbody>();
+            gj.rb.centerOfMass = new Vector3(0, 0, 0);
+            gj.rb.inertiaTensor = new Vector3(1, 1, 1);
+
             // Define o parametro paiDeTodos como essa lista
             gj.paiDeTodos = this;
 
@@ -45,7 +54,7 @@ public class ListaJoints : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         // Se a corda estiver ativa...
         if (naAtiva)
@@ -55,35 +64,51 @@ public class ListaJoints : MonoBehaviour
             /* Eu usava esse debug pra ver qual era o joint mais próximo */
             //Debug.Log(jmp);
 
-            // Pega o Rigidbody ei GrabJoint do joint mais próximo
+            // Pega o Rigidbody do joint mais próximo
             Rigidbody rbAtual = jmp.GetComponent<Rigidbody>();
-            GrabJoint gjAtual = jmp.GetComponent<GrabJoint>();
 
             // Define o joint mais próximo como parent da Ashley
-            ash.parent = jmp;
+            ash.transform.parent = jmp;
 
             #region Movimento
             // Move a Ashley ao longo da corda
             float vertical = Input.GetAxis("Vertical") * Time.fixedDeltaTime;
-            if (vertical > 0.01f && Vector3.Distance(ash.position, listaJoints[0].position) > 0.2f)
+            if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].transform.position.y)
             {
-                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.parent.position, vertical);
+                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.parent.position, Mathf.Abs(vertical));
             }
-            else if (vertical < -0.01f && Vector3.Distance(ash.position, listaJoints[listaJoints.Count - 1].position) > 0.2f)
+            else if (vertical < -0.01f && ash.transform.position.y > listaJoints[listaJoints.Count - 1].transform.position.y)
             {
-                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.GetChild(0).position, vertical);
+                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.GetChild(0).position, Mathf.Abs(vertical));
             }
+
+            ash.transform.rotation = Quaternion.Euler(Vector3.zero);
 
             // Adiciona força de acordo com o eixo horizontal
             float horizontal = Input.GetAxis("Horizontal");            
             rbAtual.AddForce(new Vector3(horizontal * 2, 0, 0));
             #endregion
 
-            if(Input.GetButton("Jump"))
+            if(Input.GetButtonDown("Jump"))
             {
-                ash.parent = null;
-                gjAtual.Abortar();
+                Abortar();
             }
+        }
+        else if(timeLeft >= -1)
+        {
+            UpdateTimer();
+        }
+    }
+
+    public float timeLeft = 7;
+    public bool podePegar = true;
+    private void UpdateTimer()
+    {
+        timeLeft -= Time.fixedDeltaTime;
+        if (timeLeft <= 0)
+        {
+            Physics.IgnoreLayerCollision(0, 10, false);
+            podePegar = true;
         }
     }
 
@@ -95,13 +120,13 @@ public class ListaJoints : MonoBehaviour
         
         // A float distanciaAnterior é a que vai ser comparada com a nova distancia lá embaixo no for
         // Coloquei a distancia do joint0 só pra não ser nulo
-        float distanciaAnterior = Vector3.Distance(listaJoints[0].position, ash.position);
+        float distanciaAnterior = Vector3.Distance(listaJoints[0].position, ash.transform.position);
 
         // Pra cada joint na lista...
         for (int i = 0; i < listaJoints.Count; i++)
         {
             // Calcula a distancia entre esse joint e player
-            float novaDistancia = Vector3.Distance(listaJoints[i].position, ash.position);
+            float novaDistancia = Vector3.Distance(listaJoints[i].position, ash.transform.position);
 
             // Se essa distancia for menor que a anterior
             if (novaDistancia < distanciaAnterior)
@@ -117,6 +142,24 @@ public class ListaJoints : MonoBehaviour
 
         // Retorna o resultado
         return jointMaisProximo;
+    }
+
+    public void Abortar()
+    {
+        // Reseta o momento dela
+        ashCtrl.moveDirection = Vector3.zero;
+        // Devolvo o controle ao Player
+        ashCtrl.sobControle = true;
+        // Reativa o CharacterController
+        ashCC.enabled = true;
+
+        ashCtrl.transform.parent = null;
+
+        // Avisa o paiDeTodos pra parar de funcionar
+        naAtiva = false;
+
+        podePegar = false;
+        timeLeft = 7;
     }
 }
 

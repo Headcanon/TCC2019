@@ -40,7 +40,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     public bool sobControle = true;
 
     void Start()
-    {
+    {        
         characterController = GetComponent<CharacterController>();
 
         anim = ashModel.GetComponent<Animator>();
@@ -128,6 +128,12 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 moveDirection.x *= speed;
             }
             #endregion
+
+            // Corrige o eixo Z
+            if (transform.position.z != 0)
+            {
+                moveDirection.z = (0 - transform.position.z) * 0.5f;
+            }
 
             // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
             // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied

@@ -5,50 +5,54 @@ using UnityEngine;
 public class GrabJoint : MonoBehaviour
 {
     public Rigidbody rb;
-    public ListaJoints paiDeTodos;
-
-    ChrCtrl_Pipilson ash;
-    CharacterController cc;    
+    public ListaJoints paiDeTodos;  
 
     // Quando a Ashley entra no trigger...
     private void OnTriggerEnter(Collider other)
     {
-        // Pega o controlador e o Gancho
-        ash = other.GetComponent<ChrCtrl_Pipilson>();
-        cc = other.GetComponent<CharacterController>();
-
         // Se nenhum dos dois for nulo...
-        if (ash !=null && cc != null)
+        if (other.CompareTag("Player") && paiDeTodos.podePegar)
         {
             // Reseta o momento dela
-            ash.moveDirection = Vector3.zero;
+            paiDeTodos.ashCtrl.moveDirection = Vector3.zero;
             // Tira o controle do Player
-            ash.sobControle = false;
+            paiDeTodos.ashCtrl.sobControle = false;
             // Desativa o CharacterController
-            cc.enabled = false;
+            paiDeTodos.ashCC.enabled = false;
+
+            //ash.transform.position = transform.position;
 
             // Avisa o paiDeTodos pra funcionar
             paiDeTodos.naAtiva = true;
+            paiDeTodos.timeLeft = 7;
+
+            Physics.IgnoreLayerCollision(0, 10, true);
         }
     }
+    /*
+     * O que é que eu estou tentando fazer
+     * Era alguma coisa com a corda
+     * Tinha a ver com o teletransporte
+     * Eu tenho que resolver duas coisas diferente
+     * Uma é os colliders que etão pequenos demais
+     * Outra é o pulo que precisa pra soltar
+     * Acho que eu vou resolver primeiro o pulo
+     * Eu só preciso botar um timer em algum lugar
+     */
 
-    public void Abortar()
-    {
-        // Se nenhum dos dois for nulo...
-        if (ash != null && cc != null)
-        {
-            // Reseta o momento dela
-            ash.moveDirection = Vector3.zero;
-            // Tira o controle do Player
-            ash.sobControle = true;
-            // Desativa o CharacterController
-            cc.enabled = true;
+    //public void Abortar()
+    //{
+    //    // Reseta o momento dela
+    //    paiDeTodos.ashCtrl.moveDirection = Vector3.zero;
+    //    // Devolvo o controle ao Player
+    //    paiDeTodos.ashCtrl.sobControle = true;
+    //    // Reativa o CharacterController
+    //    paiDeTodos.ashCC.enabled = true;
 
-            // Avisa o paiDeTodos pra funcionar
-            paiDeTodos.naAtiva = false;
+    //    // Avisa o paiDeTodos pra parar de funcionar
+    //    paiDeTodos.naAtiva = false;
 
-            ash = null;
-            cc = null;
-        }
-    }
+    //    paiDeTodos.podePegar = false;
+    //    paiDeTodos.timeLeft = 10;
+    //}
 }
