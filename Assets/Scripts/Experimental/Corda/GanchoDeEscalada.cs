@@ -22,7 +22,7 @@ public class GanchoDeEscalada : MonoBehaviour
     // Rigidbody pro Hinge funcionar e poder adicionar forças
     Rigidbody rb;
     // Hinge joint pra conectar nas coisas
-    HingeJoint hj;
+    DistanceJoint3D hj;
     #endregion
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class GanchoDeEscalada : MonoBehaviour
         // Cada frame ele tenta pegar esses compnentes
         cc = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-        hj = GetComponent<HingeJoint>();
+        hj = GetComponent<DistanceJoint3D>();
 
         // Se apertar a tecla Q...
         if (Input.GetKey(KeyCode.Q))
@@ -47,7 +47,6 @@ public class GanchoDeEscalada : MonoBehaviour
             Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
             targetPos = Camera.main.ScreenToWorldPoint(mousePosFar);
             targetPos.z = 0;
-
 
             // Desenha um raio da Ash até a posição da mira
             Debug.DrawLine(transform.position, targetPos, Color.green);
@@ -85,12 +84,11 @@ public class GanchoDeEscalada : MonoBehaviour
         {
             // Desliga o character controller
             cc.enabled = false;
-            // Adiciona o Hingejoint (o Rigidbody vem junto)
-            hj = gameObject.AddComponent<HingeJoint>();
-            // Ajeita o eixo da Hinjejoint
-            hj.axis = new Vector3(0, 0, 1);
+            // Adiciona o DistanceJoint3D
+            hj = gameObject.AddComponent<DistanceJoint3D>();
+            rb = gameObject.AddComponent<Rigidbody>();
             // Conecta o Hinjejoint ao Rigidbody identificado
-            hj.connectedBody = conectadoEm;
+            hj.penduradoEm = conectadoEm.transform;
         }
         else if (!jointado && rb != null && hj != null)
         {
