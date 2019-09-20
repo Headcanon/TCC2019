@@ -8,7 +8,7 @@ public class DistanceJoint3D : MonoBehaviour
     // Transform onde esse objeto vai se pendurar
     public Transform penduradoEm;
     // Distancia entre esse objeto e o que ele está pendurado
-    float distance;
+    public float distance;
 
     // Rigidbody desse objeto
     protected Rigidbody rb;
@@ -53,5 +53,9 @@ public class DistanceJoint3D : MonoBehaviour
         // Projeta o 
         Vector3 projectOnConnection = Vector3.Project(velocityTarget, connection);
         rb.velocity = (velocityTarget - projectOnConnection) / (1 + damper * Time.fixedDeltaTime);
+
+        if (Input.GetButton("Jump") && transform.position.y < penduradoEm.position.y - 2)
+            distance-= 0.1f;
+
     }
 }

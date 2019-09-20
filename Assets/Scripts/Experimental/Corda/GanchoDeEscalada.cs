@@ -13,7 +13,7 @@ public class GanchoDeEscalada : MonoBehaviour
     // Se Ash está conectada a algo usando o Hinge Joint
     public bool jointado;
     // Rigidbody no qual irá se conectar
-    public Rigidbody conectadoEm;
+    public Transform conectadoEm;
     #endregion
 
     #region Coisas pra ativar e desativar
@@ -25,68 +25,74 @@ public class GanchoDeEscalada : MonoBehaviour
     DistanceJoint3D hj;
     #endregion
 
+    private void Start()
+    {
+        cc = GetComponent<CharacterController>();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        #region Coisas comentadas
         // Cada frame ele tenta pegar esses compnentes
-        cc = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
-        hj = GetComponent<DistanceJoint3D>();
+        //cc = GetComponent<CharacterController>();
+        //rb = GetComponent<Rigidbody>();
+        //hj = GetComponent<DistanceJoint3D>();
 
         // Se apertar a tecla Q...
-        if (Input.GetKey(KeyCode.Q))
-        {
-            // Posição em que a corda é mirada
-            Vector3 targetPos;
-            //targetPos = Input.mousePosition;
+        //if (Input.GetKey(KeyCode.Q))
+        //{
+        //// Posição em que a corda é mirada
+        //Vector3 targetPos;
+        ////targetPos = Input.mousePosition;
 
 
-            //Pega a posição do mouse relativa ao ponto mais próximo da câmera
-            Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
-            //Pega a posição do mouse relativa ao ponto mais distante da câmera
-            Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
-            targetPos = Camera.main.ScreenToWorldPoint(mousePosFar);
-            targetPos.z = 0;
+        ////Pega a posição do mouse relativa ao ponto mais próximo da câmera
+        //Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
+        ////Pega a posição do mouse relativa ao ponto mais distante da câmera
+        //Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+        //targetPos = Camera.main.ScreenToWorldPoint(mousePosFar);
+        //targetPos.z = 0;
 
-            // Desenha um raio da Ash até a posição da mira
-            Debug.DrawLine(transform.position, targetPos, Color.green);
-            RaycastHit hit;
-            Physics.Raycast(transform.position, targetPos, out hit, alcance);
+        //// Desenha um raio da Ash até a posição da mira
+        //Debug.DrawLine(transform.position, targetPos, Color.green);
+        //RaycastHit hit;
+        //Physics.Raycast(transform.position, targetPos, out hit, alcance);
 
-            // Se o raio encostou em alguma coisa com um RigidBody...
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody>() != null)
-            {
-                // E com o raio acertando, se você atirar...
-                if (Input.GetButton("Fire1"))
-                {
-                    // Conecta no Rigidbody acertado
-                    conectadoEm = hit.rigidbody;
+        // Se o raio encostou em alguma coisa com um RigidBody...
+        //    if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody>() != null)
+        //    {
+        //        // E com o raio acertando, se você atirar...
+        //        if (Input.GetButton("Fire1"))
+        //        {
+        //            // Conecta no Rigidbody acertado
+        //            conectadoEm = hit.rigidbody;
 
-                    // Ativa o modo jointado
-                    jointado = true;
-                }
-                else
-                {
-                    // Desativa a conexão
-                    conectadoEm = null;
+        //            // Ativa o modo jointado
+        //            jointado = true;
+        //        }
+        //        else
+        //        {
+        //            // Desativa a conexão
+        //            conectadoEm = null;
 
-                    // Desativa o modo jointado
-                    jointado = false;
-                }
-            }
-        }
+        //            // Desativa o modo jointado
+        //            jointado = false;
+        //        }
+        //    }
+        //}
+        #endregion
 
         // Os códigos aqui cuida pra que a Ash se conecte a alguma coisa
         // É usado tanto para a corda quanto para o gancho
-        #region Conexão
         // Só pra garantir que ainda não tem nenhum HingeJoint nem RigidBody...
         if (jointado && rb == null && hj == null)
         {
             // Desliga o character controller
             cc.enabled = false;
             // Adiciona o DistanceJoint3D
-            hj = gameObject.AddComponent<DistanceJoint3D>();
             rb = gameObject.AddComponent<Rigidbody>();
+            hj = gameObject.AddComponent<DistanceJoint3D>();
             // Conecta o Hinjejoint ao Rigidbody identificado
             hj.penduradoEm = conectadoEm.transform;
         }
@@ -99,7 +105,13 @@ public class GanchoDeEscalada : MonoBehaviour
             // Reativa o Character Controller
             cc.enabled = true;
         }
-        #endregion
-    }
 
+        if(jointado && Input.GetButton("Fire1"))
+        {
+            jointado = false;
+        }
+
+        //}
+
+    }
 }

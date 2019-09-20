@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Atirador
+  - Ancora
   layers:
   - Default
   - TransparentFX

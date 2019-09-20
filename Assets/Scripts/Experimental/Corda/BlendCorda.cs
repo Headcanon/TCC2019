@@ -4,44 +4,52 @@ using UnityEngine;
 
 public class BlendCorda : MonoBehaviour
 {
-    // ???
-    int blendShapeCount;
-    // ???
     SkinnedMeshRenderer skinnedMeshRenderer;
-    // Malha
-    Mesh skinnedMesh;
-    // ???
-    float blendOne = 0f;
-    float blendTwo = 0f;
-    float blendSpeed = 1f;
-    // ???
-    bool blendOneFinished;
 
+    public Transform pontoAlvo;
+    public float blendSpeed = 0.1f;
+    private float blendValue = 0f;
+
+    private GanchoDeEscalada gde;
+
+    private bool procurando = true;
+
+    // ??? Não sei se vai funfar se desinstanciar e reinstanciar ???
     private void Awake()
     {
-        // skinning???
-        skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
-        skinnedMesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        skinnedMeshRenderer = transform.parent.GetComponent<SkinnedMeshRenderer>();
+
+        gde = GameObject.FindGameObjectWithTag("Player").GetComponent<GanchoDeEscalada>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Quantidade de blend shapes???
-        blendShapeCount = skinnedMesh.blendShapeCount;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-            if (blendOne < 100f)
-            {
-                skinnedMeshRenderer.SetBlendShapeWeight(0, blendOne);
-                blendOne += blendSpeed;
-            }
-            else
-            {
-                blendOneFinished = true;
-            }
+        transform.position = Vector3.Lerp(skinnedMeshRenderer.transform.position, pontoAlvo.position, blendValue / 100);
+
+        if (blendValue < 100f && procurando)
+        {
+            skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
+            blendValue += blendSpeed;
+        }
+
+        if (blendValue > 1f && Input.GetButton("Jump"))
+        {
+            skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
+            blendValue -= blendSpeed;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Ancora"))
+        {
+            gde.conectadoEm = other.transform;
+            gde.jointado = true;
+            procurando = false;
+        }
+        else if (other.CompareTag("Puxavel"))
+        {
+
+        }
     }
 }
