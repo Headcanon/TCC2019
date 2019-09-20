@@ -30,7 +30,7 @@ public class DistanceJoint3D : MonoBehaviour
     void Start()
     {
         // Determina a distancia entre Rigidbody desse objeto e o conectado
-        distance = Vector3.Distance(rb.position, penduradoEm.position);
+        distance = Vector3.Distance(rb.position, penduradoEm.position) - 0.5f;
     }
 
     void FixedUpdate()

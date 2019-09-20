@@ -141,6 +141,16 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
+        // Pra travar o movimento enquanto tá mirando
+        if (Input.GetButton("Mira"))
+        {
+            sobControle = false;
+        }
+        else
+        {
+            sobControle = true;
+        }
+
         // Move the controller
         if (characterController.enabled)
         {

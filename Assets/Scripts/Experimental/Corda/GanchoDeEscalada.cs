@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class GanchoDeEscalada : MonoBehaviour
 {
-    #region Projeção do Raycast
-    // Alcance da corda
-    public float alcance = 10f;
-    #endregion
-
     #region Conexão
     // Se Ash está conectada a algo usando o Hinge Joint
     public bool jointado;
@@ -25,6 +20,11 @@ public class GanchoDeEscalada : MonoBehaviour
     DistanceJoint3D hj;
     #endregion
 
+    public GameObject ganchoPrefab, seta;
+    private GameObject ganchoAtual;
+    private bool ganchoAtivo = false;
+    Quaternion rotacao = Quaternion.identity;
+
     private void Start()
     {
         cc = GetComponent<CharacterController>();
@@ -33,59 +33,9 @@ public class GanchoDeEscalada : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Coisas comentadas
-        // Cada frame ele tenta pegar esses compnentes
-        //cc = GetComponent<CharacterController>();
-        //rb = GetComponent<Rigidbody>();
-        //hj = GetComponent<DistanceJoint3D>();
-
-        // Se apertar a tecla Q...
-        //if (Input.GetKey(KeyCode.Q))
-        //{
-        //// Posição em que a corda é mirada
-        //Vector3 targetPos;
-        ////targetPos = Input.mousePosition;
-
-
-        ////Pega a posição do mouse relativa ao ponto mais próximo da câmera
-        //Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
-        ////Pega a posição do mouse relativa ao ponto mais distante da câmera
-        //Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
-        //targetPos = Camera.main.ScreenToWorldPoint(mousePosFar);
-        //targetPos.z = 0;
-
-        //// Desenha um raio da Ash até a posição da mira
-        //Debug.DrawLine(transform.position, targetPos, Color.green);
-        //RaycastHit hit;
-        //Physics.Raycast(transform.position, targetPos, out hit, alcance);
-
-        // Se o raio encostou em alguma coisa com um RigidBody...
-        //    if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody>() != null)
-        //    {
-        //        // E com o raio acertando, se você atirar...
-        //        if (Input.GetButton("Fire1"))
-        //        {
-        //            // Conecta no Rigidbody acertado
-        //            conectadoEm = hit.rigidbody;
-
-        //            // Ativa o modo jointado
-        //            jointado = true;
-        //        }
-        //        else
-        //        {
-        //            // Desativa a conexão
-        //            conectadoEm = null;
-
-        //            // Desativa o modo jointado
-        //            jointado = false;
-        //        }
-        //    }
-        //}
-        #endregion
-
         // Os códigos aqui cuida pra que a Ash se conecte a alguma coisa
         // É usado tanto para a corda quanto para o gancho
-        // Só pra garantir que ainda não tem nenhum HingeJoint nem RigidBody...
+        // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && hj == null)
         {
             // Desliga o character controller
@@ -106,12 +56,38 @@ public class GanchoDeEscalada : MonoBehaviour
             cc.enabled = true;
         }
 
-        if(jointado && Input.GetButton("Fire1"))
+
+        if (!ganchoAtivo && Input.GetButton("Mira"))
         {
-            jointado = false;
+            rotacao = AnguloAxis();
+            seta.gameObject.SetActive(true);
+            seta.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+            seta.transform.rotation = rotacao;
+        }
+        else
+        {
+            seta.gameObject.SetActive(false);
         }
 
-        //}
+        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
+        {
+            ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
+            ganchoAtivo = true;
+        }
+        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Fire1"))
+        {
+            ganchoAtivo = false;
+            jointado = false;
+            Destroy(ganchoAtual);
+        }
+    }
+    
+    float angulo = 0;
+    private Quaternion AnguloAxis()
+    {
+        angulo -= Input.GetAxis("Horizontal");
+        Quaternion rotacao = Quaternion.Euler(0, 0, angulo);
 
+        return rotacao;
     }
 }
