@@ -48,7 +48,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -91,11 +91,13 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             }
 
             // Se ainda não for atingido o limite de pulos permitir pular denovo
-            if (Input.GetButtonDown("Jump") && pulosDados < puloLimite) //Alterei esse if -Pipilson
+            if (Input.GetButtonDown("Jump")) //Alterei esse if -Pipilson
             {
-
-                moveDirection.y = jumpHighSpeed;
-                pulosDados++;
+                if (pulosDados < puloLimite)
+                {
+                    moveDirection.y = jumpHighSpeed;
+                    pulosDados++;
+                }
             }
 
             #region Pulo Adaptável
