@@ -11,15 +11,17 @@ public class BotaoPlataforma : MonoBehaviour {
     public bool travado;
     public Renderer renderer;
 
-    ActivePlatform plataformaAtiva;
-    bool apertado;
+    private ActivePlatform plataformaAtiva;
+    private bool apertado;
+    private Animator anim;
 
     // Use this for initialization
     void Start ()
     {
         plataformaAtiva = plataforma.GetComponent<ActivePlatform>();
         apertado = false;
-        renderer = GetComponent<Renderer>();
+        //renderer = GetComponent<Renderer>();
+        anim = GetComponent<Animator>();
 
         if(travado)
         {
@@ -54,6 +56,7 @@ public class BotaoPlataforma : MonoBehaviour {
         {
             apertado = true;
             renderer.material.SetColor("_Color", Color.black);
+            anim.SetTrigger("Apertagem");
         }
     }
 }
