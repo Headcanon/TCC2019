@@ -48,7 +48,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -91,11 +91,13 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             }
 
             // Se ainda não for atingido o limite de pulos permitir pular denovo
-            if (Input.GetButtonDown("Jump") && pulosDados < puloLimite) //Alterei esse if -Pipilson
+            if (Input.GetButtonDown("Jump")) //Alterei esse if -Pipilson
             {
-
-                moveDirection.y = jumpHighSpeed;
-                pulosDados++;
+                if (pulosDados < puloLimite)
+                {
+                    moveDirection.y = jumpHighSpeed;
+                    pulosDados++;
+                }
             }
 
             #region Pulo Adaptável
@@ -139,6 +141,16 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
             // as an acceleration (ms^-2)
             moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        // Pra travar o movimento enquanto tá mirando
+        if (Input.GetButton("Mira"))
+        {
+            sobControle = false;
+        }
+        else
+        {
+            sobControle = true;
         }
 
         // Move the controller

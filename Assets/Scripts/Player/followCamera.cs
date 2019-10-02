@@ -22,7 +22,7 @@ public class followCamera : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate ()
+    void FixedUpdate ()
     {
         if (target != null)
         {
