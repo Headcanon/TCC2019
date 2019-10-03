@@ -48,7 +48,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
 

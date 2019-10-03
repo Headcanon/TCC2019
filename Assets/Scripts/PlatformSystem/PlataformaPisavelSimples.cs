@@ -49,6 +49,7 @@ public class PlataformaPisavelSimples : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             col.transform.parent = transform;
+            Camera.main.transform.parent = transform;
         }
     }
     private void OnTriggerExit(Collider col)
@@ -56,6 +57,7 @@ public class PlataformaPisavelSimples : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             col.transform.parent = null;
+            Camera.main.transform.parent = null;
         }
     }
 }
