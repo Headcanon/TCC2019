@@ -42,6 +42,4 @@ public class LoopMovelSimples : MonoBehaviour
             transform.Translate(new Vector3(x, y, z));
         }
     }
-
 }
-

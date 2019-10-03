@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Curvador : MonoBehaviour {
-
+public class Curvador : MonoBehaviour
+{
     private void OnTriggerEnter(Collider other)
     {
         Camera.main.transform.parent = other.transform;

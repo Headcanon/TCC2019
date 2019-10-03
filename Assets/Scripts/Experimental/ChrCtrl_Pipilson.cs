@@ -50,7 +50,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("LeftHorizontal");
 
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
@@ -68,11 +68,11 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 gravity = 20f;
 
                 #region Aceleracao
-                if (Input.GetButton("Horizontal") && timer >= 1.5f)
+                if (Input.GetButton("LeftHorizontal") && timer >= 1.5f)
                 {
                     fast = true;
                 }
-                else if (Input.GetButton("Horizontal"))
+                else if (Input.GetButton("LeftHorizontal"))
                 {
                     timer += Time.deltaTime;
                 }
@@ -86,12 +86,12 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             }
             else
             {
-                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);
                 anim.SetBool("Pulano", true);
             }
 
             // Se ainda não for atingido o limite de pulos permitir pular denovo
-            if (Input.GetButtonDown("Jump")) //Alterei esse if -Pipilson
+            if (Input.GetButtonDown("FaceA")) //Alterei esse if -Pipilson
             {
                 if (pulosDados < puloLimite)
                 {
@@ -101,7 +101,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             }
 
             #region Pulo Adaptável
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("FaceA"))
             {
                 if (isJumping && pulosDados < 1)
                 {
@@ -114,7 +114,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonUp("Jump"))
+            if (Input.GetButtonUp("FaceA"))
             {
                 isJumping = false;
             }
@@ -144,7 +144,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         }
 
         // Pra travar o movimento enquanto tá mirando
-        if (Input.GetButton("Mira"))
+        if (Input.GetButton("LeftTrigger"))
         {
             sobControle = false;
         }

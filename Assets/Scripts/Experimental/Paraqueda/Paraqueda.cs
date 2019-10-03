@@ -44,7 +44,7 @@ public class Paraqueda : MonoBehaviour
     void Update()
     {
         // Se a Ash pular sendo que ela já deu o número máximo de pulos e o combustível é maior que zero
-        if (Input.GetButton("Jump") && (ashCtrl.pulosDados == ashCtrl.puloLimite) && (combustivelAtual > 0.0f))
+        if (Input.GetButton("FaceA") && (ashCtrl.pulosDados == ashCtrl.puloLimite) && (combustivelAtual > 0.0f))
         {
             // Cancela o momento linear dela
             // Sem isso, se você ativa o jetpack no começo do pulo
@@ -85,7 +85,7 @@ public class Paraqueda : MonoBehaviour
             ashCtrl.puloLimite = 2;
         }
 
-        if (Input.GetButtonUp("Jump") && (ashCtrl.pulosDados == ashCtrl.puloLimite))
+        if (Input.GetButtonUp("FaceA") && (ashCtrl.pulosDados == ashCtrl.puloLimite))
         {
             ashCtrl.sobControle = true;
             //ashCtrl.gravity = 20f;

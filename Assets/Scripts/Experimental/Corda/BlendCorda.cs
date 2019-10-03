@@ -32,7 +32,7 @@ public class BlendCorda : MonoBehaviour
             blendValue += blendSpeed;
         }
 
-        if (blendValue > 1f && Input.GetButton("Jump"))
+        if (blendValue > 1f && Input.GetButton("FaceA"))
         {
             skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
             blendValue -= 2.5f;

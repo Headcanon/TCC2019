@@ -7,7 +7,6 @@ public class Test_Collision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name + " Colidiu com " + gameObject.name);
-
     }
 
     private void OnTriggerExit(Collider other)

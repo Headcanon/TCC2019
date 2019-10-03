@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class followCamera : MonoBehaviour {
-
+public class followCamera : MonoBehaviour
+{
     public bool sideScrolling;
-    public float smoothSpeed =  0.125f;
+    public float smoothSpeed = 0.125f;
 
     private Vector3 desiredOffset;
     private Vector3 desiredLookAtOffset;
@@ -22,7 +22,7 @@ public class followCamera : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate ()
+    void FixedUpdate()
     {
         if (target != null)
         {
@@ -41,7 +41,7 @@ public class followCamera : MonoBehaviour {
             // Olha para o lookat desejado atual
             transform.LookAt(target.position + desiredLookAtOffset);
         }
-	}
+    }
 
     public void TrocaOffset(Vector3 offset, Vector3 lookAtOffset)
     {

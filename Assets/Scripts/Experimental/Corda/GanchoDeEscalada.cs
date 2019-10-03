@@ -57,7 +57,7 @@ public class GanchoDeEscalada : MonoBehaviour
         }
 
 
-        if (!ganchoAtivo && Input.GetButton("Mira"))
+        if (!ganchoAtivo && Input.GetButton("LeftTrigger"))
         {
             rotacao = AnguloAxis();
             seta.gameObject.SetActive(true);
@@ -69,12 +69,12 @@ public class GanchoDeEscalada : MonoBehaviour
             seta.gameObject.SetActive(false);
         }
 
-        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
+        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("RightTrigger"))
         {
             ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
             ganchoAtivo = true;
         }
-        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Fire1"))
+        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("RightTrigger"))
         {
             ganchoAtivo = false;
             jointado = false;
@@ -85,7 +85,7 @@ public class GanchoDeEscalada : MonoBehaviour
     float angulo = 0;
     private Quaternion AnguloAxis()
     {
-        angulo -= Input.GetAxis("Horizontal");
+        angulo -= Input.GetAxis("LeftHorizontal");
         Quaternion rotacao = Quaternion.Euler(0, 0, angulo);
 
         return rotacao;

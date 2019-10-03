@@ -78,7 +78,5 @@ public class MouseFollower : MonoBehaviour
         // Retorna o ponto resultante
         return new Vector3(x, y);
     }
-    #endregion
-
-    
+    #endregion 
 }
