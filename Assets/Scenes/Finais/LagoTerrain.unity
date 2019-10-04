@@ -1050,6 +1050,7 @@ GameObject:
   - component: {fileID: 80974904}
   - component: {fileID: 80974908}
   - component: {fileID: 80974903}
+  - component: {fileID: 80974909}
   m_Layer: 0
   m_Name: Ash
   m_TagString: Player
@@ -1177,6 +1178,20 @@ MonoBehaviour:
   vida: 100
   barraVida: {fileID: 540238663}
   spawnPoint: {fileID: 0}
+--- !u!114 &80974909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80974902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17441db40326f7448bc696b7ce9caab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nome: 
+  posicao: {x: 0, y: 0, z: 0}
 --- !u!4 &86524457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6870044871176788229, guid: 96e61c452c1b5064ba5c512737390c8a,

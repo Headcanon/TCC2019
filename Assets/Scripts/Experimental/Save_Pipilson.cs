@@ -29,7 +29,7 @@ public class Save_Pipilson : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             posicao = transform.position;
             nome = name;
@@ -37,13 +37,12 @@ public class Save_Pipilson : MonoBehaviour
             PlayerPrefs.SetString(nome, json);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKey(KeyCode.C))
         {
-            //JsonUtility.FromJsonOverwrite(json, this);
-            //transform.position = posicao;
-            //name = nome;
-            //JsonUtility.FromJsonOverwrite(json, this);
-
+            JsonUtility.FromJsonOverwrite(json, this);
+            transform.position = posicao;
+            name = nome;
+            JsonUtility.FromJsonOverwrite(json, this);
         }
     }
 }
