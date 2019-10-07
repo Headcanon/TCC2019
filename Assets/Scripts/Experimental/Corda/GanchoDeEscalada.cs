@@ -20,7 +20,8 @@ public class GanchoDeEscalada : MonoBehaviour
     DistanceJoint3D hj;
     #endregion
 
-    public GameObject ganchoPrefab, seta;
+    public GameObject ganchoPrefab;
+    //public GameObject seta;
     private GameObject ganchoAtual;
     private bool ganchoAtivo = false;
     Quaternion rotacao = Quaternion.identity;
@@ -28,6 +29,7 @@ public class GanchoDeEscalada : MonoBehaviour
     private void Start()
     {
         cc = GetComponent<CharacterController>();
+        ganchoPrefab = Resources.Load<GameObject>("CordaLonga");
     }
 
     // Update is called once per frame
@@ -57,17 +59,17 @@ public class GanchoDeEscalada : MonoBehaviour
         }
 
 
-        if (!ganchoAtivo && Input.GetButton("Mira"))
-        {
-            rotacao = AnguloAxis();
-            seta.gameObject.SetActive(true);
-            seta.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-            seta.transform.rotation = rotacao;
-        }
-        else
-        {
-            seta.gameObject.SetActive(false);
-        }
+        //if (!ganchoAtivo && Input.GetButton("Mira"))
+        //{
+        //    rotacao = AnguloAxis();
+        //    seta.gameObject.SetActive(true);
+        //    seta.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+        //    seta.transform.rotation = rotacao;
+        //}
+        //else
+        //{
+        //    seta.gameObject.SetActive(false);
+        //}
 
         if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
         {
