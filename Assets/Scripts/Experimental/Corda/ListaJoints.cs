@@ -14,6 +14,9 @@ public class ListaJoints : MonoBehaviour
 
     // bool que define se a corda está ativada
     public bool naAtiva = false;
+
+    // Velocidade de escalada da corda
+    public float velocidade;
     #endregion
 
     // Start is called before the first frame update
@@ -72,7 +75,7 @@ public class ListaJoints : MonoBehaviour
 
             #region Movimento
             // Move a Ashley ao longo da corda
-            float vertical = Input.GetAxis("Vertical") * Time.fixedDeltaTime;
+            float vertical = Input.GetAxis("Vertical") * Time.fixedDeltaTime * velocidade;
             if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].transform.position.y)
             {
                 ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.parent.position, Mathf.Abs(vertical));

@@ -76,7 +76,7 @@ public class GanchoDeEscalada : MonoBehaviour
             ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
             ganchoAtivo = true;
         }
-        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Fire1"))
+        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Jump"))
         {
             ganchoAtivo = false;
             jointado = false;

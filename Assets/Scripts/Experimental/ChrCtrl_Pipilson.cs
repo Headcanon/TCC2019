@@ -87,12 +87,13 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             else
             {
                 moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
-                anim.SetBool("Pulano", true);
+                
             }
 
             // Se ainda não for atingido o limite de pulos permitir pular denovo
             if (Input.GetButtonDown("Jump")) //Alterei esse if -Pipilson
             {
+                anim.SetBool("Pulano", true);
                 if (pulosDados < puloLimite)
                 {
                     moveDirection.y = jumpHighSpeed;
