@@ -92,7 +92,7 @@ public class ListaJoints : MonoBehaviour
             rbAtual.AddForce(new Vector3(horizontal * 2, 0, 0));
             #endregion
 
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButton("Jump"))
             {
                 Abortar();
             }
@@ -162,7 +162,7 @@ public class ListaJoints : MonoBehaviour
         naAtiva = false;
 
         podePegar = false;
-        timeLeft = 7;
+        timeLeft = 3;
     }
 }
 

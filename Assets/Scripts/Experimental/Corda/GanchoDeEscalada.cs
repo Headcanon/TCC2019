@@ -14,6 +14,8 @@ public class GanchoDeEscalada : MonoBehaviour
     #region Coisas pra ativar e desativar
     // Character controller pra ser ativado e/ou desativado
     CharacterController cc;
+    // Controlador só pra zerar o vetor de movimento
+    ChrCtrl_Pipilson chcrt;
     // Rigidbody pro Hinge funcionar e poder adicionar forças
     Rigidbody rb;
     // Hinge joint pra conectar nas coisas
@@ -29,6 +31,7 @@ public class GanchoDeEscalada : MonoBehaviour
     private void Start()
     {
         cc = GetComponent<CharacterController>();
+        chcrt = GetComponent<ChrCtrl_Pipilson>();
         ganchoPrefab = Resources.Load<GameObject>("CordaLonga");
     }
 
@@ -36,7 +39,7 @@ public class GanchoDeEscalada : MonoBehaviour
     void Update()
     {
         // Os códigos aqui cuida pra que a Ash se conecte a alguma coisa
-        // É usado tanto para a corda quanto para o gancho
+
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && hj == null)
         {
@@ -58,32 +61,26 @@ public class GanchoDeEscalada : MonoBehaviour
             cc.enabled = true;
         }
 
-
-        //if (!ganchoAtivo && Input.GetButton("Mira"))
-        //{
-        //    rotacao = AnguloAxis();
-        //    seta.gameObject.SetActive(true);
-        //    seta.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        //    seta.transform.rotation = rotacao;
-        //}
-        //else
-        //{
-        //    seta.gameObject.SetActive(false);
-        //}
-
         if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
         {
             ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
             ganchoAtivo = true;
         }
         else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Jump"))
-        {
-            ganchoAtivo = false;
-            jointado = false;
-            Destroy(ganchoAtual);
+        {            
+            Abortar();
         }
     }
     
+    public void Abortar()
+    {
+        // Reseta o momento dela
+        chcrt.moveDirection = Vector3.zero;
+        ganchoAtivo = false;
+        jointado = false;
+        Destroy(ganchoAtual);
+    }
+
     float angulo = 0;
     private Quaternion AnguloAxis()
     {

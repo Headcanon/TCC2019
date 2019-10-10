@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontoAlvo: {fileID: 613524153629696840}
-  blendSpeed: 3
+  blendSpeed: 100
 --- !u!1 &8908755449827675046
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6948448554097123456}
   - component: {fileID: 2554416168975701199}
   m_Layer: 0
-  m_Name: CordaLonga
+  m_Name: CordaLonga 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

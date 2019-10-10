@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BlendCorda : MonoBehaviour
 {
-    SkinnedMeshRenderer skinnedMeshRenderer;
+    private SkinnedMeshRenderer skinnedMeshRenderer;
 
     public Transform pontoAlvo;
-    public float blendSpeed = 0.1f;
+    public float launchSpeed = 5f;
+    public float pullSpeed = 2.5f;
     private float blendValue = 0f;
 
     private GanchoDeEscalada gde;
 
     private bool procurando = true;
 
-    // ??? Não sei se vai funfar se desinstanciar e reinstanciar ???
     private void Awake()
     {
         skinnedMeshRenderer = transform.parent.GetComponent<SkinnedMeshRenderer>();
@@ -29,13 +29,18 @@ public class BlendCorda : MonoBehaviour
         if (blendValue < 100f && procurando)
         {
             skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
-            blendValue += blendSpeed;
+            blendValue += launchSpeed * Time.deltaTime;
         }
 
         if (blendValue > 1f && Input.GetButton("Fire1"))
         {
             skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
-            blendValue -= 2.5f;
+            blendValue -= pullSpeed * Time.deltaTime;
+        }
+
+        if(blendValue >= 100 && !gde.jointado)
+        {
+            gde.Abortar();
         }
     }
 
