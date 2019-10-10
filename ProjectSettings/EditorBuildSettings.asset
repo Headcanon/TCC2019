@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Testes/PlaygroundLab.unity
+    guid: 89413f10d418d194bb532cbe832dcb14
+  - enabled: 1
     path: Assets/Scenes/Finais/LagoTerrain.unity
     guid: 67b5cb61881239845bf4d12ceffd7f7e
   - enabled: 1

@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontoAlvo: {fileID: 613524153629696840}
   launchSpeed: 200
-  pullSpeed: 45
+  pullSpeed: 32
 --- !u!1 &8908755449827675046
 GameObject:
   m_ObjectHideFlags: 0

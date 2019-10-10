@@ -55,7 +55,7 @@ public class DistanceJoint3D : MonoBehaviour
         rb.velocity = (velocityTarget - projectOnConnection) / (1 + damper * Time.fixedDeltaTime);
 
         if (Input.GetButton("Fire1") && transform.position.y < penduradoEm.position.y - 2)
-            distance-= 0.1f;
+            distance-= 5f * Time.fixedDeltaTime;
 
     }
 }

@@ -8,7 +8,8 @@ public class MenuCamera : MonoBehaviour
     public GameObject menuScreen, ui;
     bool activeMenu;
     public ChrCtrl_Pipilson player;
-
+    public Vector3 pauseOffset, pauseLookatOffset;
+    public Vector3 playOffset, playLookatOffset; 
     private void Awake()
     {
         cm = Camera.main.GetComponent<followCamera>();
@@ -39,7 +40,7 @@ public class MenuCamera : MonoBehaviour
     public void PauseCamera()
     {
         player.sobControle = false;
-        cm.TrocaOffset(new Vector3(0, 2, -4), new Vector3(1, 3, 0));
+        cm.TrocaOffset(pauseOffset, pauseLookatOffset);
         //cm.newOffset = new Vector3(0, 2, -4);
         //cm.newLookAtOffset = new Vector3(1, 3, 0);
         activeMenu = true;        
@@ -48,7 +49,7 @@ public class MenuCamera : MonoBehaviour
     public void PlayCamera()
     {
         player.sobControle = true;
-        cm.TrocaOffset(new Vector3(5, 3, -20), new Vector3(5, -3, 0));
+        cm.TrocaOffset(playOffset, playLookatOffset);
         //cm.newOffset = new Vector3(5, 3, -20);
         //cm.newLookAtOffset = new Vector3(5, -3, 0);
         activeMenu = false;        

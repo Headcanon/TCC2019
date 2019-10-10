@@ -19,7 +19,7 @@ public class GanchoDeEscalada : MonoBehaviour
     // Rigidbody pro Hinge funcionar e poder adicionar forças
     Rigidbody rb;
     // Hinge joint pra conectar nas coisas
-    DistanceJoint3D hj;
+    DistanceJoint3D dj3D;
     #endregion
 
     public GameObject ganchoPrefab;
@@ -41,20 +41,20 @@ public class GanchoDeEscalada : MonoBehaviour
         // Os códigos aqui cuida pra que a Ash se conecte a alguma coisa
 
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
-        if (jointado && rb == null && hj == null)
+        if (jointado && rb == null && dj3D == null)
         {
             // Desliga o character controller
             cc.enabled = false;
             // Adiciona o DistanceJoint3D
             rb = gameObject.AddComponent<Rigidbody>();
-            hj = gameObject.AddComponent<DistanceJoint3D>();
+            dj3D = gameObject.AddComponent<DistanceJoint3D>();
             // Conecta o Hinjejoint ao Rigidbody identificado
-            hj.penduradoEm = conectadoEm.transform;
+            dj3D.penduradoEm = conectadoEm.transform;
         }
-        else if (!jointado && rb != null && hj != null)
+        else if (!jointado && rb != null && dj3D != null)
         {
             // Destrói os dois componentes
-            Destroy(hj);
+            Destroy(dj3D);
             Destroy(rb);
 
             // Reativa o Character Controller

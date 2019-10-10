@@ -50,7 +50,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        
 
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
@@ -58,6 +58,8 @@ public class ChrCtrl_Pipilson : MonoBehaviour
 
         if (sobControle)
         {
+            float horizontal = Input.GetAxis("Horizontal");
+
             // Se Ash está no chão...
             if (noChao)
             {
@@ -142,17 +144,23 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
             // as an acceleration (ms^-2)
             moveDirection.y -= gravity * Time.deltaTime;
+
+            ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
+            if (anim != null)
+            {
+                anim.SetFloat("Vel", Mathf.Abs(horizontal));
+            }
         }
 
-        // Pra travar o movimento enquanto tá mirando
-        if (Input.GetButton("Mira"))
-        {
-            sobControle = false;
-        }
-        else
-        {
-            sobControle = true;
-        }
+        //// Pra travar o movimento enquanto tá mirando
+        //if (Input.GetButton("Mira"))
+        //{
+        //    sobControle = false;
+        //}
+        //else
+        //{
+        //    sobControle = true;
+        //}
 
         // Move the controller
         if (characterController.enabled)
@@ -160,10 +168,6 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             characterController.Move(moveDirection * Time.deltaTime);
         }
 
-        ashModel.transform.rotation = Quaternion.Euler(0, 180 - 90 * horizontal, 0);
-        if (anim != null)
-        {
-            anim.SetFloat("Vel", Mathf.Abs(horizontal));
-        }
+        
     }
 }

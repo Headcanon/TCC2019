@@ -32,7 +32,7 @@ public class BlendCorda : MonoBehaviour
             blendValue += launchSpeed * Time.deltaTime;
         }
 
-        if (blendValue > 1f && Input.GetButton("Fire1"))
+        if (blendValue > 1f && Input.GetButton("Fire1") && !procurando)
         {
             skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
             blendValue -= pullSpeed * Time.deltaTime;
@@ -51,10 +51,6 @@ public class BlendCorda : MonoBehaviour
             gde.conectadoEm = other.transform;
             gde.jointado = true;
             procurando = false;
-        }
-        else if (other.CompareTag("Puxavel"))
-        {
-
         }
     }
 }
