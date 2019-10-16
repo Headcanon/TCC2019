@@ -3,46 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class Save_Pipilson : MonoBehaviour
 {
-    public string nome;
-    public Vector3 posicao;
-    string json;
+    public GameObject player;
 
     void Start()
     {
-        //checkpoint
-        //moedas
-        //combustivel
-        //hp
-        //puzzles
-
-        if (PlayerPrefs.HasKey(name))
+        if (PlayerPrefs.HasKey("posX"))
         {
-            json = PlayerPrefs.GetString(name);
-            JsonUtility.FromJsonOverwrite(json, this);
-            transform.position = posicao;
-            name = nome;
+            player.transform.position = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
         }
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.Z)) //Save
         {
-            posicao = transform.position;
-            nome = name;
-            json = JsonUtility.ToJson(this);
-            PlayerPrefs.SetString(nome, json);
+            PlayerPrefs.SetFloat("posX", player.transform.position.x);
+            PlayerPrefs.SetFloat("posY", player.transform.position.y);
+            PlayerPrefs.SetFloat("posZ", player.transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.X)) //Load
         {
-            JsonUtility.FromJsonOverwrite(json, this);
-            transform.position = posicao;
-            name = nome;
-            JsonUtility.FromJsonOverwrite(json, this);
+            player.transform.position = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
+        }
+
+        if (Input.GetKey(KeyCode.P)) //Delete
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 }
