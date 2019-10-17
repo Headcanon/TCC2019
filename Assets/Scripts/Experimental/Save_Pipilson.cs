@@ -22,16 +22,19 @@ public class Save_Pipilson : MonoBehaviour
             PlayerPrefs.SetFloat("posX", player.transform.position.x);
             PlayerPrefs.SetFloat("posY", player.transform.position.y);
             PlayerPrefs.SetFloat("posZ", player.transform.position.z);
+            print("Save");
         }
 
         if (Input.GetKey(KeyCode.X)) //Load
         {
             player.transform.position = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
+            print("Load");
         }
 
         if (Input.GetKey(KeyCode.P)) //Delete
         {
             PlayerPrefs.DeleteAll();
+            print("Delete");
         }
     }
 }
