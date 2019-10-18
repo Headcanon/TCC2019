@@ -5,14 +5,18 @@ using UnityEngine;
 /* Quando o player passa por esse GameObject ele se torno seu novo checkpoint */
 public class NewCheckpoint : MonoBehaviour
 {
-    Vida pl;
+    Vida vida;
+    Save_Pipilson save;
 
     private void OnTriggerEnter(Collider other)
     {
-        pl = other.GetComponent<Vida>();
-        if(pl != null)
+        vida = other.GetComponent<Vida>();
+
+        if (vida != null)
         {
-            pl.spawnPoint = gameObject.transform;
+            //vida.spawnPoint = gameObject.transform;
+            save.CheckPoint();
+            print("oi");
         }
     }
 }

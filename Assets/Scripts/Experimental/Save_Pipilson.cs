@@ -6,12 +6,21 @@ using UnityEngine;
 public class Save_Pipilson : MonoBehaviour
 {
     public GameObject player;
+    public CharacterController charCtrl;
+    public Vida hp;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("posX"))
+        if (PlayerPrefs.HasKey("pos"))
         {
-            player.transform.position = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
+            charCtrl.enabled = false;
+            player.transform.position = PlayerPrefsX.GetVector3("pos");
+            charCtrl.enabled = true;
         }
     }
 
@@ -19,15 +28,15 @@ public class Save_Pipilson : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z)) //Save
         {
-            PlayerPrefs.SetFloat("posX", player.transform.position.x);
-            PlayerPrefs.SetFloat("posY", player.transform.position.y);
-            PlayerPrefs.SetFloat("posZ", player.transform.position.z);
+            PlayerPrefsX.SetVector3("pos", player.transform.position);
             print("Save");
         }
 
         if (Input.GetKey(KeyCode.X)) //Load
         {
-            player.transform.position = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
+            charCtrl.enabled = false;
+            player.transform.position = PlayerPrefsX.GetVector3("pos");
+            charCtrl.enabled = true;
             print("Load");
         }
 
@@ -36,5 +45,10 @@ public class Save_Pipilson : MonoBehaviour
             PlayerPrefs.DeleteAll();
             print("Delete");
         }
+    }
+
+    public void CheckPoint()
+    {
+        //save posicao
     }
 }
