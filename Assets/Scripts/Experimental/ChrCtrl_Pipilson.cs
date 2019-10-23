@@ -13,8 +13,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
 
     public float jumpTime = 1.0f;
     float jumpTimeCounter;
-    public float jumpSpeed = 10.0f;
-    public float jumpHighSpeed = 15f;
+    public float jumpSpeed = 10f;
     bool isJumping;
 
     public int pulosDados; //Pipilson
@@ -28,7 +27,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     public float speed = 6.0f;
     public float highSpeed = 9.0f;
 
-    float timer = 0.0f;
+    float aceleTimer = 0.0f;
     bool fast;
     #endregion
 
@@ -44,84 +43,78 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         anim = ashModel.GetComponent<Animator>();
-    }
-    
+    }    
 
     // Update is called once per frame
     void Update()
-    {
-        
-
+    {       
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
         noChao = characterController.isGrounded;
 
+        // Se estiver sob controle...
         if (sobControle)
         {
+            // Pega o botão de movimento
             float horizontal = Input.GetAxis("Horizontal");
 
             // Se Ash está no chão...
             if (noChao)
             {
-                // We are grounded, so recalculate
-                // move direction directly from axes
+                //  Cria a direção de movimento
                 moveDirection = transform.right * horizontal;
+
+                // Zera os pulos dados
                 pulosDados = 0;
+
+                // Põe a gravidade no padrão
                 gravity = 20f;
 
+                jumpTimeCounter = jumpTime;
+
                 #region Aceleracao
-                if (Input.GetButton("Horizontal") && timer >= 1.5f)
+                // Se o botão está sendo apertado e já deu o tempo do timer...
+                if (Input.GetButton("Horizontal") && aceleTimer >= 1.5f)
                 {
+                    // Deixa rápido
                     fast = true;
                 }
+                // Caso contrário, se mesmo assim tiver apertando o botão...
                 else if (Input.GetButton("Horizontal"))
                 {
-                    timer += Time.deltaTime;
+                    // Aumenta o tempo
+                    aceleTimer += Time.deltaTime;
                 }
+                // Caso nenhum dos anteriores seja verdade...
                 else
                 {
+                    // Deixa normal
                     fast = false;
-                    timer = 0.0f;
+                    // Zera o timer
+                    aceleTimer = 0.0f;
                 }
                 #endregion
+
+                // Encerra a animação de pulo
                 anim.SetBool("Pulano", false);
             }
+            // Se ela está no ar...
             else
             {
-                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
-                
+                // Altera a movimentação lateral sem alterar o eixo Y
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);                
             }
 
-            // Se ainda não for atingido o limite de pulos permitir pular denovo
-            if (Input.GetButtonDown("Jump")) //Alterei esse if -Pipilson
+            // Enquanto o botão de pulo for apertado e ainda não tiver dado o tempo...
+            if (Input.GetButton("Jump") && jumpTimeCounter > 0)
             {
-                anim.SetBool("Pulano", true);
-                if (pulosDados < puloLimite)
-                {
-                    moveDirection.y = jumpHighSpeed;
-                    pulosDados++;
-                }
-            }
+                // Adiciona movimento vertical ao vetor de movimento
+                moveDirection.y = jumpSpeed;
 
-            #region Pulo Adaptável
-            if (Input.GetButton("Jump"))
-            {
-                if (isJumping && pulosDados < 1)
-                {
-                    moveDirection.y = jumpHighSpeed;
-                    jumpTimeCounter -= Time.deltaTime;
-                }
-                else
-                {
-                    isJumping = false;
-                }
-            }
+                jumpTimeCounter -= Time.deltaTime;
 
-            if (Input.GetButtonUp("Jump"))
-            {
-                isJumping = false;
+                pulosDados = 1;
             }
-            #endregion
 
             #region Aceleracao
             if (fast)
@@ -151,16 +144,6 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 anim.SetFloat("Vel", Mathf.Abs(horizontal));
             }
         }
-
-        //// Pra travar o movimento enquanto tá mirando
-        //if (Input.GetButton("Mira"))
-        //{
-        //    sobControle = false;
-        //}
-        //else
-        //{
-        //    sobControle = true;
-        //}
 
         // Move the controller
         if (characterController.enabled)
