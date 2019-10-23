@@ -72,9 +72,14 @@ public class ChrCtrl_Pipilson : MonoBehaviour
 
                 jumpTimeCounter = jumpTime;
 
+                if (Input.GetButton("Jump") && jumpTimeCounter > 0)
+                {
+                    anim.SetTrigger("Jump");
+                }
+
                 #region Aceleracao
-                // Se o botão está sendo apertado e já deu o tempo do timer...
-                if (Input.GetButton("Horizontal") && aceleTimer >= 1.5f)
+                    // Se o botão está sendo apertado e já deu o tempo do timer...
+                    if (Input.GetButton("Horizontal") && aceleTimer >= 1.5f)
                 {
                     // Deixa rápido
                     fast = true;
@@ -95,8 +100,6 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 }
                 #endregion
 
-                // Encerra a animação de pulo
-                anim.SetBool("Pulano", false);
             }
             // Se ela está no ar...
             else
@@ -116,13 +119,21 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 pulosDados = 1;
             }
 
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.down, out hit, 1000))
+            {
+                anim.SetFloat("JumpHeight", hit.distance);
+            }
+
             #region Aceleracao
             if (fast)
             {
-                moveDirection.x *= highSpeed;
+                anim.SetBool("Fast", true);
+                moveDirection.x *= highSpeed;                
             }
             else
             {
+                anim.SetBool("Fast", false);
                 moveDirection.x *= speed;
             }
             #endregion
