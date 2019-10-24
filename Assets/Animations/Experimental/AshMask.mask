@@ -1,0 +1,361 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AshMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Ash_jnts
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_dir_1_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_dir_2_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_dir_3_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_dir_4_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_esq_1_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_esq_2_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_esq_3_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_capa_esq_4_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_1A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_1A_jnt/Ash_branch_dir_1B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_1A_jnt/Ash_branch_dir_1B_jnt/Ash_branch_dir_1C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_1A_jnt/Ash_branch_dir_1B_jnt/Ash_branch_dir_1C_jnt/Ash_branch_dir_1FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_2A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_2A_jnt/Ash_branch_dir_2B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_2A_jnt/Ash_branch_dir_2B_jnt/Ash_branch_dir_2C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_2A_jnt/Ash_branch_dir_2B_jnt/Ash_branch_dir_2C_jnt/Ash_branch_dir_2FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_3A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_3A_jnt/Ash_branch_dir_3B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_3A_jnt/Ash_branch_dir_3B_jnt/Ash_branch_dir_3C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_dir_3A_jnt/Ash_branch_dir_3B_jnt/Ash_branch_dir_3C_jnt/Ash_branch_dir_3FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_1A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_1A_jnt/Ash_branch_esq_1B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_1A_jnt/Ash_branch_esq_1B_jnt/Ash_branch_esq_1C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_1A_jnt/Ash_branch_esq_1B_jnt/Ash_branch_esq_1C_jnt/Ash_branch_esq_1FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_2A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_2A_jnt/Ash_branch_esq_2B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_2A_jnt/Ash_branch_esq_2B_jnt/Ash_branch_esq_2C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_2A_jnt/Ash_branch_esq_2B_jnt/Ash_branch_esq_2C_jnt/Ash_branch_esq_2FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_3A_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_3A_jnt/Ash_branch_esq_3B_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_3A_jnt/Ash_branch_esq_3B_jnt/Ash_branch_esq_3C_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_branch_esq_3A_jnt/Ash_branch_esq_3B_jnt/Ash_branch_esq_3C_jnt/Ash_branch_esq_3FIM_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_head_top_jnt/Ash_head_front_FIM
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_jaw
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_neck_base_jnt/Ash_head_base_jnt/Ash_jaw/Ash_jaw_FIM
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_FK_jnt/Ash_braco_B_dir_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_FK_jnt/Ash_braco_B_dir_FK_jnt/Ash_mao_dir_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_IK_jnt/Ash_braco_B_dir_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_IK_jnt/Ash_braco_B_dir_IK_jnt/Ash_mao_dir_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_anel_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_anel_A_jnt/Ash_dedo_anel_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_anel_A_jnt/Ash_dedo_anel_B_jnt/Ash_dedo_anel_C_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_anel_A_jnt/Ash_dedo_anel_B_jnt/Ash_dedo_anel_C_jnt/Ash_dedo_anel_D_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_indicador_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_indicador_A_jnt/Ash_dedo_indicador_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_indicador_A_jnt/Ash_dedo_indicador_B_jnt/Ash_dedo_indicador_C_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_indicador_A_jnt/Ash_dedo_indicador_B_jnt/Ash_dedo_indicador_C_jnt/Ash_dedo_indicador_D_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_meio_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_meio_A_jnt/Ash_dedo_meio_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_meio_A_jnt/Ash_dedo_meio_B_jnt/Ash_dedo_meio_C_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_meio_A_jnt/Ash_dedo_meio_B_jnt/Ash_dedo_meio_C_jnt/Ash_dedo_meio_D_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_min_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_min_A_jnt/Ash_dedo_min_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_min_A_jnt/Ash_dedo_min_B_jnt/Ash_dedo_min_C_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_min_A_jnt/Ash_dedo_min_B_jnt/Ash_dedo_min_C_jnt/Ash_dedo_min_D_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_polegar_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_polegar_A_jnt/Ash_dedo_polegar_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_polegar_A_jnt/Ash_dedo_polegar_B_jnt/Ash_dedo_polegar_C_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_dir_jnt/Ash_braco_A_dir_jnt/Ash_braco_B_dir_jnt/Ash_mao_dir_jnt/Ash_dedo_polegar_A_jnt/Ash_dedo_polegar_B_jnt/Ash_dedo_polegar_C_jnt/Ash_dedo_polegar_D_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_FK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_FK_jnt/Ash_braco_B_esq_FK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_FK_jnt/Ash_braco_B_esq_FK_jnt/Ash_mao_esq_FK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_IK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_IK_jnt/Ash_braco_B_esq_IK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_IK_jnt/Ash_braco_B_esq_IK_jnt/Ash_mao_esq_IK_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_anel_A_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_anel_A_jnt
+      1/Ash_dedo_anel_B_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_anel_A_jnt
+      1/Ash_dedo_anel_B_jnt 1/Ash_dedo_anel_C_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_anel_A_jnt
+      1/Ash_dedo_anel_B_jnt 1/Ash_dedo_anel_C_jnt 1/Ash_dedo_anel_D_FIM_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_indicador_A_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_indicador_A_jnt
+      1/Ash_dedo_indicador_B_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_indicador_A_jnt
+      1/Ash_dedo_indicador_B_jnt 1/Ash_dedo_indicador_C_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_indicador_A_jnt
+      1/Ash_dedo_indicador_B_jnt 1/Ash_dedo_indicador_C_jnt 1/Ash_dedo_indicador_D_FIM_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_meio_A_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_meio_A_jnt
+      1/Ash_dedo_meio_B_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_meio_A_jnt
+      1/Ash_dedo_meio_B_jnt 1/Ash_dedo_meio_C_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_meio_A_jnt
+      1/Ash_dedo_meio_B_jnt 1/Ash_dedo_meio_C_jnt 1/Ash_dedo_meio_D_FIM_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_min_A_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_min_A_jnt
+      1/Ash_dedo_min_B_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_min_A_jnt
+      1/Ash_dedo_min_B_jnt 1/Ash_dedo_min_C_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_min_A_jnt
+      1/Ash_dedo_min_B_jnt 1/Ash_dedo_min_C_jnt 1/Ash_dedo_min_D_FIM_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_polegar_A_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_polegar_A_jnt
+      1/Ash_dedo_polegar_B_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_polegar_A_jnt
+      1/Ash_dedo_polegar_B_jnt 1/Ash_dedo_polegar_C_jnt 1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_Coluna_A_jnt/Ash_Coluna_B_jnt/Ash_Coluna_C_jnt/Ash_ombro_esq_jnt/Ash_braco_A_esq_jnt/Ash_braco_B_esq_jnt/Ash_mao_esq_jnt/Ash_dedo_polegar_A_jnt
+      1/Ash_dedo_polegar_B_jnt 1/Ash_dedo_polegar_C_jnt 1/Ash_dedo_polegar_D_FIM_jnt
+      1
+    m_Weight: 1
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_FK_jnt/Ash_Perna_dir_B_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_FK_jnt/Ash_Perna_dir_B_FK_jnt/Ash_Pe_dir_A_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_FK_jnt/Ash_Perna_dir_B_FK_jnt/Ash_Pe_dir_A_FK_jnt/Ash_Pe_dir_B_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_FK_jnt/Ash_Perna_dir_B_FK_jnt/Ash_Pe_dir_A_FK_jnt/Ash_Pe_dir_B_FK_jnt/Ash_Pe_dir_FIM_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_IK_jnt/Ash_Perna_dir_B_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_IK_jnt/Ash_Perna_dir_B_IK_jnt/Ash_Pe_dir_A_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_IK_jnt/Ash_Perna_dir_B_IK_jnt/Ash_Pe_dir_A_IK_jnt/Ash_Pe_dir_B_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_IK_jnt/Ash_Perna_dir_B_IK_jnt/Ash_Pe_dir_A_IK_jnt/Ash_Pe_dir_B_IK_jnt/Ash_Pe_dir_FIM_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_jnt/Ash_Perna_dir_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_jnt/Ash_Perna_dir_B_jnt/Ash_Pe_dir_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_jnt/Ash_Perna_dir_B_jnt/Ash_Pe_dir_A_jnt/Ash_Pe_dir_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_dir_A_jnt/Ash_Perna_dir_B_jnt/Ash_Pe_dir_A_jnt/Ash_Pe_dir_B_jnt/Ash_Pe_dir_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_FK_jnt/Ash_Perna_esq_B_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_FK_jnt/Ash_Perna_esq_B_FK_jnt/Ash_Pe_esq_A_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_FK_jnt/Ash_Perna_esq_B_FK_jnt/Ash_Pe_esq_A_FK_jnt/Ash_Pe_esq_B_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_FK_jnt/Ash_Perna_esq_B_FK_jnt/Ash_Pe_esq_A_FK_jnt/Ash_Pe_esq_B_FK_jnt/Ash_Pe_esq_FIM_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_IK_jnt/Ash_Perna_esq_B_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_IK_jnt/Ash_Perna_esq_B_IK_jnt/Ash_Pe_esq_A_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_IK_jnt/Ash_Perna_esq_B_IK_jnt/Ash_Pe_esq_A_IK_jnt/Ash_Pe_esq_B_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_IK_jnt/Ash_Perna_esq_B_IK_jnt/Ash_Pe_esq_A_IK_jnt/Ash_Pe_esq_B_IK_jnt/Ash_Pe_esq_FIM_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_jnt/Ash_Perna_esq_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_jnt/Ash_Perna_esq_B_jnt/Ash_Pe_esq_A_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_jnt/Ash_Perna_esq_B_jnt/Ash_Pe_esq_A_jnt/Ash_Pe_esq_B_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_quadril_A_jnt/Ash_quadril_B_jnt/Ash_Perna_esq_A_jnt/Ash_Perna_esq_B_jnt/Ash_Pe_esq_A_jnt/Ash_Pe_esq_B_jnt/Ash_Pe_esq_FIM_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt/Ash_tail3_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt/Ash_tail3_FK_jnt/Ash_tail4_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt/Ash_tail3_FK_jnt/Ash_tail4_FK_jnt/Ash_tail5_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt/Ash_tail3_FK_jnt/Ash_tail4_FK_jnt/Ash_tail5_FK_jnt/Ash_tail6_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_FK_jnt/Ash_tail2_FK_jnt/Ash_tail3_FK_jnt/Ash_tail4_FK_jnt/Ash_tail5_FK_jnt/Ash_tail6_FK_jnt/Ash_tail_FIM_FK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt/Ash_tail3_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt/Ash_tail3_IK_jnt/Ash_tail4_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt/Ash_tail3_IK_jnt/Ash_tail4_IK_jnt/Ash_tail5_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt/Ash_tail3_IK_jnt/Ash_tail4_IK_jnt/Ash_tail5_IK_jnt/Ash_tail6_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_IK_jnt/Ash_tail2_IK_jnt/Ash_tail3_IK_jnt/Ash_tail4_IK_jnt/Ash_tail5_IK_jnt/Ash_tail6_IK_jnt/Ash_tail_FIM_IK_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt/Ash_tail3_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt/Ash_tail3_jnt/Ash_tail4_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt/Ash_tail3_jnt/Ash_tail4_jnt/Ash_tail5_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt/Ash_tail3_jnt/Ash_tail4_jnt/Ash_tail5_jnt/Ash_tail6_jnt
+    m_Weight: 0
+  - m_Path: Ash_jnts/Ash_Root_jnt/Ash_tail1_jnt/Ash_tail2_jnt/Ash_tail3_jnt/Ash_tail4_jnt/Ash_tail5_jnt/Ash_tail6_jnt/Ash_tail_FIM_jnt
+    m_Weight: 0
+  - m_Path: base_axo1
+    m_Weight: 1
+  - m_Path: base_axo1/Axel_base_geo
+    m_Weight: 1
+  - m_Path: base_axo1/Axel_jaleco_geo
+    m_Weight: 1
+  - m_Path: base_axo1/extra
+    m_Weight: 1
+  - m_Path: base_axo1/extra/Axel_dentro_boca_geo
+    m_Weight: 1
+  - m_Path: base_axo1/extra/Axel_fundo_olhos_geo
+    m_Weight: 1
+  - m_Path: base_axo1/extra/Axel_olhos_geo
+    m_Weight: 1

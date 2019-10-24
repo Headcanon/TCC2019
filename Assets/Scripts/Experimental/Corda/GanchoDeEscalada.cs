@@ -26,13 +26,15 @@ public class GanchoDeEscalada : MonoBehaviour
     //public GameObject seta;
     private GameObject ganchoAtual;
     private bool ganchoAtivo = false;
-    Quaternion rotacao = Quaternion.identity;
+    private Quaternion rotacao = Quaternion.identity;
+    private Animator anim;
 
     private void Start()
     {
         cc = GetComponent<CharacterController>();
         chcrt = GetComponent<ChrCtrl_Pipilson>();
         ganchoPrefab = Resources.Load<GameObject>("CordaLonga");
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class GanchoDeEscalada : MonoBehaviour
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && dj3D == null)
         {
+            anim.SetBool("Enganchado", true);
             // Desliga o character controller
             cc.enabled = false;
             // Adiciona o DistanceJoint3D
@@ -63,6 +66,7 @@ public class GanchoDeEscalada : MonoBehaviour
 
         if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
         {
+            anim.SetTrigger("LancaGancho");
             ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
             ganchoAtivo = true;
         }
@@ -74,6 +78,7 @@ public class GanchoDeEscalada : MonoBehaviour
     
     public void Abortar()
     {
+        anim.SetBool("Enganchado", false);
         // Reseta o momento dela
         chcrt.moveDirection = Vector3.zero;
         ganchoAtivo = false;
