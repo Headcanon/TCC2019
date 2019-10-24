@@ -28,13 +28,15 @@ public class GanchoDeEscalada : MonoBehaviour
     private bool ganchoAtivo = false;
     private Quaternion rotacao = Quaternion.identity;
     private Animator anim;
+    private Transform mao;
 
     private void Start()
     {
         cc = GetComponent<CharacterController>();
         chcrt = GetComponent<ChrCtrl_Pipilson>();
-        ganchoPrefab = Resources.Load<GameObject>("CordaLonga");
+        ganchoPrefab = Resources.Load<GameObject>("Gancho_Prefab");
         anim = transform.GetChild(0).GetComponent<Animator>();
+        mao = GameObject.Find("SpawnGancho").transform;
     }
 
     // Update is called once per frame
@@ -67,7 +69,7 @@ public class GanchoDeEscalada : MonoBehaviour
         if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("LancaGancho");
-            ganchoAtual = Instantiate(ganchoPrefab, transform.position, rotacao, transform);
+            ganchoAtual = Instantiate(ganchoPrefab, mao.position, rotacao, mao);
             ganchoAtivo = true;
         }
         else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Jump"))
