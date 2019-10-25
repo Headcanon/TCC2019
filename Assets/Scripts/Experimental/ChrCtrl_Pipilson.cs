@@ -63,7 +63,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
     void Start()
     {        
         characterController = GetComponent<CharacterController>();
-        ashModel = transform.GetChild(0).GetChild(0).gameObject;
+        ashModel = transform.GetChild(0).gameObject;
         anim = ashModel.GetComponent<Animator>();
     }    
 

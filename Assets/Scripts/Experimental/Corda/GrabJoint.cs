@@ -16,7 +16,7 @@ public class GrabJoint : MonoBehaviour
         if (other.CompareTag("Player") && paiDeTodos.podePegar)
         {
             // Pega o animator
-            anim = other.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+            anim = other.transform.GetChild(0).GetComponent<Animator>();
             // Ativa o ciclo de animações de corda
             anim.SetTrigger("EntraCorda");
 

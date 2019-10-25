@@ -31,7 +31,7 @@ public class ListaJoints : MonoBehaviour
         ash = GameObject.FindGameObjectWithTag("Player");
         ashCtrl = ash.GetComponent<ChrCtrl_Pipilson>();
         ashCC = ash.GetComponent<CharacterController>();
-        anim = ash.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        anim = ash.transform.GetChild(0).GetComponent<Animator>();
         // Pega o filho desse objeto
         Transform child = transform.GetChild(0);
 
