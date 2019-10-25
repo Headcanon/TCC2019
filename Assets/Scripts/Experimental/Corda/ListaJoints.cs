@@ -17,6 +17,8 @@ public class ListaJoints : MonoBehaviour
 
     // Velocidade de escalada da corda
     public float velocidade;
+
+    private Animator anim;
     #endregion
 
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class ListaJoints : MonoBehaviour
         ash = GameObject.FindGameObjectWithTag("Player");
         ashCtrl = ash.GetComponent<ChrCtrl_Pipilson>();
         ashCC = ash.GetComponent<CharacterController>();
-
+        anim = ash.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         // Pega o filho desse objeto
         Transform child = transform.GetChild(0);
 
@@ -76,18 +78,32 @@ public class ListaJoints : MonoBehaviour
             #region Movimento
             // Move a Ashley ao longo da corda
             float vertical = Input.GetAxis("Vertical") * Time.fixedDeltaTime * velocidade;
+            // Se estiver indo pra cima...
             if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].transform.position.y)
             {
+                // Move na direção do parent do joint mais próximo
                 ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.parent.position, Mathf.Abs(vertical));
+
+                //anim.speed = 1f;
             }
             else if (vertical < -0.01f && ash.transform.position.y > listaJoints[listaJoints.Count - 1].transform.position.y)
             {
                 ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.GetChild(0).position, Mathf.Abs(vertical));
+
+                //anim
+            }
+            else
+            {
+                //anim.speed = 0f;
             }
 
+            // Ativa a animação
+            anim.SetFloat("DireCorda", Input.GetAxis("Vertical"));
+
+            // Zera a rotação da Ashley
             ash.transform.rotation = Quaternion.Euler(Vector3.zero);
 
-            // Adiciona força de acordo com o eixo horizontal
+            // Adiciona força de acordo com o eixo horizontal pra fazer a corda se movimentar lateralmente
             float horizontal = Input.GetAxis("Horizontal");            
             rbAtual.AddForce(new Vector3(horizontal * 2, 0, 0));
             #endregion
@@ -149,6 +165,8 @@ public class ListaJoints : MonoBehaviour
 
     public void Abortar()
     {
+        //anim.speed = 1f;
+        anim.SetTrigger("SaiCorda");
         // Reseta o momento dela
         ashCtrl.moveDirection = Vector3.zero;
         // Devolvo o controle ao Player
