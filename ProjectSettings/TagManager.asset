@@ -9,6 +9,7 @@ TagManager:
   - Puxavel
   - Trigger
   - Flag
+  - Parade
   layers:
   - Default
   - TransparentFX

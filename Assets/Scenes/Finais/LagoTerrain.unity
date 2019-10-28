@@ -414,6 +414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlocoMovel
       objectReference: {fileID: 0}
+    - target: {fileID: 1698947515752216, guid: 3f3733e467734554bbb4495f5320eae9, type: 3}
+      propertyPath: m_TagString
+      value: Parade
+      objectReference: {fileID: 0}
     - target: {fileID: 4358636702497968, guid: 3f3733e467734554bbb4495f5320eae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.33
@@ -1620,8 +1624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 80974902}
+  parede: {fileID: 992441951}
   charCtrl: {fileID: 80974904}
-  hp: {fileID: 0}
 --- !u!4 &146861002
 Transform:
   m_ObjectHideFlags: 0

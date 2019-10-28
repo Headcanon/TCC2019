@@ -8,6 +8,11 @@ public class NewCheckpoint : MonoBehaviour
     Vida vida;
     Save_Pipilson save;
 
+    private void Start()
+    {
+        save = GameObject.Find("SaveManager").GetComponent<Save_Pipilson>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         vida = other.GetComponent<Vida>();

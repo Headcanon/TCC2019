@@ -7,10 +7,11 @@ public class Save_Pipilson : MonoBehaviour
 {
     public GameObject player;
     public CharacterController charCtrl;
-    public Vida hp;
+    GameObject[] parede;
 
     void Awake()
     {
+        parede = GameObject.FindGameObjectsWithTag("Parade");
         DontDestroyOnLoad(this);
     }
 
@@ -21,18 +22,23 @@ public class Save_Pipilson : MonoBehaviour
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos");
             charCtrl.enabled = true;
+
+            for (int i = 0; i < parede.Length; i++)
+            {
+                parede[i].transform.position = PlayerPrefsX.GetVector3("posParede");
+            }
         }
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Z)) //Save
+        if (Input.GetKeyDown(KeyCode.Z)) //Save
         {
             PlayerPrefsX.SetVector3("pos", player.transform.position);
             print("Save");
         }
 
-        if (Input.GetKey(KeyCode.X)) //Load
+        if (Input.GetKeyDown(KeyCode.X)) //Load
         {
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos");
@@ -40,7 +46,7 @@ public class Save_Pipilson : MonoBehaviour
             print("Load");
         }
 
-        if (Input.GetKey(KeyCode.P)) //Delete
+        if (Input.GetKeyDown(KeyCode.P)) //Delete
         {
             PlayerPrefs.DeleteAll();
             print("Delete");
@@ -49,6 +55,13 @@ public class Save_Pipilson : MonoBehaviour
 
     public void CheckPoint()
     {
-        //save posicao
+        PlayerPrefsX.SetVector3("pos", player.transform.position);
+
+        for (int i = 0; i < parede.Length; i++)
+        {
+            PlayerPrefsX.SetVector3("posParede", parede[i].transform.position);
+        }
+
+        print("Save");
     }
 }
