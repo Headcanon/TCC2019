@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cee01823dc6122647beb23ce738f0999
+guid: 3c54af1d4cb6d274289ae7a35e8291ff
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
@@ -7,21 +7,55 @@ ModelImporter:
       1: 100000
     second: //RootNode
   - first:
+      1: 100002
+    second: Cylinder
+  - first:
+      1: 100004
+    second: Cylinder.001
+  - first:
       4: 400000
     second: //RootNode
   - first:
+      4: 400002
+    second: Cylinder
+  - first:
+      4: 400004
+    second: Cylinder.001
+  - first:
       21: 2100000
-    second: Rock
+    second: Folhas
+  - first:
+      21: 2100002
+    second: Tronco
   - first:
       23: 2300000
-    second: //RootNode
+    second: Cylinder
+  - first:
+      23: 2300002
+    second: Cylinder.001
   - first:
       33: 3300000
-    second: //RootNode
+    second: Cylinder
+  - first:
+      33: 3300002
+    second: Cylinder.001
   - first:
       43: 4300000
-    second: Sphere
-  externalObjects: {}
+    second: Cylinder
+  - first:
+      43: 4300002
+    second: Cylinder.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Folhas
+    second: {fileID: 2100000, guid: 43f0e2450919d584384414365b850399, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco
+    second: {fileID: 2100000, guid: 7c8a23575d76a8648b07d355b7ba3c23, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,7 +86,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -99,7 +133,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 50
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -1,27 +1,19 @@
 fileFormatVersion: 2
-guid: cee01823dc6122647beb23ce738f0999
+guid: 5cb85e183c21b6c48b4edd8167bdfca7
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      1: 100000
-    second: //RootNode
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Solo_com_pilares__Material.107
+    second: {fileID: 2100000, guid: 95e2947c717c5ec4cb98f4a3fc9b3273, type: 2}
   - first:
-      4: 400000
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: Rock
-  - first:
-      23: 2300000
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: Sphere
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Solo_com_pilares__lambert2
+    second: {fileID: 2100000, guid: 5f3aa189ceed92143b04a981fa1a21f7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,10 +41,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -79,7 +71,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -99,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
