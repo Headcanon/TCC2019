@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testes/PlaygroundLab.unity
+    path: Assets/Scenes/Finais/Laboratorio.unity
     guid: 89413f10d418d194bb532cbe832dcb14
   - enabled: 1
     path: Assets/Scenes/Finais/LagoTerrain.unity
