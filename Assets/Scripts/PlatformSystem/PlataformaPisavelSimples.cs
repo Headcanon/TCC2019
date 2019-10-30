@@ -23,17 +23,17 @@ public class PlataformaPisavelSimples : MonoBehaviour
         if (goX)
         {
             // Magia da matemática que calcula a posição X
-            x = Mathf.Sin(Time.fixedTime * velocity) * distance;
+            x = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
         }
         if (goY)
         {
             // Magia da matemática que calcula a posição Y
-            y = Mathf.Sin(Time.fixedTime * velocity) * distance;
+            y = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
         }
         if (goZ)
         {
             // Magia da matemática que calcula a posição Z
-            z = Mathf.Sin(Time.fixedTime * velocity) * distance;
+            z = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
         }
 
 
