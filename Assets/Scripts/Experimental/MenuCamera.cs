@@ -23,13 +23,13 @@ public class MenuCamera : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !activeMenu)
+        if(Input.GetButtonDown("Start") && !activeMenu)
         {
             menuScreen.gameObject.SetActive(true);
             ui.gameObject.SetActive(false);
             PauseCamera();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && activeMenu)
+        else if (Input.GetButtonDown("Start") && activeMenu)
         {
             menuScreen.gameObject.SetActive(false);
             ui.gameObject.SetActive(true);

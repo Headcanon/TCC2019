@@ -32,7 +32,7 @@ public class BlendCorda : MonoBehaviour
             blendValue += launchSpeed * Time.deltaTime;
         }
 
-        if (blendValue > 1f && Input.GetButton("Fire1") && !procurando)
+        if (blendValue > 1f && Input.GetButtonDown("RightTrigger") && !procurando)
         {
             skinnedMeshRenderer.SetBlendShapeWeight(0, blendValue);
             blendValue -= pullSpeed * Time.deltaTime;

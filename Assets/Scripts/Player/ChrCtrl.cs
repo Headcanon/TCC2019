@@ -44,7 +44,7 @@ public class ChrCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("LeftHorizontal");
         if (enableMove)
         {
             #region CharCtrl
@@ -55,11 +55,11 @@ public class ChrCtrl : MonoBehaviour
                 moveDirection = transform.right * horizontal;
 
                 #region Aceleracao
-                if (Input.GetButton("Horizontal") && timer >= 1.5f)
+                if (Input.GetButton("LeftHorizontal") && timer >= 1.5f)
                 {
                     fast = true;
                 }
-                else if (Input.GetButton("Horizontal"))
+                else if (Input.GetButton("LeftHorizontal"))
                 {
                     timer += Time.deltaTime;
                 }
@@ -70,7 +70,7 @@ public class ChrCtrl : MonoBehaviour
                 }
                 #endregion
 
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("FaceA"))
                 {
                     isJumping = true;
                     jumpTimeCounter = jumpTime;
@@ -79,11 +79,11 @@ public class ChrCtrl : MonoBehaviour
             }
             else
             {
-                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);
             }
 
             #region Pulo Adaptável
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("FaceA"))
             {
                 if (isJumping && jumpTimeCounter > 0)
                 {
@@ -96,7 +96,7 @@ public class ChrCtrl : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonUp("Jump"))
+            if (Input.GetButtonUp("FaceA"))
             {
                 isJumping = false;
             }

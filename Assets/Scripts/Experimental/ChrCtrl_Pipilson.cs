@@ -77,7 +77,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
         if (sobControle)
         {
             // Pega o botão de movimento
-            float horizontal = Input.GetAxis("Horizontal");
+            float horizontal = Input.GetAxis("LeftHorizontal");
 
             // Se Ash está no chão...
             if (noChao)
@@ -96,7 +96,7 @@ public class ChrCtrl_Pipilson : MonoBehaviour
                 jumpTimeCounter = jumpTime;
 
                 // Ativa a animação de pulo
-                if (Input.GetButton("Jump") && jumpTimeCounter > 0)
+                if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
                 {
                     anim.SetTrigger("Jump");
                 }
@@ -104,13 +104,13 @@ public class ChrCtrl_Pipilson : MonoBehaviour
 
                 #region Aceleracao
                 // Se o botão está sendo apertado e já deu o tempo do timer...
-                if (Input.GetButton("Horizontal") && aceleTimeCounter > 0)
+                if (Input.GetButton("LeftHorizontal") && aceleTimeCounter > 0)
                 {
                     // Deixa rápido
                     fast = true;
                 }
                 // Caso contrário, se mesmo assim tiver apertando o botão...
-                else if (Input.GetButton("Horizontal"))
+                else if (Input.GetButton("LeftHorizontal"))
                 {
                     // Aumenta o tempo
                     aceleTimeCounter -= Time.deltaTime;
@@ -130,12 +130,12 @@ public class ChrCtrl_Pipilson : MonoBehaviour
             else
             {
                 // Altera a movimentação lateral sem alterar o eixo Y
-                moveDirection = new Vector3(transform.right.x * Input.GetAxis("Horizontal"), moveDirection.y, 0);                
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);                
             }
 
             #region Pulo
             // Enquanto o botão de pulo for apertado e ainda não tiver dado o tempo...
-            if (Input.GetButton("Jump") && jumpTimeCounter > 0)
+            if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
             {
                 // Adiciona movimento vertical ao vetor de movimento
                 moveDirection.y = jumpSpeed;

@@ -6,13 +6,15 @@ using UnityEngine;
 public class NewCheckpoint : MonoBehaviour
 {
     Vida pl;
+    Save_Pipilson save;
 
     private void OnTriggerEnter(Collider other)
     {
         pl = other.GetComponent<Vida>();
         if(pl != null)
         {
-            pl.spawnPoint = gameObject.transform;
+            //pl.spawnPoint = gameObject.transform;
+            save.CheckPoint();
         }
     }
 }
