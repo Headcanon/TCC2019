@@ -77,7 +77,7 @@ public class ListaJoints : MonoBehaviour
 
             #region Movimento
             // Move a Ashley ao longo da corda
-            float vertical = Input.GetAxis("Vertical") * Time.fixedDeltaTime * velocidade;
+            float vertical = Input.GetAxis("LeftVertical") * Time.fixedDeltaTime * velocidade;
             // Se estiver indo pra cima...
             if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].transform.position.y)
             {
@@ -104,11 +104,11 @@ public class ListaJoints : MonoBehaviour
             ash.transform.rotation = Quaternion.Euler(Vector3.zero);
 
             // Adiciona força de acordo com o eixo horizontal pra fazer a corda se movimentar lateralmente
-            float horizontal = Input.GetAxis("Horizontal");            
+            float horizontal = Input.GetAxis("LeftHorizontal");            
             rbAtual.AddForce(new Vector3(horizontal * 2, 0, 0));
             #endregion
 
-            if(Input.GetButton("Jump"))
+            if(Input.GetButton("FaceA"))
             {
                 Abortar();
             }

@@ -66,13 +66,13 @@ public class GanchoDeEscalada : MonoBehaviour
             cc.enabled = true;
         }
 
-        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("Fire1"))
+        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("RightTrigger"))
         {
             anim.SetTrigger("LancaGancho");
             ganchoAtual = Instantiate(ganchoPrefab, mao.position, rotacao, mao);
             ganchoAtivo = true;
         }
-        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("Jump"))
+        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("FaceA"))
         {            
             Abortar();
         }
@@ -91,7 +91,7 @@ public class GanchoDeEscalada : MonoBehaviour
     float angulo = 0;
     private Quaternion AnguloAxis()
     {
-        angulo -= Input.GetAxis("Horizontal");
+        angulo -= Input.GetAxis("LeftHorizontal");
         Quaternion rotacao = Quaternion.Euler(0, 0, angulo);
 
         return rotacao;

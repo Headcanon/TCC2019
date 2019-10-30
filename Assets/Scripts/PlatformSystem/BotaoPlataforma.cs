@@ -52,7 +52,7 @@ public class BotaoPlataforma : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (!travado && Input.GetKey(KeyCode.E))
+        if (!travado && Input.GetButton("FaceX"))
         {
             apertado = true;
             renderer.material.SetColor("_Color", Color.black);
