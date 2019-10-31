@@ -98,7 +98,7 @@ public class ListaJoints : MonoBehaviour
             }
 
             // Ativa a animação
-            anim.SetFloat("DireCorda", Input.GetAxis("Vertical"));
+            anim.SetFloat("DireCorda", Input.GetAxis("LeftVertical"));
 
             // Zera a rotação da Ashley
             ash.transform.rotation = Quaternion.Euler(Vector3.zero);

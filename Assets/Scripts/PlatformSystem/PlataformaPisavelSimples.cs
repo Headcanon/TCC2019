@@ -16,24 +16,26 @@ public class PlataformaPisavelSimples : MonoBehaviour
     // Distancia percorrida e velocidade do percurso
     public float distance;
     public float velocity;
-
+    float mytime;
     // FixedUpdate é o que permite que o Character Controller tenha tempo de reconhecer o movimento da plataforma
     void FixedUpdate()
-    {        
+    {
+        mytime += Time.fixedDeltaTime;
+
         if (goX)
         {
             // Magia da matemática que calcula a posição X
-            x = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
+            x = Mathf.Sin(mytime * velocity) * distance;
         }
         if (goY)
         {
             // Magia da matemática que calcula a posição Y
-            y = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
+            y = Mathf.Sin(mytime * velocity) * distance;
         }
         if (goZ)
         {
             // Magia da matemática que calcula a posição Z
-            z = Mathf.Sin(Time.fixedUnscaledTime * velocity) * distance;
+            z = Mathf.Sin(mytime * velocity) * distance;
         }
 
 
