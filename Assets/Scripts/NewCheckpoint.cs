@@ -5,12 +5,12 @@ using UnityEngine;
 /* Quando o player passa por esse GameObject ele se torno seu novo checkpoint */
 public class NewCheckpoint : MonoBehaviour
 {
-    Vida pl;
-    Save_Pipilson save;
+    private Vida pl;
+    private Save_Pipilson save;
 
     private void Start()
     {
-        save = GameObject.Find("SaveManager").GetComponent<Save_Pipilson>();
+        save = GameObject.Find("GM").GetComponent<Save_Pipilson>();
     }
 
     private void OnTriggerEnter(Collider other)

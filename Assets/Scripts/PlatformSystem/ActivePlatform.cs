@@ -5,9 +5,7 @@ using UnityEngine;
 public class ActivePlatform : MonoBehaviour
 {
     Rigidbody rb;
-    Transform transformer;
     Transform start;
-
 
     public bool Foi;
 
@@ -16,9 +14,10 @@ public class ActivePlatform : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transformer = GetComponent<Transform>();
+
+        // Cria um novo game object pra servir de referencia pro ponto inicial
         start = new GameObject().transform;
-        start.position = transformer.position;
+        start.position = transform.position;
 
     }
 
@@ -26,22 +25,22 @@ public class ActivePlatform : MonoBehaviour
         // Vai
     public void Vai(Vector3 dis, float vel)
     {
-        if (transformer.position.x < start.position.x + dis.x)
+        if (transform.position.x < start.position.x + dis.x)
         {
-            transformer.Translate(Vector3.right * Time.deltaTime * vel);
+            transform.Translate(Vector3.right * Time.deltaTime * vel);
         }
 
-        if (transformer.position.y < start.position.y + dis.y)
+        if (transform.position.y < start.position.y + dis.y)
         {
-            transformer.Translate(Vector3.up * Time.deltaTime * vel);
+            transform.Translate(Vector3.up * Time.deltaTime * vel);
         }
 
-        if (transformer.position.z < start.position.z + dis.z)
+        if (transform.position.z < start.position.z + dis.z)
         {
-            transformer.Translate(Vector3.forward * Time.deltaTime * vel);
+            transform.Translate(Vector3.forward * Time.deltaTime * vel);
         }
 
-        if(transformer.position.x >= start.position.x + dis.x && transformer.position.y >= start.position.y + dis.y && transformer.position.z >= start.position.z + dis.z)
+        if(transform.position.x >= start.position.x + dis.x && transform.position.y >= start.position.y + dis.y && transform.position.z >= start.position.z + dis.z)
         {
             Foi = true;
         }
@@ -51,22 +50,22 @@ public class ActivePlatform : MonoBehaviour
     //VEM
     public void Volta(Vector3 dis, float vel)
     {
-        if (transformer.position.x > start.position.x - dis.x)
+        if (transform.position.x > start.position.x - dis.x)
         {
-            transformer.Translate(Vector3.right * Time.deltaTime * -vel);
+            transform.Translate(Vector3.right * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.y > start.position.y - dis.y)
+        if (transform.position.y > start.position.y - dis.y)
         {
-            transformer.Translate(Vector3.up * Time.deltaTime * -vel);
+            transform.Translate(Vector3.up * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.z > start.position.z - dis.z)
+        if (transform.position.z > start.position.z - dis.z)
         {
-            transformer.Translate(Vector3.forward * Time.deltaTime * -vel);
+            transform.Translate(Vector3.forward * Time.deltaTime * -vel);
         }
 
-        if (transformer.position.x <= start.position.x - dis.x && transformer.position.y <= start.position.y - dis.y && transformer.position.z <= start.position.z - dis.z)
+        if (transform.position.x <= start.position.x - dis.x && transform.position.y <= start.position.y - dis.y && transform.position.z <= start.position.z - dis.z)
         {
             Foi = false;
         }

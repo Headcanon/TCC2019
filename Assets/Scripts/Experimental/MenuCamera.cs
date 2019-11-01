@@ -9,18 +9,27 @@ public class MenuCamera : MonoBehaviour
     bool activeMenu;
     public ChrCtrl_Pipilson player;
     public Vector3 pauseOffset, pauseLookatOffset;
-    public Vector3 playOffset, playLookatOffset; 
-    private void Awake()
+    public Vector3 playOffset, playLookatOffset;
+
+    private int contagemDeLevels = 0;
+
+    private void OnLevelWasLoaded(int level)
     {
+        // Mais um level carregado nesse playthrough
+        contagemDeLevels++;
+
         cm = Camera.main.GetComponent<followCamera>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl_Pipilson>();
-        PauseCamera();
+
+        // Se ainda não carregou dois levels nesse playthrough...
+        if (contagemDeLevels < 2)
+        {
+            PauseCamera();
+        }
 
         menuScreen = GameObject.Find("Menu");
-
-        //ui = GameObject.Find("UI");
-    }
-
+    }           
+    
     private void Update()
     {
         if(Input.GetButtonDown("Start") && !activeMenu)
