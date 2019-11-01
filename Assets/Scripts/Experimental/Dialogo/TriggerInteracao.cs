@@ -9,7 +9,7 @@ public class TriggerInteracao : MonoBehaviour
     private ChrCtrl_Pipilson chr;
 
     public TextMeshProUGUI textDisplay;
-    public Frase[] sentences;
+    public Dialogo sentences;
     private int sentenceIndex;
     public float typingSpeed;
 
@@ -19,8 +19,9 @@ public class TriggerInteracao : MonoBehaviour
     [System.Serializable]
     public struct Personagems
     {
-        public Frase.Personagem personagem;
+        public Dialogo.Personagem personagem;
         public Transform pos;
+        public GameObject balao;
     }
     #endregion
 
@@ -40,8 +41,27 @@ public class TriggerInteracao : MonoBehaviour
             chr.sobControle = false;
         }
 
-        // Zera o display
-        textDisplay.text = "";
+        // Pra cada personagem da lista...
+        foreach (Personagems p in personagems)
+        {
+            // Se o falante dessa frase for igual a personagem que está sendo verificada...
+            if (sentences.GetPersonagem(sentenceIndex) == p.personagem)
+            {
+                // Bota o Display na posição indicada
+                textDisplay.transform.position = p.pos.position;
+
+                // Ativa a imagem do balão
+                p.balao.SetActive(true);
+
+                // Zera o display
+                textDisplay.text = "";
+            }
+            else
+            {
+                // Desativa a imagem do balão
+                p.balao.SetActive(false);
+            }
+        }
 
         // Começa a digitar a primeira frase
         StartCoroutine(TypeSentence());
@@ -52,7 +72,7 @@ public class TriggerInteracao : MonoBehaviour
     private void Update()
     {
         // Se o texto em display for igual ao previsto na frase atual...
-        if (textDisplay.text == sentences[sentenceIndex].texto)
+        if (textDisplay.text == sentences.GetTexto(sentenceIndex))
         {
             // Se apertar o botão de interação...
             if (Input.GetButtonDown("FaceX") && chr != null)
@@ -61,7 +81,7 @@ public class TriggerInteracao : MonoBehaviour
                 NextSentence();
 
                 // Se já estiver na última frase...
-                if (sentenceIndex == sentences.Length - 1)
+                if (sentenceIndex == sentences.listaFrases.Length - 1)
                 {
                     // Retorna o controle de Player
                     chr.sobControle = true;
@@ -76,7 +96,7 @@ public class TriggerInteracao : MonoBehaviour
     IEnumerator TypeSentence()
     {
         // Pra cad letra da frase atual...
-        foreach (char letra in sentences[sentenceIndex].texto.ToCharArray())
+        foreach (char letra in sentences.GetTexto(sentenceIndex))
         {
             // Adiciona uma letra no texto de display
             textDisplay.text += letra;
@@ -90,7 +110,7 @@ public class TriggerInteracao : MonoBehaviour
     private void NextSentence()
     {
         // Se a frase atual ainda for menor do que o total de frases...
-        if (sentenceIndex < sentences.Length -1)
+        if (sentenceIndex < sentences.listaFrases.Length -1)
         {
             // Passa pra próxima frase
             sentenceIndex++;
@@ -99,13 +119,21 @@ public class TriggerInteracao : MonoBehaviour
             foreach(Personagems p in personagems)
             {
                 // Se o falante dessa frase for igual a personagem que está sendo verificada...
-                if(sentences[sentenceIndex].falante == p.personagem)
+                if(sentences.GetPersonagem(sentenceIndex) == p.personagem)
                 {                    
                     // Bota o Display na posição indicada
                     textDisplay.transform.position = p.pos.position;
 
+                    // Ativa a imagem do balão
+                    p.balao.SetActive(true);
+
                     // Zera o display
                     textDisplay.text = "";
+                }
+                else
+                {
+                    // Desativa a imagem do balão
+                    p.balao.SetActive(false);
                 }
             }
 
