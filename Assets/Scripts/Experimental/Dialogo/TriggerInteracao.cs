@@ -13,6 +13,17 @@ public class TriggerInteracao : MonoBehaviour
     private int sentenceIndex;
     public float typingSpeed;
 
+    #region Lista de personagens
+    public Personagems[] personagems;
+
+    [System.Serializable]
+    public struct Personagems
+    {
+        public Frase.Personagem personagem;
+        public Transform pos;
+    }
+    #endregion
+
     #region Inicio da interação
     // Quando Player entra no trigger...
     private void OnTriggerEnter(Collider other)
@@ -84,16 +95,18 @@ public class TriggerInteracao : MonoBehaviour
             // Passa pra próxima frase
             sentenceIndex++;
 
-            if (sentences[sentenceIndex].falante == Frase.Personagem.Ashley)
+            // Pra cada personagem da lista...
+            foreach(Personagems p in personagems)
             {
-                // Zera o display
-                textDisplay.transform.position = chr.gameObject.transform.position;
-                textDisplay.text = "";
-            }
-            else
-            {
-                // Zera o display
-                textDisplay.text = "";
+                // Se o falante dessa frase for igual a personagem que está sendo verificada...
+                if(sentences[sentenceIndex].falante == p.personagem)
+                {                    
+                    // Bota o Display na posição indicada
+                    textDisplay.transform.position = p.pos.position;
+
+                    // Zera o display
+                    textDisplay.text = "";
+                }
             }
 
             // Começa a corrotina de digitação
