@@ -17,7 +17,7 @@ public class Moeda : MonoBehaviour
         if(other.tag == "Player")
         {
             SetPontuacao(pontos);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

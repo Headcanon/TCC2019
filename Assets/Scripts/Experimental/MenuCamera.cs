@@ -7,7 +7,7 @@ public class MenuCamera : MonoBehaviour
     followCamera cm;
     public GameObject menuScreen, ui;
     bool activeMenu;
-    public ChrCtrl_Pipilson player;
+    private ChrCtrl_Pipilson player;
     public Vector3 pauseOffset, pauseLookatOffset;
     public Vector3 playOffset, playLookatOffset;
 
@@ -27,7 +27,6 @@ public class MenuCamera : MonoBehaviour
             PauseCamera();
         }
 
-        menuScreen = GameObject.Find("Menu");
     }           
     
     private void Update()
@@ -62,5 +61,10 @@ public class MenuCamera : MonoBehaviour
         //cm.newOffset = new Vector3(5, 3, -20);
         //cm.newLookAtOffset = new Vector3(5, -3, 0);
         activeMenu = false;        
+    }
+
+    public void Sair()
+    {
+        Application.Quit();
     }
 }

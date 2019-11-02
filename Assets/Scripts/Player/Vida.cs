@@ -7,21 +7,26 @@ public class Vida : MonoBehaviour
 {
     [Header("Vida&Morte")]
     public float vida = 100;
-    public Slider barraVida;
     public Transform spawnPoint;
+    private Slider barraVida;
 
     private CharacterController cc;
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        barraVida = FindObjectOfType<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Atualiza a barra de vida
-        if (barraVida != null)
+        if (barraVida == null)
+        {
+            barraVida = FindObjectOfType<Slider>();
+        }
+        else
         {
             barraVida.value = vida / 100;
         }

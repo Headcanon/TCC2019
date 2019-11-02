@@ -8,7 +8,11 @@ public class Save_Pipilson : MonoBehaviour
 {
     private GameObject player;
     private CharacterController charCtrl;
+    private Vida vida;
     private GameObject[] paredes;
+    private GameObject[] items;
+    private BotaoPlataforma[] alavancas;
+    private Pontuacao pontos;
 
     private int contagemDeLevels = 0;
 
@@ -19,21 +23,56 @@ public class Save_Pipilson : MonoBehaviour
 
     private void Start()
     {
+        pontos = GetComponent<Pontuacao>();
+        pontos.pontos = PlayerPrefs.GetInt("pecasTotais", 0);
+
         // Começa e imediatamente joga pra última cena
         // Caso não tenha nenhuma cena salva o default é a cena 1 (Laboratorio)
         SceneManager.LoadScene(PlayerPrefs.GetInt("lastSceneIndex", 1));
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        // Mais um level carregado nesse playthrough
+        contagemDeLevels++;
+
+        // Encontra player e seu character controller
+        player = GameObject.FindGameObjectWithTag("Player");
+        charCtrl = player.GetComponent<CharacterController>();
+        vida = player.GetComponent<Vida>();
+
+        // Acha todas as paredes com a tag
+        paredes = GameObject.FindGameObjectsWithTag("Parede");
+        // Acha todos os itens com a tag
+        items = GameObject.FindGameObjectsWithTag("Coletavel");
+        // Acha todas as alvancas pelo tipo
+        alavancas = FindObjectsOfType<BotaoPlataforma>();
+
+        // Se já existe um save da posição de player e ainda não carregou dois levels nesse playthrough...
+        if (PlayerPrefs.HasKey("pos") && contagemDeLevels < 2)
+        {
+            charCtrl.enabled = false;
+            player.transform.position = PlayerPrefsX.GetVector3("pos"); // Carrega a posição de player
+            charCtrl.enabled = true;
+        }
+
+        // Pega a vida salva
+        vida.vida = PlayerPrefs.GetFloat("vida", 100);
+
+        // Carrega tudo o q está salvo
+        CarregarObjetos();
+    }
+
     void Update()
     {
         #region Debug
-        if (Input.GetKeyDown(KeyCode.Z)) //Save
+        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.Z)) //Save
         {
             PlayerPrefsX.SetVector3("pos", player.transform.position);
             print("Save");
         }
 
-        if (Input.GetKeyDown(KeyCode.X)) //Load
+        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.X)) //Load
         {
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos");
@@ -41,7 +80,7 @@ public class Save_Pipilson : MonoBehaviour
             print("Load");
         }
 
-        if (Input.GetKeyDown(KeyCode.P)) //Delete
+        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.P)) //Delete
         {
             PlayerPrefs.DeleteAll();
             print("Delete");
@@ -57,56 +96,100 @@ public class Save_Pipilson : MonoBehaviour
         // Salva o indice da última cena acessada
         PlayerPrefs.SetInt("lastSceneIndex", SceneManager.GetActiveScene().buildIndex);
 
+        // Salva os pontos totais no momento do checkpoint
+        PlayerPrefs.SetInt("pecasTotais", pontos.pontos);
+
+        // Salva a vida total no momento do checkpoint
+        PlayerPrefs.SetFloat("vida", vida.vida);
+
+        #region Paredes
         // Pra cada objeto da lista...
         for (int i = 0; i < paredes.Length; i++)
         {
             PlayerPrefsX.SetVector3("posParede_" + SceneManager.GetActiveScene().buildIndex + "_" + i, paredes[i].transform.position); //Salva posição dos objetos
         }
+        #endregion
+
+        #region Itens
+        for (int i = 0; i < items.Length; i++)
+        {
+            string key = "item_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+
+            PlayerPrefsX.SetBool(key, items[i].activeSelf); // Carrega a atividade de objetos
+        }
+        #endregion
+
+        #region Botões
+        for (int i = 0; i < alavancas.Length; i++)
+        {
+            string key = "alavancaAperto_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+            PlayerPrefsX.SetBool(key, alavancas[i].apertado); // Carrega o aperto de botões
+
+            string key2 = "alavancaTrava_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+            PlayerPrefsX.SetBool(key2, alavancas[i].travado); // Carrega a trava de botões
+        }
+        #endregion
 
         print("Save");
     }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        // Mais um level carregado nesse playthrough
-        contagemDeLevels++;
-
-        // Encontra player e seu character controller
-        player = GameObject.FindGameObjectWithTag("Player");
-        charCtrl = player.GetComponent<CharacterController>();
-
-        // Acha todas as paredes com a tag
-        paredes = GameObject.FindGameObjectsWithTag("Parede");
-
-
-        // Se já existe um save da posição de player e ainda não carregou dois levels nesse playthrough...
-        if (PlayerPrefs.HasKey("pos") && contagemDeLevels < 2)
-        {
-            charCtrl.enabled = false;
-            player.transform.position = PlayerPrefsX.GetVector3("pos"); // Carrega a posição de player
-            charCtrl.enabled = true;
-        }
-
-        // Carrega tudo o q está salvo
-        CarregarObjetos();
-    }
+    
 
     private void CarregarObjetos()
     {
-        // Se já existe um save da posição, carregar
-        if (PlayerPrefs.HasKey("posParede"))
+        #region Paredes
+        // Pra cada objeto da lista...
+        for (int i = 0; i < paredes.Length; i++)
         {
-            // Pra cada objeto da lista...
-            for (int i = 0; i < paredes.Length; i++)
+            string key = "posParede_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+
+            // Se já existe um save da posição, carregar
+            if (PlayerPrefs.HasKey(key))
             {
-                paredes[i].transform.position = PlayerPrefsX.GetVector3("posParede_" + SceneManager.GetActiveScene().buildIndex + "_" + i); // Carrega a posição de objetos
+                paredes[i].transform.position = PlayerPrefsX.GetVector3(key); // Carrega a posição de objetos
             }
         }
+        #endregion
+
+        #region Itens
+        // Pra cada objeto da lista...
+        for (int i = 0; i < items.Length; i++)
+        {
+            string key = "item_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+
+            // Se já existe um save da posição, carregar
+            if (PlayerPrefs.HasKey(key))
+            {
+                items[i].SetActive(PlayerPrefsX.GetBool(key)); // Carrega a atividade de objetos
+            }
+        }
+        #endregion
+
+        #region Botões
+        for (int i = 0; i < alavancas.Length; i++)
+        {
+            string key = "alavancaAperto_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+            if (PlayerPrefs.HasKey(key))
+            {
+                alavancas[i].apertado = PlayerPrefsX.GetBool(key); // Carrega o aperto de botões
+                Debug.Log("Pegou aperto");
+            }
+
+            string key2 = "alavancaTrava_" + SceneManager.GetActiveScene().buildIndex + "_" + i;
+            if (PlayerPrefs.HasKey(key2))
+            {
+                alavancas[i].travado = PlayerPrefsX.GetBool(key2); // Carrega a trava de botões
+            }
+        }
+        #endregion
+
     }
 
     public void Resetar()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(1);
+        
+        SceneManager.LoadScene(0);
+
+        Destroy(gameObject);
     }
 }

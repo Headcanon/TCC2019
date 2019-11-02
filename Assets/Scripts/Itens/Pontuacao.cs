@@ -8,6 +8,11 @@ public class Pontuacao : MonoBehaviour
     public int pontos = 0;
     public Text txtPts;
 
+    private void Start()
+    {
+        txtPts.text = pontos.ToString();
+    }
+
     public void AlteraPontos(int pts)
     {        
         pontos += pts;

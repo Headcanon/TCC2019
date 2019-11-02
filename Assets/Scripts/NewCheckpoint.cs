@@ -19,7 +19,7 @@ public class NewCheckpoint : MonoBehaviour
 
         if(pl != null)
         {
-            //pl.spawnPoint = gameObject.transform;
+            pl.spawnPoint = gameObject.transform;
             save.CheckPoint();
         }
     }

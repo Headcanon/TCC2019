@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Atirador
   - Ancora
-  - Puxavel
   - Parede
+  - Coletavel
   layers:
   - Default
   - TransparentFX

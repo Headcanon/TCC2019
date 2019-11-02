@@ -9,6 +9,6 @@ public class Chave : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         trava.travado = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
