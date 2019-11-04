@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 65246910272519244}
   - component: {fileID: 114292103891701742}
   m_Layer: 0
-  m_Name: BlocoMovel 1
+  m_Name: BlocoMovel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17, y: 1, z: 10}
+  m_Size: {x: 1, y: 17, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114292103891701742
 MonoBehaviour:
@@ -89,22 +89,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
@@ -114,7 +114,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0f73deeea2ed0224490d7db9345c26a9,
         type: 3}
