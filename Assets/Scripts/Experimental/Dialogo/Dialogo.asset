@@ -15,11 +15,25 @@ MonoBehaviour:
   listaFrases:
   - texto: oie
     falante: 0
+    animacao: 
+    tempoDesativar: 0
   - texto: oooooi
     falante: 1
+    animacao: 
+    tempoDesativar: 0
   - texto: Tudo bem?
     falante: 0
+    animacao: 
+    tempoDesativar: 0
   - texto: "Tudo, e voc\xEA?"
     falante: 1
+    animacao: 
+    tempoDesativar: 0
   - texto: "Tudo \xF3timo!"
     falante: 0
+    animacao: 
+    tempoDesativar: 0
+  - texto: 
+    falante: 1
+    animacao: Andar
+    tempoDesativar: 3

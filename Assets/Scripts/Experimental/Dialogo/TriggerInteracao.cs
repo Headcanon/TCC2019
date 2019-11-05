@@ -9,7 +9,7 @@ public class TriggerInteracao : MonoBehaviour
     private ChrCtrl_Pipilson chr;
 
     public TextMeshProUGUI textDisplay;
-    public Dialogo sentences;
+    public Dialogo dialogo;
     private int sentenceIndex;
     public float typingSpeed;
 
@@ -22,6 +22,7 @@ public class TriggerInteracao : MonoBehaviour
         public Dialogo.Personagem personagem;
         public Transform pos;
         public GameObject balao;
+        public Animator anim;
     }
     #endregion
 
@@ -45,7 +46,7 @@ public class TriggerInteracao : MonoBehaviour
         foreach (Personagems p in personagems)
         {
             // Se o falante dessa frase for igual a personagem que está sendo verificada...
-            if (sentences.GetPersonagem(sentenceIndex) == p.personagem)
+            if (dialogo.GetPersonagem(sentenceIndex) == p.personagem)
             {
                 // Bota o Display na posição indicada
                 textDisplay.transform.position = p.pos.position;
@@ -72,7 +73,7 @@ public class TriggerInteracao : MonoBehaviour
     private void Update()
     {
         // Se o texto em display for igual ao previsto na frase atual...
-        if (textDisplay.text == sentences.GetTexto(sentenceIndex))
+        if (textDisplay.text == dialogo.GetTexto(sentenceIndex))
         {
             // Se apertar o botão de interação...
             if (Input.GetButtonDown("FaceX") && chr != null)
@@ -80,12 +81,12 @@ public class TriggerInteracao : MonoBehaviour
                 // Chama a próxima frase
                 NextSentence();
 
-                // Se já estiver na última frase...
-                if (sentenceIndex == sentences.listaFrases.Length - 1)
-                {
-                    // Retorna o controle de Player
-                    chr.sobControle = true;
-                }
+                //// Se já estiver na última frase...
+                //if (sentenceIndex == dialogo.listaFrases.Length - 1)
+                //{
+                //    // Retorna o controle de Player
+                //    chr.sobControle = true;
+                //}
             }
         }
     }
@@ -96,7 +97,7 @@ public class TriggerInteracao : MonoBehaviour
     IEnumerator TypeSentence()
     {
         // Pra cad letra da frase atual...
-        foreach (char letra in sentences.GetTexto(sentenceIndex))
+        foreach (char letra in dialogo.GetTexto(sentenceIndex))
         {
             // Adiciona uma letra no texto de display
             textDisplay.text += letra;
@@ -110,7 +111,7 @@ public class TriggerInteracao : MonoBehaviour
     private void NextSentence()
     {
         // Se a frase atual ainda for menor do que o total de frases...
-        if (sentenceIndex < sentences.listaFrases.Length -1)
+        if (sentenceIndex < dialogo.listaFrases.Length -1)
         {
             // Passa pra próxima frase
             sentenceIndex++;
@@ -119,16 +120,28 @@ public class TriggerInteracao : MonoBehaviour
             foreach(Personagems p in personagems)
             {
                 // Se o falante dessa frase for igual a personagem que está sendo verificada...
-                if(sentences.GetPersonagem(sentenceIndex) == p.personagem)
+                if(dialogo.GetPersonagem(sentenceIndex) == p.personagem)
                 {                    
                     // Bota o Display na posição indicada
                     textDisplay.transform.position = p.pos.position;
 
-                    // Ativa a imagem do balão
-                    p.balao.SetActive(true);
+                    // Se o texto dessa frase não for vazio...
+                    // Isso é usado pra possibilitar frases que só tenham animação
+                    if (dialogo.GetTexto(sentenceIndex) != "")
+                    {
+                        // Ativa a imagem do balão
+                        p.balao.SetActive(true);
+                    }
+
+                    p.anim.SetTrigger(dialogo.GetAnimacao(sentenceIndex));
 
                     // Zera o display
                     textDisplay.text = "";
+
+                    if(dialogo.GetTempo(sentenceIndex) != 0.0f)
+                    {
+                        Invoke("Desativar", dialogo.GetTempo(sentenceIndex));
+                    }
                 }
                 else
                 {
@@ -146,6 +159,16 @@ public class TriggerInteracao : MonoBehaviour
             // Zera o display
             textDisplay.text = "";
         }
+    }
+    #endregion
+
+    #region Desativa
+    private void Desativar()
+    {
+        // Retorna o controle de Player
+        chr.sobControle = true;
+
+        gameObject.SetActive(false);
     }
     #endregion
 }

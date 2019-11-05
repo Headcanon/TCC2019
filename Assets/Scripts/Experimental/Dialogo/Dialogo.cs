@@ -14,6 +14,13 @@ public class Dialogo : ScriptableObject
     {
         public string texto;
         public Personagem falante;
+        public string animacao;
+        public float tempoDesativar;
+    }
+
+    public Frase GetFrase(int index)
+    {
+        return listaFrases[index];
     }
 
     public string GetTexto(int index)
@@ -24,5 +31,15 @@ public class Dialogo : ScriptableObject
     public Personagem GetPersonagem(int index)
     {
         return listaFrases[index].falante;
+    }
+
+    public string GetAnimacao(int index)
+    {
+        return listaFrases[index].animacao;
+    }
+
+    public float GetTempo(int index)
+    {
+        return listaFrases[index].tempoDesativar;
     }
 }
