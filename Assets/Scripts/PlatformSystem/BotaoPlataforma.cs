@@ -9,23 +9,26 @@ public class BotaoPlataforma : MonoBehaviour {
     public float velocidade;
     public bool negativo;
     public bool travado;
-    public Renderer renderer;
     public bool apertado;
+    public Animator anim;
+
+    private GameObject alavanca, alavancaTravada;
 
     private ActivePlatform plataformaAtiva;
-    private Animator anim;
     private bool travaExtra = true;
 
     // Use this for initialization
     void Start ()
     {
+        alavanca = transform.GetChild(0).gameObject;
+        alavancaTravada = transform.GetChild(1).gameObject;
+
         plataformaAtiva = plataforma.GetComponent<ActivePlatform>();
-        //renderer = GetComponent<Renderer>();
-        anim = GetComponent<Animator>();
 
         if(travado)
         {
-            renderer.material.SetColor("_Color", Color.blue);
+            alavanca.SetActive(false);
+            alavancaTravada.SetActive(true);
         }
     }
 	
@@ -34,7 +37,8 @@ public class BotaoPlataforma : MonoBehaviour {
     {
         if(!travado && !apertado)
         {
-            renderer.material.SetColor("_Color", Color.cyan);
+            alavanca.SetActive(true);
+            alavancaTravada.SetActive(false);
         }
 
         if (!travado && apertado && !travaExtra)
@@ -56,8 +60,7 @@ public class BotaoPlataforma : MonoBehaviour {
         {
             travaExtra = false;
             apertado = true;
-            renderer.material.SetColor("_Color", Color.black);
-            anim.SetTrigger("Apertagem");
+            anim.SetTrigger("Ativar");
         }
     }
 }
