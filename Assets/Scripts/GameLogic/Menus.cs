@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* Todos os métodos dos menus do jogo*/
 public class Menus : MonoBehaviour
@@ -26,6 +27,6 @@ public class Menus : MonoBehaviour
     // Reinicia a fase
     public void Restart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Lago");
+        GameObject.FindObjectOfType<Save_Pipilson>().Resetar();
     }
 }

@@ -13,13 +13,13 @@ public class GanchoDeEscalada : MonoBehaviour
 
     #region Coisas pra ativar e desativar
     // Character controller pra ser ativado e/ou desativado
-    CharacterController cc;
+    private CharacterController cc;
     // Controlador só pra zerar o vetor de movimento
-    ChrCtrl chcrt;
+    private ChrCtrl ashCtrl;
     // Rigidbody pro Hinge funcionar e poder adicionar forças
-    Rigidbody rb;
+    private Rigidbody rb;
     // Hinge joint pra conectar nas coisas
-    DistanceJoint3D dj3D;
+    private DistanceJoint3D dj3D;
     #endregion
 
     public GameObject ganchoPrefab;
@@ -33,7 +33,7 @@ public class GanchoDeEscalada : MonoBehaviour
     private void Start()
     {
         cc = GetComponent<CharacterController>();
-        chcrt = GetComponent<ChrCtrl>();
+        ashCtrl = GetComponent<ChrCtrl>();
         ganchoPrefab = Resources.Load<GameObject>("Gancho_Prefab");
         anim = transform.GetChild(0).GetComponent<Animator>();
         mao = GameObject.Find("SpawnGancho").transform;
@@ -47,7 +47,11 @@ public class GanchoDeEscalada : MonoBehaviour
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && dj3D == null)
         {
+            // Ativa a animação de gancho
             anim.SetBool("Enganchado", true);
+
+            // Tira o controle de player
+            ashCtrl.sobControle = false;
             // Desliga o character controller
             cc.enabled = false;
             // Adiciona o DistanceJoint3D
@@ -80,9 +84,17 @@ public class GanchoDeEscalada : MonoBehaviour
     
     public void Abortar()
     {
+        // Desativa animação de gancho
         anim.SetBool("Enganchado", false);
+
+        // Retorna o controle de player
+        ashCtrl.sobControle = true;
         // Reseta o momento dela
-        chcrt.moveDirection = Vector3.zero;
+        ashCtrl.moveDirection = Vector3.zero;
+        // Bota um impulso de pulo reduzido nela
+        ashCtrl.moveDirection.y = ashCtrl.jumpSpeed / 1.5f;
+
+        // Desativa o gancho
         ganchoAtivo = false;
         jointado = false;
         Destroy(ganchoAtual);

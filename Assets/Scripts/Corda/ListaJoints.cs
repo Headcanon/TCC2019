@@ -5,8 +5,10 @@ using UnityEngine;
 public class ListaJoints : MonoBehaviour
 {
     #region Parametros
+    public float forcaBalango = 2;
+
     // Lista de todos os joints na corda
-    private List<Transform> listaJoints;
+    private List<Joint> listaJoints;
     // Transform de player
     private GameObject ash;
     public ChrCtrl ashCtrl;
@@ -21,11 +23,24 @@ public class ListaJoints : MonoBehaviour
     private Animator anim;
     #endregion
 
+    [System.Serializable]
+    private struct Joint
+    {
+        public Transform t_Joint;
+        public GrabJoint gj_Joint;
+
+        public Joint(Transform t, GrabJoint gj)
+        {
+            t_Joint = t;
+            gj_Joint = gj;
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
         // Cria a lista
-        listaJoints = new List<Transform>();
+        listaJoints = new List<Joint>();
 
         // Acha a coisas da Ashley
         ash = GameObject.FindGameObjectWithTag("Player");
@@ -36,7 +51,7 @@ public class ListaJoints : MonoBehaviour
         Transform child = transform.GetChild(0);
 
         // Enquanto o filho não for nulo, ou seja, child tiver outro child...
-        while (child != null)
+        for (int i = 0;  child.childCount == 1; i ++)
         {
             // Adiciona o componente GrabJoint a ele
             GrabJoint gj = child.gameObject.AddComponent<GrabJoint>();
@@ -49,7 +64,7 @@ public class ListaJoints : MonoBehaviour
             gj.paiDeTodos = this;
 
             // Adiciona ele à lista
-            listaJoints.Add(child);
+            listaJoints.Add( new Joint(child, gj));
             // E pega o child dele
             child = child.GetChild(0);
 
@@ -65,36 +80,28 @@ public class ListaJoints : MonoBehaviour
         if (naAtiva)
         {
             // Pega o joint mais próximo de player
-            Transform jmp = JointMaisProximo();
-            /* Eu usava esse debug pra ver qual era o joint mais próximo */
-            //Debug.Log(jmp);
-
+            Joint jmp = JointMaisProximo();
+            // Pega o Transform do joint mais próximo
+            Transform jmpTransform = jmp.t_Joint;
             // Pega o Rigidbody do joint mais próximo
-            Rigidbody rbAtual = jmp.GetComponent<Rigidbody>();
+            Rigidbody rbAtual = jmp.gj_Joint.rb;
 
             // Define o joint mais próximo como parent da Ashley
-            ash.transform.parent = jmp;
+            ash.transform.parent = jmpTransform;
 
             #region Movimento
             // Move a Ashley ao longo da corda
             float vertical = Input.GetAxis("LeftVertical") * Time.fixedDeltaTime * velocidade;
             // Se estiver indo pra cima...
-            if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].transform.position.y)
+            if (vertical > 0.01f && ash.transform.position.y < listaJoints[0].t_Joint.position.y)
             {
                 // Move na direção do parent do joint mais próximo
-                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.parent.position, Mathf.Abs(vertical));
-
-                //anim.speed = 1f;
+                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmpTransform.parent.position, Mathf.Abs(vertical));
             }
-            else if (vertical < -0.01f && ash.transform.position.y > listaJoints[listaJoints.Count - 1].transform.position.y)
+            else if (vertical < -0.01f && ash.transform.position.y > listaJoints[listaJoints.Count - 1].t_Joint.position.y)
             {
-                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmp.GetChild(0).position, Mathf.Abs(vertical));
-
-                //anim
-            }
-            else
-            {
-                //anim.speed = 0f;
+                // Move na direção do child do joint mais próximo
+                ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmpTransform.GetChild(0).position, Mathf.Abs(vertical));
             }
 
             // Ativa a animação
@@ -105,7 +112,7 @@ public class ListaJoints : MonoBehaviour
 
             // Adiciona força de acordo com o eixo horizontal pra fazer a corda se movimentar lateralmente
             float horizontal = Input.GetAxis("LeftHorizontal");            
-            rbAtual.AddForce(new Vector3(horizontal * 2, 0, 0));
+            rbAtual.AddForce(new Vector3(horizontal * forcaBalango, 0, 0));
             #endregion
 
             if(Input.GetButton("FaceA"))
@@ -131,21 +138,21 @@ public class ListaJoints : MonoBehaviour
         }
     }
 
-    private Transform JointMaisProximo()
+    private Joint JointMaisProximo()
     {
         // jointMaisProximo sempre é o que tem a distancia correspondete a distanciaAnterior
         // Coloquei o joint0 só pra não ser nulo
-        Transform jointMaisProximo = listaJoints[0];
+        Joint jointMaisProximo = listaJoints[0];
         
         // A float distanciaAnterior é a que vai ser comparada com a nova distancia lá embaixo no for
         // Coloquei a distancia do joint0 só pra não ser nulo
-        float distanciaAnterior = Vector3.Distance(listaJoints[0].position, ash.transform.position);
+        float distanciaAnterior = Vector3.Distance(listaJoints[0].t_Joint.position, ash.transform.position);
 
         // Pra cada joint na lista...
         for (int i = 0; i < listaJoints.Count; i++)
         {
             // Calcula a distancia entre esse joint e player
-            float novaDistancia = Vector3.Distance(listaJoints[i].position, ash.transform.position);
+            float novaDistancia = Vector3.Distance(listaJoints[i].t_Joint.position, ash.transform.position);
 
             // Se essa distancia for menor que a anterior
             if (novaDistancia < distanciaAnterior)
@@ -169,6 +176,8 @@ public class ListaJoints : MonoBehaviour
         anim.SetTrigger("SaiCorda");
         // Reseta o momento dela
         ashCtrl.moveDirection = Vector3.zero;
+        // Bota um impulso de pulo reduzido nela
+        ashCtrl.moveDirection.y = ashCtrl.jumpSpeed / 1.5f;
         // Devolvo o controle ao Player
         ashCtrl.sobControle = true;
         // Reativa o CharacterController
