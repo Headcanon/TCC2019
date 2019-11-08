@@ -15,7 +15,7 @@ public class GanchoDeEscalada : MonoBehaviour
     // Character controller pra ser ativado e/ou desativado
     CharacterController cc;
     // Controlador só pra zerar o vetor de movimento
-    ChrCtrl_Pipilson chcrt;
+    ChrCtrl chcrt;
     // Rigidbody pro Hinge funcionar e poder adicionar forças
     Rigidbody rb;
     // Hinge joint pra conectar nas coisas
@@ -33,7 +33,7 @@ public class GanchoDeEscalada : MonoBehaviour
     private void Start()
     {
         cc = GetComponent<CharacterController>();
-        chcrt = GetComponent<ChrCtrl_Pipilson>();
+        chcrt = GetComponent<ChrCtrl>();
         ganchoPrefab = Resources.Load<GameObject>("Gancho_Prefab");
         anim = transform.GetChild(0).GetComponent<Animator>();
         mao = GameObject.Find("SpawnGancho").transform;

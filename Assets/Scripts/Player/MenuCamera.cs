@@ -7,7 +7,7 @@ public class MenuCamera : MonoBehaviour
     followCamera cm;
     public GameObject menuScreen, ui;
     bool activeMenu;
-    private ChrCtrl_Pipilson player;
+    private ChrCtrl player;
     public Vector3 pauseOffset, pauseLookatOffset;
     public Vector3 playOffset, playLookatOffset;
 
@@ -19,7 +19,7 @@ public class MenuCamera : MonoBehaviour
         contagemDeLevels++;
 
         cm = Camera.main.GetComponent<followCamera>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl_Pipilson>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl>();
 
         // Se ainda não carregou dois levels nesse playthrough...
         if (contagemDeLevels < 2)

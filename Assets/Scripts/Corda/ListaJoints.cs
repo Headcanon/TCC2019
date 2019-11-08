@@ -9,7 +9,7 @@ public class ListaJoints : MonoBehaviour
     private List<Transform> listaJoints;
     // Transform de player
     private GameObject ash;
-    public ChrCtrl_Pipilson ashCtrl;
+    public ChrCtrl ashCtrl;
     public CharacterController ashCC;
 
     // bool que define se a corda está ativada
@@ -29,7 +29,7 @@ public class ListaJoints : MonoBehaviour
 
         // Acha a coisas da Ashley
         ash = GameObject.FindGameObjectWithTag("Player");
-        ashCtrl = ash.GetComponent<ChrCtrl_Pipilson>();
+        ashCtrl = ash.GetComponent<ChrCtrl>();
         ashCC = ash.GetComponent<CharacterController>();
         anim = ash.transform.GetChild(0).GetComponent<Animator>();
         // Pega o filho desse objeto

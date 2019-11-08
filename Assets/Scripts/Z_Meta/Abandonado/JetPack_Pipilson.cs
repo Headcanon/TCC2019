@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class JetPack_Pipilson : MonoBehaviour
 {
     // Script de movimento da Ash
-    ChrCtrl_Pipilson ashCtrl;
+    ChrCtrl ashCtrl;
 
     public ParticleSystem ps;
 
@@ -28,7 +28,7 @@ public class JetPack_Pipilson : MonoBehaviour
     void Start()
     {
         // Pega o controle da Ash no mesmo GameObject
-        ashCtrl = GetComponent<ChrCtrl_Pipilson>();
+        ashCtrl = GetComponent<ChrCtrl>();
 
         // Começa com o combustível atual no máximo
         combustivelAtual = combustivelMaximo;

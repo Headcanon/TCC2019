@@ -6,7 +6,7 @@ using TMPro;
 public class TriggerInteracao : MonoBehaviour
 {
     // Controle pra ser tirado de Player
-    private ChrCtrl_Pipilson chr;
+    private ChrCtrl chr;
 
     public TextMeshProUGUI textDisplay;
     public Dialogo dialogo;
@@ -31,7 +31,7 @@ public class TriggerInteracao : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Tenta pegar o controle
-        chr = other.GetComponent<ChrCtrl_Pipilson>();
+        chr = other.GetComponent<ChrCtrl>();
 
         // Se o controle existir...
         if(chr != null)
