@@ -1,9 +1,0 @@
-Horizontal -----> LeftHorizontal
-Vertical -------> LeftVertical
-Jump -----------> FaceA
-KeyCode.E ------> FaceX
-Mira -----------> LeftTrigger
-KeyCode.Escape -> Start
-Fire1 ----------> RightTrigger
-
-//GanchoDeEscalada
