@@ -47,6 +47,8 @@ public class MenuCamera : MonoBehaviour
 
     public void PauseCamera()
     {
+        player.moveDirection = Vector3.zero;
+        player.gravidadeSecundaria = true;
         player.sobControle = false;
         cm.TrocaOffset(pauseOffset, pauseLookatOffset);
         //cm.newOffset = new Vector3(0, 2, -4);
@@ -56,6 +58,8 @@ public class MenuCamera : MonoBehaviour
 
     public void PlayCamera()
     {
+        player.moveDirection = Vector3.zero;
+        player.gravidadeSecundaria = false;
         player.sobControle = true;
         cm.TrocaOffset(playOffset, playLookatOffset);
         //cm.newOffset = new Vector3(5, 3, -20);

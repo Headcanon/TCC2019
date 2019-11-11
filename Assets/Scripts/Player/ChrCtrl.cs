@@ -60,6 +60,8 @@ public class ChrCtrl : MonoBehaviour
     private bool fast;
     #endregion
 
+    public bool gravidadeSecundaria = false;
+
     void Start()
     {        
         characterController = GetComponent<CharacterController>();
@@ -72,6 +74,8 @@ public class ChrCtrl : MonoBehaviour
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
         noChao = characterController.isGrounded;
+
+        RaycastHit hit;
 
         // Se estiver sob controle...
         if (sobControle)
@@ -147,17 +151,9 @@ public class ChrCtrl : MonoBehaviour
                 pulosDados = 1;
             }
 
-            // Lança um raycast pra baixo
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.down, out hit, 1000))
-            {
-                // Retorna a distância entre a Ash e o chão
-                anim.SetFloat("JumpHeight", hit.distance);
-            }
-
             // Lança um raycast pequeno pra cima
             // Se ele bater em alguma coisa...
-            if(Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.up, out hit, 2))
+            if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.up, out hit, 2))
             {                
                 // Zera o vetor de movimento
                 moveDirection = Vector3.zero;
@@ -194,6 +190,19 @@ public class ChrCtrl : MonoBehaviour
             // Retorna o aperto do botão de movimento pro animator
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
             
+        }
+
+        // Lança um raycast pra baixo
+        if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.down, out hit, 1000))
+        {
+            // Retorna a distância entre a Ash e o chão
+            anim.SetFloat("JumpHeight", hit.distance);
+        }
+
+        // Pro caso de eu quererer que a gravidade seja aplicada mesmo que player não esteja sob controle
+        if (gravidadeSecundaria)
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
         }
 
         // Move the controller, mesmo se player não estiver sob controle

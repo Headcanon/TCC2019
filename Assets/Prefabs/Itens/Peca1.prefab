@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6870044871176788229}
   - component: {fileID: 6870044871176788226}
   - component: {fileID: 6870044871176788225}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Peca1
   m_TagString: Coletavel
   m_Icon: {fileID: 0}
@@ -70,6 +70,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Parafuso
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c37e92b954a7cd44ab716759f98587f9,
         type: 3}
@@ -140,6 +145,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.70936
+      objectReference: {fileID: 0}
+    - target: {fileID: -2994569234417419163, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243104111019375627, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232488858435980449, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102530947620581811, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6581041025168474491, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292535884062368016, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c37e92b954a7cd44ab716759f98587f9, type: 3}

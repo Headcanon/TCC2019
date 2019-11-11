@@ -38,6 +38,8 @@ public class ListaJoints : MonoBehaviour
         
     }
 
+    GrabJoint jmp;
+
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -45,7 +47,7 @@ public class ListaJoints : MonoBehaviour
         if (naAtiva)
         {
             // Pega o joint mais próximo de player
-            GrabJoint jmp = listaJoints.JointMaisProximo(ash.transform);
+             jmp = listaJoints.JointMaisProximo(ash.transform);
             // Pega o Transform do joint mais próximo
             Transform jmpTransform = jmp.transform;
             // Pega o Rigidbody do joint mais próximo

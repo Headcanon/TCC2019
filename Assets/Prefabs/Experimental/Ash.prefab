@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 365745721292541527}
   - component: {fileID: 365745721292541526}
   - component: {fileID: 365745721292541522}
-  - component: {fileID: 365745721292541529}
+  - component: {fileID: 1930205474864084565}
   m_Layer: 0
   m_Name: Ash
   m_TagString: Player
@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 100
-  barraVida: {fileID: 0}
   spawnPoint: {fileID: 0}
---- !u!114 &365745721292541529
+  spawnTime: 2
+--- !u!114 &1930205474864084565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,13 +124,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 365745721292541528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850b55c1d5c4f59489044c93e3cdc611, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c75738860c1a9d40807ac8ee14336bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
   sobControle: 1
   gravity: 20
-  jumpTime: 0.2
+  jumpTime: 0.25
   jumpSpeed: 17
   pulosDados: 0
   puloLimite: 1
@@ -150,11 +150,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ashley
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7dd200a159eb75e46a3625648e83c93d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +220,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.2
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd200a159eb75e46a3625648e83c93d, type: 3}
 --- !u!4 &134183799155900560 stripped

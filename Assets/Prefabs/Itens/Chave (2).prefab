@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6386690348037966775}
   - component: {fileID: 1665931351138398544}
   - component: {fileID: 6615161368710064638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chave (2)
   m_TagString: Coletavel
   m_Icon: {fileID: 0}

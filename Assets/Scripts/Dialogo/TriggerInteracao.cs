@@ -126,14 +126,19 @@ public class TriggerInteracao : MonoBehaviour
                     textDisplay.transform.position = p.pos.position;
 
                     // Se o texto dessa frase não for vazio...
-                    // Isso é usado pra possibilitar frases que só tenham animação
+                    // Isso é usado pra possibilitar frases que não tenham texto
                     if (dialogo.GetTexto(sentenceIndex) != "")
                     {
                         // Ativa a imagem do balão
                         p.balao.SetActive(true);
                     }
 
-                    p.anim.SetTrigger(dialogo.GetAnimacao(sentenceIndex));
+                    // Se a animação dessa frase não for vazia...
+                    // Isso é usado pra possibilitar frases que não tenham animação
+                    if (dialogo.GetAnimacao(sentenceIndex) != "")
+                    {
+                        p.anim.SetTrigger(dialogo.GetAnimacao(sentenceIndex));
+                    }
 
                     // Zera o display
                     textDisplay.text = "";
