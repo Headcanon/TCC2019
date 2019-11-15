@@ -60,10 +60,18 @@ public class ChrCtrl : MonoBehaviour
     private bool fast;
     #endregion
 
+    #region Sons
+    public float walkRepeatRate;
+    public GameObject passosSound;
+    private bool playerIsMoving = false;
+    #endregion
+
     public bool gravidadeSecundaria = false;
 
     void Start()
-    {        
+    {
+        InvokeRepeating("CallFootsteps", 0, walkRepeatRate);
+
         characterController = GetComponent<CharacterController>();
         ashModel = transform.GetChild(0).gameObject;
         anim = ashModel.GetComponent<Animator>();
@@ -86,6 +94,15 @@ public class ChrCtrl : MonoBehaviour
             // Se Ash está no chão...
             if (noChao)
             {
+                if (Input.GetAxis("LeftHorizontal") > 0.01f || Input.GetAxis("LeftHorizontal") < -0.01f)
+                {
+                    playerIsMoving = true;
+                }
+                else
+                {
+                    playerIsMoving = false;
+                }
+
                 //  Cria a direção de movimento
                 moveDirection = transform.right * horizontal;
 
@@ -212,6 +229,23 @@ public class ChrCtrl : MonoBehaviour
         }
 
         
+    }
+
+    private void CallFootsteps()
+    {
+        if (playerIsMoving)
+        {
+            passosSound.SetActive(true);
+        }
+        else
+        {
+            passosSound.SetActive(false);
+        }
+    }
+
+    private void OnDisable()
+    {
+        playerIsMoving = false;
     }
 
 }

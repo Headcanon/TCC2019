@@ -23,6 +23,10 @@ public class GanchoDeEscalada : MonoBehaviour
     #endregion
 
     public GameObject ganchoPrefab;
+
+    [FMODUnity.EventRef]
+    public string hookSound;
+
     //public GameObject seta;
     private GameObject ganchoAtual;
     private bool ganchoAtivo = false;
@@ -47,6 +51,8 @@ public class GanchoDeEscalada : MonoBehaviour
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && dj3D == null)
         {
+            // Ativa o som do gancho
+            FMODUnity.RuntimeManager.PlayOneShot(hookSound);
             // Ativa a animação de gancho
             anim.SetBool("Enganchado", true);
 

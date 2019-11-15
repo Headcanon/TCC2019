@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ba18c454-335f-4fad-8b82-bc53d23ff5fe}">
+        <property name="assetPath">
+            <value>pull_switch.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>22.0499992</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.5</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e7ce08e1-e6f0-46ab-a103-12b114027201}</destination>
+        </relationship>
+    </object>
+</objects>

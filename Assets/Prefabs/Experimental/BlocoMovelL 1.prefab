@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Foi: 0
+  moveSound: event:/sfx/platform_down
 --- !u!1001 &1997807280846590320
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Moeda : MonoBehaviour
 {
     public int pontos = 5;
-    Pontuacao gm;
+
+    private Pontuacao gm;
 
     void Start()
     {

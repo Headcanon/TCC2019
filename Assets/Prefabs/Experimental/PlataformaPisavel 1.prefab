@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6772765716939103981}
   - component: {fileID: 6772429283951362071}
   - component: {fileID: 6707499781312106196}
+  - component: {fileID: 5406890938265073554}
   m_Layer: 0
   m_Name: PlataformaPisavel 1
   m_TagString: Untagged
@@ -78,6 +79,30 @@ MonoBehaviour:
   goAtAll: 1
   distance: 0.1
   velocity: 0.5
+  moveSound: event:/sfx/horizontal_platform
+--- !u!114 &5406890938265073554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706869294057712829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/sfx/horizontal_platform
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: Player
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &8462962992871024306
 PrefabInstance:
   m_ObjectHideFlags: 0

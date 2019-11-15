@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ActivePlatform : MonoBehaviour
 {
-    Rigidbody rb;
-    Transform start;
-
     public bool Foi;
 
-    //public Vector3 distancia;
+    private Rigidbody rb;
+    private Transform start;
 
     private void Start()
     {
@@ -21,8 +19,7 @@ public class ActivePlatform : MonoBehaviour
 
     }
 
-    
-        // Vai
+    // Vai
     public void Vai(Vector3 dis, float vel)
     {
         if (transform.position.x < start.position.x + dis.x)

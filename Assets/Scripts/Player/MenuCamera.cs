@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MenuCamera : MonoBehaviour
 {
-    followCamera cm;
     public GameObject menuScreen, ui;
-    bool activeMenu;
-    private ChrCtrl player;
-    public Vector3 pauseOffset, pauseLookatOffset;
-    public Vector3 playOffset, playLookatOffset;
 
+    [FMODUnity.EventRef]
+    public string clickSound;
+
+    private ChrCtrl player;
+    private bool activeMenu;
     private int contagemDeLevels = 0;
 
     private void OnLevelWasLoaded(int level)
@@ -18,7 +18,6 @@ public class MenuCamera : MonoBehaviour
         // Mais um level carregado nesse playthrough
         contagemDeLevels++;
 
-        cm = Camera.main.GetComponent<followCamera>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl>();
 
         // Se ainda não carregou dois levels nesse playthrough...
@@ -50,9 +49,7 @@ public class MenuCamera : MonoBehaviour
         player.moveDirection = Vector3.zero;
         player.gravidadeSecundaria = true;
         player.sobControle = false;
-        cm.TrocaOffset(pauseOffset, pauseLookatOffset);
-        //cm.newOffset = new Vector3(0, 2, -4);
-        //cm.newLookAtOffset = new Vector3(1, 3, 0);
+
         activeMenu = true;        
     }
 
@@ -61,14 +58,18 @@ public class MenuCamera : MonoBehaviour
         player.moveDirection = Vector3.zero;
         player.gravidadeSecundaria = false;
         player.sobControle = true;
-        cm.TrocaOffset(playOffset, playLookatOffset);
-        //cm.newOffset = new Vector3(5, 3, -20);
-        //cm.newLookAtOffset = new Vector3(5, -3, 0);
+
         activeMenu = false;        
     }
 
     public void Sair()
     {
         Application.Quit();
+    }
+
+    public void Click()
+    {
+        // Som de clique
+        FMODUnity.RuntimeManager.PlayOneShot(clickSound);
     }
 }

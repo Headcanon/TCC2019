@@ -9,14 +9,25 @@ public class PlataformaPisavelSimples : MonoBehaviour
     public bool goX, goY, goZ;
     // Se a plataforma se move at all
     public bool goAtAll;
+    
+    // Distancia percorrida e velocidade do percurso
+    public float distance;
+    public float velocity;
+
+    //[FMODUnity.EventRef]
+    //public string moveSound;
+
+    // Tempo
+    private float mytime;
 
     // X, Y e Z do movimento desejado
     private float x, y, z;
 
-    // Distancia percorrida e velocidade do percurso
-    public float distance;
-    public float velocity;
-    float mytime;
+    private void Start()
+    {
+        //FMODUnity.RuntimeManager.PlayOneShot(moveSound);
+    }
+
     // FixedUpdate é o que permite que o Character Controller tenha tempo de reconhecer o movimento da plataforma
     void FixedUpdate()
     {

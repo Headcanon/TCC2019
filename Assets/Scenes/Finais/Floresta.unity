@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4472084, g: 0.4971285, b: 0.57517046, a: 1}
+  m_IndirectSpecularColor: {r: 0.44720823, g: 0.4971279, b: 0.57517, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -726,6 +726,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7921290146896985491, guid: 05dc93ca9880d3a4c83721f3a2fe8df3,
+        type: 3}
+      propertyPath: passosSound
+      value: 
+      objectReference: {fileID: 408249907}
     m_RemovedComponents:
     - {fileID: 8229210149308581279, guid: 05dc93ca9880d3a4c83721f3a2fe8df3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05dc93ca9880d3a4c83721f3a2fe8df3, type: 3}
@@ -2613,6 +2618,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e4c800d847e344ca9d2d5cfb66c136, type: 3}
+--- !u!1 &408249907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408249909}
+  - component: {fileID: 408249908}
+  m_Layer: 0
+  m_Name: Passos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408249908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408249907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/sfx/footsteps
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &408249909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408249907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 237.58685, y: 66.87874, z: -29.35453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417706091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e186ff1fff3ac0947ad19eb2b9e3dfa1,
@@ -3446,6 +3505,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 982710530}
 --- !u!4 &534545828
@@ -3455,7 +3516,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534545826}
-  m_LocalRotation: {x: 0.029891262, y: -0.019185297, z: 0.0005738294, w: 0.99936885}
+  m_LocalRotation: {x: 0.029891262, y: -0.019185303, z: 0.0005738295, w: 0.99936885}
   m_LocalPosition: {x: -58.41, y: -52.6, z: -24.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3817,7 +3878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580498733}
-  m_LocalRotation: {x: 0.048044994, y: -0.000000017316024, z: 7.4504586e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.048044976, y: 0.000000017324496, z: -9.211815e-10, w: 0.9988452}
   m_LocalPosition: {x: -27.1, y: -46.28269, z: -55.60913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3854,9 +3915,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &602278483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4518,35 +4583,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 682862653}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &683264042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8229210149308581278, guid: 05dc93ca9880d3a4c83721f3a2fe8df3,
-    type: 3}
-  m_PrefabInstance: {fileID: 123529072}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &683264043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683264042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c75738860c1a9d40807ac8ee14336bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  sobControle: 1
-  gravity: 20
-  jumpTime: 0.25
-  jumpSpeed: 15
-  pulosDados: 0
-  puloLimite: 1
-  noChao: 0
-  speed: 6
-  highSpeed: 9
-  aceleTime: 1.5
 --- !u!1 &683682515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4736865379338716346, guid: e186ff1fff3ac0947ad19eb2b9e3dfa1,
@@ -10061,6 +10097,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1510709121}
 --- !u!4 &1492951196
@@ -10070,7 +10108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492951194}
-  m_LocalRotation: {x: 0.048044994, y: -0.000000017316024, z: 7.4504586e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.048044976, y: 0.000000017324496, z: -9.211815e-10, w: 0.9988452}
   m_LocalPosition: {x: -59.959564, y: -56.4, z: -11.299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11552,6 +11590,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Press X shoot
 
     Hold it to climb'
@@ -12642,6 +12682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955657556}
+  - component: {fileID: 1955657557}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -12689,6 +12730,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955657557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955657555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/gameplay_music/bgmusic_level3
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1958477155
 PrefabInstance:
   m_ObjectHideFlags: 0

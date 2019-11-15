@@ -138,6 +138,10 @@ MonoBehaviour:
   speed: 6
   highSpeed: 9
   aceleTime: 1.5
+  walkSound: event:/sfx/footsteps
+  jumpSound: event:/sfx/jump
+  walkRepeatRate: 0.5
+  gravidadeSecundaria: 0
 --- !u!1001 &4946645341649070986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ashley
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7dd200a159eb75e46a3625648e83c93d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,11 +229,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.2
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd200a159eb75e46a3625648e83c93d, type: 3}
 --- !u!4 &134183799155900560 stripped

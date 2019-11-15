@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Save_Pipilson : MonoBehaviour
 {
+
+    [FMODUnity.EventRef]
+    public string saveSound;
+
     private GameObject player;
     private CharacterController charCtrl;
     private Vida vida;
@@ -90,6 +94,9 @@ public class Save_Pipilson : MonoBehaviour
 
     public void CheckPoint()
     {
+        // Som de save
+        FMODUnity.RuntimeManager.PlayOneShot(saveSound);
+
         // Salva posição de player
         PlayerPrefsX.SetVector3("pos", player.transform.position);
 

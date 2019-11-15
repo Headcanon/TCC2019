@@ -12,6 +12,10 @@ public class BotaoPlataforma : MonoBehaviour {
     public bool apertado;
     public Animator anim;
 
+    [FMODUnity.EventRef]
+    public string buttSound, platSound;
+    public float delay;
+
     private GameObject alavanca, alavancaTravada;
 
     private ActivePlatform plataformaAtiva;
@@ -58,9 +62,21 @@ public class BotaoPlataforma : MonoBehaviour {
     {
         if (!travado && Input.GetButton("FaceX"))
         {
-            travaExtra = false;
-            apertado = true;
+            Invoke("PlatComand", delay);
+
+            // Ativa o som
+            FMODUnity.RuntimeManager.PlayOneShot(buttSound);
+
+            // Ativa animação
             anim.SetTrigger("Ativar");
         }
+    }
+
+    private void PlatComand()
+    {
+        travaExtra = false;
+        apertado = true;
+
+        FMODUnity.RuntimeManager.PlayOneShot(platSound);
     }
 }

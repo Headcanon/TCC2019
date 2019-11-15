@@ -67,6 +67,7 @@ MonoBehaviour:
   travado: 0
   apertado: 0
   anim: {fileID: 3926512958922970220}
+  buttSound: event:/sfx/pull_switch
 --- !u!95 &3926512958922970220
 Animator:
   serializedVersion: 3
