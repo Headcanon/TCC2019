@@ -20,6 +20,8 @@ public class ChrCtrl : MonoBehaviour
 
     // Bool que define se player controla o movimento da Ash
     public bool sobControle = true;
+
+    //AshStateMachine stateMachine;
     #endregion
     
     #region Pulo
@@ -75,10 +77,23 @@ public class ChrCtrl : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         ashModel = transform.GetChild(0).gameObject;
         anim = ashModel.GetComponent<Animator>();
+        //stateMachine = new AshStateMachine(characterController, ashModel, anim);
     }    
+    /*
+     * MOVENDO_ALTO
+     * MOVENDO_CHAO
+     * PARADO
+     * 
+     * SUBINDO_GANCHO
+     * USANDO_CORDA
+     * BALANCANDO_CORDA
+     * 
+     */
 
-    void Update()
-    {       
+    void Update() {
+        //AshState nextState = stateMachine.process(currentState);
+        //currentState = nextSate;
+        
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
         noChao = characterController.isGrounded;
