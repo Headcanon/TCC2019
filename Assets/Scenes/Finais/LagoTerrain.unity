@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: da6d5db57e4921a43a5f36ffa83e4ada, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ca03d3536ac2a0a4b8fd7925ce10f5d8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3977,13 +3977,9 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &429565430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,8 +5615,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2072116971}
 --- !u!4 &567964171
@@ -5630,8 +5624,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567964169}
-  m_LocalRotation: {x: 0.113294825, y: 0.000000018155488, z: -0.0000000020702329,
-    w: 0.99356145}
+  m_LocalRotation: {x: 0.11329485, y: -0.0000000165778, z: 0.0000000018904691, w: 0.99356145}
   m_LocalPosition: {x: -78.49245, y: 43.62, z: -58.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6374,7 +6367,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8a2831357cbb1064caeb60b2a7c76d5a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 153.12386
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8a2831357cbb1064caeb60b2a7c76d5a,
         type: 3}
@@ -9803,8 +9796,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1338394791}
 --- !u!4 &1179986737
@@ -10557,8 +10548,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 162152826}
 --- !u!4 &1299517977
@@ -12706,11 +12695,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: avorevivinha (2)
       objectReference: {fileID: 0}
-    - target: {fileID: -6493880245531896197, guid: 0055c267445df64439ed4899de8d8210,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 43f0e2450919d584384414365b850399, type: 2}
     - target: {fileID: -4216859302048453862, guid: 0055c267445df64439ed4899de8d8210,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12781,6 +12765,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2389004
       objectReference: {fileID: 0}
+    - target: {fileID: -6493880245531896197, guid: 0055c267445df64439ed4899de8d8210,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43f0e2450919d584384414365b850399, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0055c267445df64439ed4899de8d8210, type: 3}
 --- !u!1 &1497404933
@@ -14459,8 +14448,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 693080652}
 --- !u!4 &1756625526
@@ -16633,11 +16620,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arvore_viva_2_
       objectReference: {fileID: 0}
-    - target: {fileID: -4411956294933154525, guid: dc86409b4b2f8544d9769a4a8e8b0abc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 43f0e2450919d584384414365b850399, type: 2}
     - target: {fileID: -4216859302048453862, guid: dc86409b4b2f8544d9769a4a8e8b0abc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16713,6 +16695,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d5a281737fa5364d9967847631c0cd9, type: 2}
+    - target: {fileID: -4411956294933154525, guid: dc86409b4b2f8544d9769a4a8e8b0abc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43f0e2450919d584384414365b850399, type: 2}
     - target: {fileID: 1318462475825722627, guid: dc86409b4b2f8544d9769a4a8e8b0abc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -18207,6 +18194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881977963}
     m_Modifications:
+    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Ash
+      objectReference: {fileID: 0}
     - target: {fileID: 365745721292541525, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18261,11 +18253,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Ash
       objectReference: {fileID: 0}
     - target: {fileID: 365745721292541529, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
