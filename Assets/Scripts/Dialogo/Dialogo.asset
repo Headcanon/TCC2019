@@ -15,7 +15,7 @@ MonoBehaviour:
   listaFrases:
   - texto: oie
     falante: 0
-    animacao: 
+    animacao: Idle
     tempoDesativar: 0
   - texto: oooooi
     falante: 1
