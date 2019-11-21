@@ -76,17 +76,10 @@ public class TriggerInteracao : MonoBehaviour
         if (textDisplay.text == dialogo.GetTexto(sentenceIndex))
         {
             // Se apertar o botão de interação...
-            if (Input.GetButtonDown("FaceX") && chr != null)
+            if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
             {
                 // Chama a próxima frase
                 NextSentence();
-
-                //// Se já estiver na última frase...
-                //if (sentenceIndex == dialogo.listaFrases.Length - 1)
-                //{
-                //    // Retorna o controle de Player
-                //    chr.sobControle = true;
-                //}
             }
         }
     }

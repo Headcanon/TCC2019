@@ -16,6 +16,7 @@ public class Dialogo : ScriptableObject
         public Personagem falante;
         public string animacao;
         public float tempoDesativar;
+        public bool autoPassar;
     }
 
     public Frase GetFrase(int index)
@@ -41,5 +42,10 @@ public class Dialogo : ScriptableObject
     public float GetTempo(int index)
     {
         return listaFrases[index].tempoDesativar;
+    }
+
+    public bool GetPassar(int index)
+    {
+        return listaFrases[index].autoPassar;
     }
 }
