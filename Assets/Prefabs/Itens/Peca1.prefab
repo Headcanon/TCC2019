@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontos: 1
+  rotacao: {x: 1, y: 0, z: 0}
 --- !u!114 &632452972106360507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,12 +101,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: -6581041025168474491, guid: c37e92b954a7cd44ab716759f98587f9,
+    - target: {fileID: -5102530947620581811, guid: c37e92b954a7cd44ab716759f98587f9,
         type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: -5102530947620581811, guid: c37e92b954a7cd44ab716759f98587f9,
+    - target: {fileID: 5232488858435980449, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2994569234417419163, guid: c37e92b954a7cd44ab716759f98587f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243104111019375627, guid: c37e92b954a7cd44ab716759f98587f9,
         type: 3}
       propertyPath: m_Layer
       value: 2
@@ -180,17 +191,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.70936
       objectReference: {fileID: 0}
-    - target: {fileID: -2994569234417419163, guid: c37e92b954a7cd44ab716759f98587f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3243104111019375627, guid: c37e92b954a7cd44ab716759f98587f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232488858435980449, guid: c37e92b954a7cd44ab716759f98587f9,
+    - target: {fileID: -6581041025168474491, guid: c37e92b954a7cd44ab716759f98587f9,
         type: 3}
       propertyPath: m_Layer
       value: 2

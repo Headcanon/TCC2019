@@ -538,12 +538,12 @@ PrefabInstance:
     - target: {fileID: 224127442202055206, guid: 62230fa206fe1614bbcdb9b163fe3582,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224127442202055206, guid: 62230fa206fe1614bbcdb9b163fe3582,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62230fa206fe1614bbcdb9b163fe3582, type: 3}
@@ -1189,6 +1189,7 @@ GameObject:
   - component: {fileID: 1415455635}
   - component: {fileID: 1415455634}
   - component: {fileID: 1415455633}
+  - component: {fileID: 1415455636}
   m_Layer: 0
   m_Name: Pecas
   m_TagString: Untagged
@@ -1257,6 +1258,21 @@ RectTransform:
   m_AnchoredPosition: {x: -263.3, y: 167}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1415455636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415455632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.9056604, g: 0.9013884, b: 0.9013884, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1515408200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,7 +1736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2019096253
 RectTransform:
   m_ObjectHideFlags: 0
