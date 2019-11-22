@@ -8,7 +8,7 @@ public class ChrCtrl : MonoBehaviour
     #region Movimento basico
     [Header("Movimento basico")]
     // Componente que controla o movimento da Ash
-    private CharacterController characterController;  
+    private CharacterController characterController;
 
     // Vetor de movimento da Ashley
     public Vector3 moveDirection = Vector3.zero;
@@ -23,7 +23,7 @@ public class ChrCtrl : MonoBehaviour
 
     //AshStateMachine stateMachine;
     #endregion
-    
+
     #region Pulo
     [Header("Pulo")]
     // Força da gravidade que puxa a Ash pra baixo
@@ -70,8 +70,6 @@ public class ChrCtrl : MonoBehaviour
 
     public bool gravidadeSecundaria = false;
 
-    AshStateMachine.PlayerState currentState;
-
     void Start()
     {
         InvokeRepeating("CallFootsteps", 0, walkRepeatRate);
@@ -80,7 +78,7 @@ public class ChrCtrl : MonoBehaviour
         ashModel = transform.GetChild(0).gameObject;
         anim = ashModel.GetComponent<Animator>();
         //stateMachine = new AshStateMachine(characterController, ashModel, anim);
-    }    
+    }
     /*
      * MOVENDO_ALTO
      * MOVENDO_CHAO
@@ -92,123 +90,114 @@ public class ChrCtrl : MonoBehaviour
      * 
      */
 
-    void Update() {
+    void Update()
+    {
         //AshState nextState = stateMachine.process(currentState);
         //currentState = nextSate;
 
-        // Pega o botão de movimento
-        float horizontal = Input.GetAxis("LeftHorizontal");
-
-
-        RaycastHit hit;
-
-        switch (currentState)
-        {
-            case AshStateMachine.PlayerState.MOVENDO_CHAO:
-                {
-
-                    //  Cria a direção de movimento
-                    moveDirection = transform.right * horizontal;
-
-                    #region Pulo
-                    // Zera os pulos dados
-                    pulosDados = 0;
-
-                    // Põe a gravidade no padrão
-                    gravity = 20f;
-
-                    // Zera o timer de segurar o botão de pulo
-                    jumpTimeCounter = jumpTime;
-
-                    // Ativa a animação de pulo
-                    if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
-                    {
-                        anim.SetTrigger("Jump");
-                    }
-                    #endregion
-
-                    #region Aceleracao
-                    // Se o botão está sendo apertado e já deu o tempo do timer...
-                    if (Input.GetButton("LeftHorizontal") && aceleTimeCounter > 0)
-                    {
-                        // Deixa rápido
-                        fast = true;
-                    }
-                    // Caso contrário, se mesmo assim tiver apertando o botão...
-                    else if (Input.GetButton("LeftHorizontal"))
-                    {
-                        // Aumenta o tempo
-                        aceleTimeCounter -= Time.deltaTime;
-                    }
-                    // Caso nenhum dos anteriores seja verdade...
-                    else
-                    {
-                        // Deixa normal
-                        fast = false;
-                        // Zera o timer
-                        aceleTimeCounter = aceleTime;
-                    }
-                    #endregion
-
-                    break;
-                }
-
-            case AshStateMachine.PlayerState.PULANDO:
-                {
-
-                    break;
-                }
-
-            // Se ela está no ar...
-            case AshStateMachine.PlayerState.MOVENDO_ALTO:
-                {
-                    // Enquanto o botão de pulo for apertado e ainda não tiver dado o tempo...
-                    if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
-                    {
-                        // Adiciona movimento vertical ao vetor de movimento
-                        moveDirection.y = jumpSpeed;
-
-                        // Roda o timer
-                        jumpTimeCounter -= Time.deltaTime;
-
-                        // Coloca os pulos dados como 1
-                        pulosDados = 1;
-                    }
-
-                    // Lança um raycast pequeno pra cima
-                    // Se ele bater em alguma coisa...
-                    if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.up, out hit, 2))
-                    {
-                        // Zera o vetor de movimento
-                        moveDirection = Vector3.zero;
-                    }
-
-                    // Altera a movimentação lateral sem alterar o eixo Y
-                    moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);
-                    break;
-                }
-        }
-
-        
         // A bool noChao é igual ao idGrounded do CharacterController
         // Isso é só pra que eu possa acessar o noChao em outros scripts
         noChao = characterController.isGrounded;
 
+        RaycastHit hit;
 
         // Se estiver sob controle...
         if (sobControle)
         {
-            #region Pulo
-            
+            // Pega o botão de movimento
+            float horizontal = Input.GetAxis("LeftHorizontal");
 
-            
+            // Se Ash está no chão...
+            if (noChao)
+            {
+                if (Input.GetAxis("LeftHorizontal") > 0.01f || Input.GetAxis("LeftHorizontal") < -0.01f)
+                {
+                    playerIsMoving = true;
+                }
+                else
+                {
+                    playerIsMoving = false;
+                }
+
+                //  Cria a direção de movimento
+                moveDirection = transform.right * horizontal;
+
+                #region Pulo
+                // Zera os pulos dados
+                pulosDados = 0;
+
+                // Põe a gravidade no padrão
+                gravity = 20f;
+
+                // Zera o timer de segurar o botão de pulo
+                jumpTimeCounter = jumpTime;
+
+                // Ativa a animação de pulo
+                if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
+                {
+                    anim.SetTrigger("Jump");
+                }
+                #endregion
+
+                #region Aceleracao
+                // Se o botão está sendo apertado e já deu o tempo do timer...
+                if (Input.GetButton("LeftHorizontal") && aceleTimeCounter > 0)
+                {
+                    // Deixa rápido
+                    fast = true;
+                }
+                // Caso contrário, se mesmo assim tiver apertando o botão...
+                else if (Input.GetButton("LeftHorizontal"))
+                {
+                    // Aumenta o tempo
+                    aceleTimeCounter -= Time.deltaTime;
+                }
+                // Caso nenhum dos anteriores seja verdade...
+                else
+                {
+                    // Deixa normal
+                    fast = false;
+                    // Zera o timer
+                    aceleTimeCounter = aceleTime;
+                }
+                #endregion
+
+            }
+            // Se ela está no ar...
+            else
+            {
+                // Altera a movimentação lateral sem alterar o eixo Y
+                moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);
+            }
+
+            #region Pulo
+            // Enquanto o botão de pulo for apertado e ainda não tiver dado o tempo...
+            if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
+            {
+                // Adiciona movimento vertical ao vetor de movimento
+                moveDirection.y = jumpSpeed;
+
+                // Roda o timer
+                jumpTimeCounter -= Time.deltaTime;
+
+                // Coloca os pulos dados como 1
+                pulosDados = 1;
+            }
+
+            // Lança um raycast pequeno pra cima
+            // Se ele bater em alguma coisa...
+            if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.up, out hit, 2))
+            {
+                // Zera o vetor de movimento
+                moveDirection = Vector3.zero;
+            }
             #endregion
 
             #region Aceleracao
             if (fast)
             {
                 anim.SetBool("Fast", true);
-                moveDirection.x *= highSpeed;                
+                moveDirection.x *= highSpeed;
             }
             else
             {
@@ -233,7 +222,7 @@ public class ChrCtrl : MonoBehaviour
 
             // Retorna o aperto do botão de movimento pro animator
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
-            
+
         }
 
         // Lança um raycast pra baixo
@@ -255,7 +244,24 @@ public class ChrCtrl : MonoBehaviour
             characterController.Move(moveDirection * Time.deltaTime);
         }
 
-        
+
+    }
+
+    private void CallFootsteps()
+    {
+        if (playerIsMoving)
+        {
+            passosSound.SetActive(true);
+        }
+        else
+        {
+            passosSound.SetActive(false);
+        }
+    }
+
+    private void OnDisable()
+    {
+        playerIsMoving = false;
     }
 
 }
