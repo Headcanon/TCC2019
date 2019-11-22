@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76602fb6b3ef1ce458b2a44d0dd10cd9, type: 3}
-  m_Name: Lago
+  m_Name: LagoHueHueBR
   m_EditorClassIdentifier: 
   listaFrases:
   - texto: "Ah\xE1! Peguei voc\xEA"
@@ -23,23 +23,23 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-  - texto: "N\xE3o finge que n\xE3o sabe! Eu sei o que voc\xEA fez!"
-    falante: 0
-    animacao: 
-    tempoDesativar: 0
-    autoPassar: 0
-  - texto: ' Err... Como assim?'
+  - texto: "Seu nome \xE9 Ashley, n\xE9?"
     falante: 1
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-  - texto: Fique sabendo que eu vou acabar com esse seu show!
+  - texto: "\xC9 Axel pra voc\xEA!"
+    falante: 0
+    animacao: Teste
+    tempoDesativar: 0
+    autoPassar: 0
+  - texto: E eu vim pra te avisar
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-  - texto: '... Como?'
-    falante: 1
+  - texto: "O que voc\xEA fez n\xE3o vai ficar barato"
+    falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-  - texto: Aquela... Eu preciso chegar no acampamento antes dela!
+  - texto: 
     falante: 0
     animacao: 
-    tempoDesativar: 0
+    tempoDesativar: 0.5
     autoPassar: 0

@@ -224,6 +224,10 @@ public class ChrCtrl : MonoBehaviour
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
 
         }
+        else
+        {
+            anim.SetFloat("Vel", 0);
+        }
 
         // Lança um raycast pra baixo
         if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.down, out hit, 1000))
@@ -246,6 +250,7 @@ public class ChrCtrl : MonoBehaviour
 
 
     }
+    
 
     private void CallFootsteps()
     {
