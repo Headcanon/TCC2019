@@ -51,8 +51,8 @@ public class GanchoDeEscalada : MonoBehaviour
         // Só pra garantir que ainda não tem nenhum Joint nem RigidBody...
         if (jointado && rb == null && dj3D == null)
         {
-            // Ativa o som do gancho
-            FMODUnity.RuntimeManager.PlayOneShot(hookSound);
+            Debug.Log("deu if");
+            
             // Ativa a animação de gancho
             anim.SetBool("Enganchado", true);
 
@@ -65,6 +65,9 @@ public class GanchoDeEscalada : MonoBehaviour
             dj3D = gameObject.AddComponent<DistanceJoint3D>();
             // Conecta o Hinjejoint ao Rigidbody identificado
             dj3D.penduradoEm = conectadoEm.transform;
+
+            // Ativa o som do gancho
+            FMODUnity.RuntimeManager.PlayOneShot(hookSound);
         }
         else if (!jointado && rb != null && dj3D != null)
         {
@@ -76,18 +79,18 @@ public class GanchoDeEscalada : MonoBehaviour
             cc.enabled = true;
         }
 
-        if(!ganchoAtivo &&  ganchoAtual == null && Input.GetButtonDown("RightTrigger"))
+        if (!ganchoAtivo && ganchoAtual == null && Input.GetButtonDown("RightTrigger"))
         {
             anim.SetTrigger("LancaGancho");
             ganchoAtual = Instantiate(ganchoPrefab, mao.position, rotacao, mao);
             ganchoAtivo = true;
         }
-        else if(ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("FaceA"))
-        {            
+        else if (ganchoAtivo && ganchoAtual != null && Input.GetButtonDown("FaceA"))
+        {
             Abortar();
         }
     }
-    
+
     public void Abortar()
     {
         // Desativa animação de gancho
