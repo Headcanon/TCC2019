@@ -8,8 +8,7 @@ public class Pontuacao : MonoBehaviour
     public int pontos = 0;
     public Text txtPts;
 
-    public float tempoReducao;
-    private int ptsReduzidos;
+    public float tempoReducao = 0.1f;
 
     private void Start()
     {
@@ -19,7 +18,6 @@ public class Pontuacao : MonoBehaviour
     public void AlteraPontos(int pts)
     {        
         pontos += pts;
-        //Debug.Log("Pontuacao" + pts);
 
         txtPts.text = pontos.ToString();
     }
@@ -27,18 +25,19 @@ public class Pontuacao : MonoBehaviour
 
     public void Reduzir(int ptsReduzir)
     {
-        ptsReduzidos = pontos -= ptsReduzir;
         StartCoroutine(Reduzindo(ptsReduzir));
     }
 
     IEnumerator Reduzindo(int ptsReduzir)
     {
-        for (int i = ptsReduzir; i > ptsReduzidos; i--)
+        Debug.Log("chamou");
+        for (int i = 0; i < ptsReduzir; i++)
         {
             pontos--;
+            Debug.Log(pontos);
             txtPts.text = pontos.ToString();
-
             yield return new WaitForSeconds(tempoReducao);
         }
+        Debug.Log("algo acontece depois disso?");
     }
 }

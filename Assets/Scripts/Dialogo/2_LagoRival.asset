@@ -18,58 +18,75 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: 'Uh? Ummm... Oi? '
     falante: 1
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: "Seu nome \xE9 Ashley, n\xE9?"
     falante: 1
     animacao: 
     tempoDesativar: 0
-    autoPassar: 0
+    autoPassar: 1
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: "\xC9 Axel pra voc\xEA!"
     falante: 0
     animacao: Teste
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: E eu vim pra te avisar
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: "O que voc\xEA fez n\xE3o vai ficar barato"
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: Eu vou... Pensar em alguma coisa!
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: Uh... Ok, eu vou embora agora...
     falante: 1
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: 
     falante: 1
     animacao: TurnLeft
     tempoDesativar: 0
     autoPassar: 1
-  - texto: 
-    falante: 1
-    animacao: Andar
-    tempoDesativar: 0
-    autoPassar: 1
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: Aquela... Eu preciso chegar no acampamento antes dela!
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
   - texto: 
     falante: 0
     animacao: 
-    tempoDesativar: 0.5
+    tempoDesativar: 0.1
     autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0

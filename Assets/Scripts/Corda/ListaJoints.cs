@@ -93,6 +93,7 @@ public class ListaJoints : MonoBehaviour
         }
     }
 
+    #region Timer
     public float timeLeft = 7;
     public bool podePegar = true;
     private void UpdateTimer()
@@ -104,8 +105,7 @@ public class ListaJoints : MonoBehaviour
             podePegar = true;
         }
     }
-
-    
+    #endregion
 
     public void Abortar()
     {
