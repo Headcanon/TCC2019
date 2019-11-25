@@ -17,7 +17,7 @@ public class NewCheckpoint : MonoBehaviour
     {
         pl = other.GetComponent<Vida>();
 
-        if(pl != null && other.GetComponent<ChrCtrl>().noChao)
+        if(pl != null )
         {
             pl.spawnPoint = gameObject.transform;
             save.CheckPoint();

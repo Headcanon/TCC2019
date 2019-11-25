@@ -5,13 +5,12 @@ using TMPro;
 
 public class TriggerInteracao : MonoBehaviour
 {
+    public Dialogo dialogo;
+
     // Controle pra ser tirado de Player
     private ChrCtrl chr;
-
-    public TextMeshProUGUI textDisplay;
-    public Dialogo dialogo;
-    private int sentenceIndex;
-    public float typingSpeed;
+    private string textDisplayed;
+    private int sentenceIndex = 0;
 
     #region Lista de personagens
     public Personagems[] personagems;
@@ -20,9 +19,9 @@ public class TriggerInteracao : MonoBehaviour
     public struct Personagems
     {
         public Dialogo.Personagem personagem;
-        public Transform pos;
         public GameObject balao;
         public Animator anim;
+        public TextManager tm;
     }
     #endregion
 
@@ -48,14 +47,14 @@ public class TriggerInteracao : MonoBehaviour
             // Se o falante dessa frase for igual a personagem que está sendo verificada...
             if (dialogo.GetPersonagem(sentenceIndex) == p.personagem)
             {
-                // Bota o Display na posição indicada
-                textDisplay.transform.position = p.pos.position;
-
                 // Ativa a imagem do balão
                 p.balao.SetActive(true);
 
-                // Zera o display
-                textDisplay.text = "";
+                // Bota o texto
+                textDisplayed = dialogo.GetTexto(sentenceIndex);
+
+                // Começa a digitar a primeira frase
+                p.tm.Digitar(textDisplayed);
             }
             else
             {
@@ -64,38 +63,30 @@ public class TriggerInteracao : MonoBehaviour
             }
         }
 
-        // Começa a digitar a primeira frase
-        StartCoroutine(TypeSentence());
+
     }
     #endregion
 
     #region Controle da interação
     private void Update()
     {
-        // Se o texto em display for igual ao previsto na frase atual...
-        if (textDisplay.text == dialogo.GetTexto(sentenceIndex))
+        // Pra cada personagem da lista...
+        foreach (Personagems p in personagems)
         {
-            // Se apertar o botão de interação...
-            if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
+            // Se o falante dessa frase for igual a personagem que está sendo verificada...
+            if (dialogo.GetPersonagem(sentenceIndex) == p.personagem)
             {
-                // Chama a próxima frase
-                NextSentence();
+                // Se o texto em display for igual ao previsto na frase atual...
+                if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex))
+                {
+                    // Se apertar o botão de interação...
+                    if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
+                    {
+                        // Chama a próxima frase
+                        NextSentence();
+                    }
+                }
             }
-        }
-    }
-    #endregion
-
-    #region Digitar
-    // Corrotina
-    IEnumerator TypeSentence()
-    {
-        // Pra cad letra da frase atual...
-        foreach (char letra in dialogo.GetTexto(sentenceIndex))
-        {
-            // Adiciona uma letra no texto de display
-            textDisplay.text += letra;
-            // Espera o tempo determinado
-            yield return new WaitForSeconds(typingSpeed);
         }
     }
     #endregion
@@ -110,14 +101,11 @@ public class TriggerInteracao : MonoBehaviour
             sentenceIndex++;
 
             // Pra cada personagem da lista...
-            foreach(Personagems p in personagems)
+            foreach (Personagems p in personagems)
             {
                 // Se o falante dessa frase for igual a personagem que está sendo verificada...
                 if(dialogo.GetPersonagem(sentenceIndex) == p.personagem)
-                {                    
-                    // Bota o Display na posição indicada
-                    textDisplay.transform.position = p.pos.position;
-
+                {
                     // Se o texto dessa frase não for vazio...
                     // Isso é usado pra possibilitar frases que não tenham texto
                     if (dialogo.GetTexto(sentenceIndex) != "")
@@ -133,13 +121,16 @@ public class TriggerInteracao : MonoBehaviour
                         p.anim.SetTrigger(dialogo.GetAnimacao(sentenceIndex));
                     }
 
-                    // Zera o display
-                    textDisplay.text = "";
-
                     if(dialogo.GetTempo(sentenceIndex) != 0.0f)
                     {
                         Invoke("Desativar", dialogo.GetTempo(sentenceIndex));
                     }
+
+                    // Bota o texto
+                    textDisplayed = dialogo.GetTexto(sentenceIndex);
+
+                    // Começa a corrotina de digitação
+                    p.tm.Digitar(textDisplayed);
                 }
                 else
                 {
@@ -147,15 +138,6 @@ public class TriggerInteracao : MonoBehaviour
                     p.balao.SetActive(false);
                 }
             }
-
-            // Começa a corrotina de digitação
-            StartCoroutine(TypeSentence());
-        }
-        // Caso contrário...
-        else
-        {
-            // Zera o display
-            textDisplay.text = "";
         }
     }
     #endregion

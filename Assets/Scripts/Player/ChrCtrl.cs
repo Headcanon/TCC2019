@@ -123,8 +123,11 @@ public class ChrCtrl : MonoBehaviour
                 moveDirection = transform.right * horizontal;
 
                 #region Pulo
-                // Zera os pulos dados
-                pulosDados = 0;
+                if (!Input.GetButton("FaceA"))
+                {
+                    // Zera os pulos dados
+                    pulosDados = 0;
+                }
 
                 // Põe a gravidade no padrão
                 gravity = 20f;
@@ -133,7 +136,7 @@ public class ChrCtrl : MonoBehaviour
                 jumpTimeCounter = jumpTime;
 
                 // Ativa a animação de pulo
-                if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
+                if (Input.GetButton("FaceA") && pulosDados == 0)
                 {
                     anim.SetTrigger("Jump");
                 }
@@ -166,13 +169,20 @@ public class ChrCtrl : MonoBehaviour
             // Se ela está no ar...
             else
             {
+                // Se soltar o botão de pulo
+                if(Input.GetButtonUp("FaceA"))
+                {
+                    // Coloca os pulos dados como 1
+                    pulosDados = 1;
+                }
+
                 // Altera a movimentação lateral sem alterar o eixo Y
                 moveDirection = new Vector3(transform.right.x * Input.GetAxis("LeftHorizontal"), moveDirection.y, 0);
             }
 
             #region Pulo
             // Enquanto o botão de pulo for apertado e ainda não tiver dado o tempo...
-            if (Input.GetButton("FaceA") && jumpTimeCounter > 0)
+            if (Input.GetButton("FaceA") && jumpTimeCounter > 0 && pulosDados < 1)
             {
                 // Adiciona movimento vertical ao vetor de movimento
                 moveDirection.y = jumpSpeed;
@@ -180,8 +190,6 @@ public class ChrCtrl : MonoBehaviour
                 // Roda o timer
                 jumpTimeCounter -= Time.deltaTime;
 
-                // Coloca os pulos dados como 1
-                pulosDados = 1;
             }
 
             // Lança um raycast pequeno pra cima
@@ -224,6 +232,10 @@ public class ChrCtrl : MonoBehaviour
             anim.SetFloat("Vel", Mathf.Abs(horizontal));
 
         }
+        else
+        {
+            anim.SetFloat("Vel", 0);
+        }
 
         // Lança um raycast pra baixo
         if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.down, out hit, 1000))
@@ -246,6 +258,7 @@ public class ChrCtrl : MonoBehaviour
 
 
     }
+    
 
     private void CallFootsteps()
     {
