@@ -12,7 +12,10 @@ public class TextManager : MonoBehaviour
     {
         textDisplay.text = "";
         // Começa a corrotina de digitação
-        StartCoroutine(TypeSentence(texto));
+        if (transform.parent.gameObject.activeSelf)
+        {
+            StartCoroutine(TypeSentence(texto));
+        }
     }
 
     #region Digitar

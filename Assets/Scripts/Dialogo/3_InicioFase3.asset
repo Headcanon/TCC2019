@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76602fb6b3ef1ce458b2a44d0dd10cd9, type: 3}
-  m_Name: InicioFase3
+  m_Name: 3_InicioFase3
   m_EditorClassIdentifier: 
   listaFrases:
   - texto: Espero chegar a tempo...
     falante: 0
     animacao: 
     tempoDesativar: 1
+    autoPassar: 0
