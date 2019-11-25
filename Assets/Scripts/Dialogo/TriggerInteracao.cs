@@ -41,28 +41,8 @@ public class TriggerInteracao : MonoBehaviour
             chr.sobControle = false;
         }
 
-        // Pra cada personagem da lista...
-        foreach (Personagems p in personagems)
-        {
-            // Se o falante dessa frase for igual a personagem que está sendo verificada...
-            if (dialogo.GetPersonagem(sentenceIndex) == p.personagem)
-            {
                 // Ativa a imagem do balão
-                p.balao.SetActive(true);
-
-                // Bota o texto
-                textDisplayed = dialogo.GetTexto(sentenceIndex);
-
-                // Começa a digitar a primeira frase
-                p.tm.Digitar(textDisplayed);
-            }
-            else
-            {
-                // Desativa a imagem do balão
-                p.balao.SetActive(false);
-            }
-        }
-
+        NextSentence();
 
     }
     #endregion
@@ -82,6 +62,9 @@ public class TriggerInteracao : MonoBehaviour
                     // Se apertar o botão de interação...
                     if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
                     {
+                        // Passa pra próxima frase
+                        sentenceIndex++;
+                        
                         // Chama a próxima frase
                         NextSentence();
                     }
@@ -95,10 +78,8 @@ public class TriggerInteracao : MonoBehaviour
     private void NextSentence()
     {
         // Se a frase atual ainda for menor do que o total de frases...
-        if (sentenceIndex < dialogo.listaFrases.Length -1)
-        {
-            // Passa pra próxima frase
-            sentenceIndex++;
+        if (sentenceIndex < dialogo.listaFrases.Length)
+        {           
 
             // Pra cada personagem da lista...
             foreach (Personagems p in personagems)
@@ -138,6 +119,7 @@ public class TriggerInteracao : MonoBehaviour
                     p.balao.SetActive(false);
                 }
             }
+
         }
     }
     #endregion

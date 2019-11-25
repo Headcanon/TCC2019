@@ -6,6 +6,7 @@ public class GrabJoint : MonoBehaviour
 {
     public Rigidbody rb;
     public ListaJoints paiDeTodos;
+    private ListaGrabJoints listaGrabJoints;
 
     private Animator anim;
 
@@ -27,7 +28,8 @@ public class GrabJoint : MonoBehaviour
             // Desativa o CharacterController
             paiDeTodos.ashCC.enabled = false;
 
-            //ash.transform.position = transform.position;
+            listaGrabJoints = paiDeTodos.GetComponent<ListaGrabJoints>();
+            other.transform.position = listaGrabJoints.JointMaisProximo(other.transform).transform.position;
 
             // Avisa o paiDeTodos pra funcionar
             paiDeTodos.naAtiva = true;

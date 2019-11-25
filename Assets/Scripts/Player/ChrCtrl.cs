@@ -196,8 +196,11 @@ public class ChrCtrl : MonoBehaviour
             // Se ele bater em alguma coisa...
             if (Physics.Raycast(transform.position - (transform.forward * 0.1f) + transform.up * 0.3f, Vector3.up, out hit, 2))
             {
-                // Zera o vetor de movimento
-                moveDirection = Vector3.zero;
+                if (!hit.collider.CompareTag("Dano"))
+                {
+                    // Zera o vetor de movimento
+                    moveDirection = Vector3.zero;
+                }
             }
             #endregion
 

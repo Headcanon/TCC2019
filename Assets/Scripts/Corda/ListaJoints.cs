@@ -54,7 +54,7 @@ public class ListaJoints : MonoBehaviour
             Rigidbody rbAtual = jmp.rb;
 
             // Define o joint mais próximo como parent da Ashley
-            ash.transform.parent = jmpTransform;
+            ash.transform.SetParent(jmpTransform, true);
 
             #region Movimento
             // Move a Ashley ao longo da corda

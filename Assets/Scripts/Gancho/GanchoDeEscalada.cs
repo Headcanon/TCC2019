@@ -79,7 +79,7 @@ public class GanchoDeEscalada : MonoBehaviour
             cc.enabled = true;
         }
 
-        if (!ganchoAtivo && ganchoAtual == null && Input.GetButtonDown("RightTrigger"))
+        if (!ganchoAtivo && ganchoAtual == null && Input.GetButtonDown("FaceY"))
         {
             anim.SetTrigger("LancaGancho");
             ganchoAtual = Instantiate(ganchoPrefab, mao.position, rotacao, mao);
@@ -100,8 +100,11 @@ public class GanchoDeEscalada : MonoBehaviour
         ashCtrl.sobControle = true;
         // Reseta o momento dela
         ashCtrl.moveDirection = Vector3.zero;
-        // Bota um impulso de pulo reduzido nela
-        ashCtrl.moveDirection.y = ashCtrl.jumpSpeed / 1.5f;
+        if (jointado)
+        {
+            // Bota um impulso de pulo reduzido nela
+            ashCtrl.moveDirection.y = ashCtrl.jumpSpeed / 1.5f;
+        }
 
         // Desativa o gancho
         ganchoAtivo = false;

@@ -14,4 +14,9 @@ public class Chave : MonoBehaviour {
         trava.travado = false;
         gameObject.SetActive(false);
     }
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up);
+    }
 }

@@ -54,7 +54,7 @@ public class DistanceJoint3D : MonoBehaviour
         Vector3 projectOnConnection = Vector3.Project(velocityTarget, connection);
         rb.velocity = (velocityTarget - projectOnConnection) / (1 + damper * Time.fixedDeltaTime);
 
-        if (Input.GetButton("RightTrigger") && transform.position.y < penduradoEm.position.y - 2)
+        if (Input.GetButton("FaceY") && transform.position.y < penduradoEm.position.y - 2)
             distance-= 5f * Time.fixedDeltaTime;
 
     }

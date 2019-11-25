@@ -8,6 +8,7 @@ TagManager:
   - Ancora
   - Parede
   - Coletavel
+  - Dano
   layers:
   - Default
   - TransparentFX
