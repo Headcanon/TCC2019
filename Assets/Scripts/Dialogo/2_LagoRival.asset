@@ -76,7 +76,14 @@ MonoBehaviour:
     autoPassar: 1
     tempoChegar: 0
     reduzirPontos: 0
-  - texto: Aquela... Eu preciso chegar no acampamento antes dela!
+  - texto: 'Aquela... '
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    tempoChegar: 0
+    reduzirPontos: 0
+  - texto: Eu preciso chegar no acampamento antes dela!
     falante: 0
     animacao: 
     tempoDesativar: 0

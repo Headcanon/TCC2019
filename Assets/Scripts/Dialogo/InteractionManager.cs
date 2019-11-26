@@ -56,7 +56,7 @@ public class InteractionManager : MonoBehaviour
         if (PermitePassar())
         {           
             // Chama a próxima frase
-            Invoke("Avancar", dialogo.GetTempoChegar(sentenceIndex +1));
+            Invoke("Avancar", 0);
         }
     }
 
@@ -107,6 +107,8 @@ public class InteractionManager : MonoBehaviour
     }
     #endregion
 
+    private float timeCounter;
+
     private bool PermitePassar()
     {
         bool permite = false;
@@ -122,15 +124,20 @@ public class InteractionManager : MonoBehaviour
                 {
                     //Debug.Log("Confirmou " + p.personagem);
                     // Se o texto em display for igual ao previsto na frase atual...
-                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex))
+                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex) && timeCounter >= dialogo.GetTempoChegar(sentenceIndex))
                     {
                         Debug.Log("O texto é igual");
                         // Se apertar o botão de interação...
                         if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
                         {
+                            timeCounter = 0;
                             Debug.Log("Foi liberado");
                             permite = true;
                         }
+                    }
+                    else if(p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex))
+                    {
+                        timeCounter += Time.deltaTime;
                     }
                 }
             }
