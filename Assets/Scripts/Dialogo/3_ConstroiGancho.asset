@@ -18,40 +18,40 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-    tempoChegar: 0
+    esperar: 0
     reduzirPontos: 0
   - texto: Preciso achar outro jeito!
     falante: 0
     animacao: 
     tempoDesativar: 0
     autoPassar: 0
-    tempoChegar: 0
+    esperar: 0
     reduzirPontos: 0
   - texto: 
     falante: 2
     animacao: Cam3
     tempoDesativar: 0
     autoPassar: 1
-    tempoChegar: 0
+    esperar: 7
     reduzirPontos: 0
   - texto: 
     falante: 2
     animacao: Cam4
     tempoDesativar: 0
     autoPassar: 1
-    tempoChegar: 5
+    esperar: 7
     reduzirPontos: 0
   - texto: 
     falante: 2
     animacao: Cam2
     tempoDesativar: 0
     autoPassar: 1
-    tempoChegar: 10
+    esperar: 0
     reduzirPontos: 0
   - texto: 
     falante: 2
     animacao: 
     tempoDesativar: 0.1
     autoPassar: 0
-    tempoChegar: 0
+    esperar: 0
     reduzirPontos: 0

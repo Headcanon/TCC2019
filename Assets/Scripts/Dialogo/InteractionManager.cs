@@ -124,7 +124,7 @@ public class InteractionManager : MonoBehaviour
                 {
                     //Debug.Log("Confirmou " + p.personagem);
                     // Se o texto em display for igual ao previsto na frase atual...
-                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex) && timeCounter >= dialogo.GetTempoChegar(sentenceIndex))
+                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex) && timeCounter >= dialogo.GetTempoEsperar(sentenceIndex))
                     {
                         Debug.Log("O texto é igual");
                         // Se apertar o botão de interação...

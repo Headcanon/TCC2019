@@ -17,7 +17,7 @@ public class Dialogo : ScriptableObject
         public string animacao;
         public float tempoDesativar;
         public bool autoPassar;
-        public float tempoChegar;
+        public float esperar;
         public int reduzirPontos;
     }
 
@@ -51,9 +51,9 @@ public class Dialogo : ScriptableObject
         return listaFrases[index].autoPassar;
     }
 
-    public float GetTempoChegar(int index)
+    public float GetTempoEsperar(int index)
     {
-        return listaFrases[index].tempoChegar;
+        return listaFrases[index].esperar;
     }
 
     public int GetReducao(int index)
