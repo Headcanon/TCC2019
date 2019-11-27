@@ -40,6 +40,8 @@ public class InteractionManager : MonoBehaviour
             chr.moveDirection = Vector3.zero;
             // Tira o controle de Player
             chr.sobControle = false;
+            // Ativa a gravidade secundária para que player não fique flutuando
+            chr.gravidadeSecundaria = true;
 
             conversaAtiva = true;
 
@@ -102,6 +104,9 @@ public class InteractionManager : MonoBehaviour
     {
         // Retorna o controle de Player
         chr.sobControle = true;
+        // Desativa a gravidade secundária
+        chr.gravidadeSecundaria = false;
+
         conversaAtiva = false;
         gameObject.SetActive(false);
     }

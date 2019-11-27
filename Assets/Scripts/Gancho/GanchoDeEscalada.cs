@@ -93,6 +93,7 @@ public class GanchoDeEscalada : MonoBehaviour
 
     public void Abortar()
     {
+        Invoke("RecobrarColisao", 5);
         // Desativa animação de gancho
         anim.SetBool("Enganchado", false);
 
@@ -110,6 +111,11 @@ public class GanchoDeEscalada : MonoBehaviour
         ganchoAtivo = false;
         jointado = false;
         Destroy(ganchoAtual);
+    }
+
+    private void RecobrarColisao()
+    {
+        Physics.IgnoreLayerCollision(0, 2, false);
     }
 
     float angulo = 0;

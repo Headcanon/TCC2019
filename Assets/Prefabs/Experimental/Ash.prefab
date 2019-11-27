@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53fedd859bfc054ebba833ac7adbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estadoAtual: 0
 --- !u!114 &1930205474864084565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +167,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ashley
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7dd200a159eb75e46a3625648e83c93d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,7 +180,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7dd200a159eb75e46a3625648e83c93d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7dd200a159eb75e46a3625648e83c93d,
         type: 3}
@@ -236,11 +242,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.2
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 7dd200a159eb75e46a3625648e83c93d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d85a21a50719bde4ab337b184a6c7530, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd200a159eb75e46a3625648e83c93d, type: 3}
 --- !u!4 &134183799155900560 stripped
