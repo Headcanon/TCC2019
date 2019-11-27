@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.517797, g: 0.81277865, b: 0.6305723, a: 1}
+  m_IndirectSpecularColor: {r: 0.5177958, g: 0.81278235, b: 0.63058466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1227,11 +1227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151899917}
     m_Modifications:
-    - target: {fileID: 4246524973559919536, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 870779176599936244, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: m_RootOrder
@@ -1507,6 +1502,67 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: dialogo
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6bfb462e336084b880afbde9f768bc,
+        type: 2}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[0].anim
+      value: 
+      objectReference: {fileID: 1213706646}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[0].balao
+      value: 
+      objectReference: {fileID: 507826194}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[1].balao
+      value: 
+      objectReference: {fileID: 1021921595}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 797
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246524973382404296, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246524973559919536, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1594588617463685601, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: m_Name
@@ -1662,62 +1718,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: dialogo
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e6bfb462e336084b880afbde9f768bc,
-        type: 2}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[0].anim
-      value: 
-      objectReference: {fileID: 1213706646}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[0].balao
-      value: 
-      objectReference: {fileID: 507826194}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[1].balao
-      value: 
-      objectReference: {fileID: 1021921595}
-    - target: {fileID: 4246524973382404296, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5426753915830923361, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 797
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed974c57000f52444adbe8fa19e89821, type: 3}
@@ -3220,6 +3220,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1576787970}
 --- !u!1 &417706091 stripped
@@ -4142,6 +4144,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 982710530}
 --- !u!4 &534545828
@@ -4151,7 +4155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534545826}
-  m_LocalRotation: {x: 0.029891213, y: -0.01918532, z: 0.0005738346, w: 0.99936885}
+  m_LocalRotation: {x: 0.029891215, y: -0.01918531, z: 0.0005738343, w: 0.99936885}
   m_LocalPosition: {x: -50.91, y: 31.3, z: -24.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4543,7 +4547,9 @@ GameObject:
   - component: {fileID: 580498735}
   - component: {fileID: 580498734}
   - component: {fileID: 580498737}
-  m_Layer: 0
+  - component: {fileID: 580498739}
+  - component: {fileID: 580498738}
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -4608,7 +4614,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580498733}
-  m_LocalRotation: {x: 0.048044927, y: -0.000000017454518, z: 8.395925e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.04804491, y: 0.00000001705328, z: -8.2020213e-10, w: 0.9988452}
   m_LocalPosition: {x: -19.6, y: 37.61731, z: -55.60913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4645,9 +4651,90 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &580498738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580498733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 7e6c9d96030514348a4026f8985660d7, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 3.08
+--- !u!114 &580498739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580498733}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 580498736}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 257
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.687
+    sharpness: 0
+    stationaryBlending: 0.95
+    motionBlending: 0.467
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &589561167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,6 +5631,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 245511107}
 --- !u!1001 &709326060
@@ -10678,11 +10767,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogoPrefab (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4246524973559919536, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 870779176599936244, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: m_RootOrder
@@ -10963,6 +11047,62 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: dialogo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4faacae2355a5744da917c4157999eb0,
+        type: 2}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[0].anim
+      value: 
+      objectReference: {fileID: 1213706646}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[0].balao
+      value: 
+      objectReference: {fileID: 62761141}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[1].personagem
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[1].balao
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[1].anim
+      value: 
+      objectReference: {fileID: 1492951198}
+    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: personagems.Array.data[1].tm
+      value: 
+      objectReference: {fileID: 522487585}
+    - target: {fileID: 4246524973382404296, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246524973559919536, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013086279492502130, guid: ed974c57000f52444adbe8fa19e89821,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1594588617463685601, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: m_Name
@@ -11117,57 +11257,6 @@ PrefabInstance:
     - target: {fileID: 5320404018841320972, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: dialogo
-      value: 
-      objectReference: {fileID: 11400000, guid: 4faacae2355a5744da917c4157999eb0,
-        type: 2}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[0].anim
-      value: 
-      objectReference: {fileID: 1213706646}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[0].balao
-      value: 
-      objectReference: {fileID: 62761141}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[1].personagem
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[1].balao
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[1].anim
-      value: 
-      objectReference: {fileID: 1492951198}
-    - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: personagems.Array.data[1].tm
-      value: 
-      objectReference: {fileID: 522487585}
-    - target: {fileID: 4246524973382404296, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013086279492502130, guid: ed974c57000f52444adbe8fa19e89821,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11813,6 +11902,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1510709121}
 --- !u!4 &1492951196
@@ -11822,7 +11913,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492951194}
-  m_LocalRotation: {x: 0.048044927, y: -0.000000017454518, z: 8.395925e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.04804491, y: 0.00000001705328, z: -8.2020213e-10, w: 0.9988452}
   m_LocalPosition: {x: -52.459564, y: 27.499996, z: -11.299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13425,6 +13516,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Press X shoot
 
     Hold it to climb'
