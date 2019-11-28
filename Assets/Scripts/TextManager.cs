@@ -5,6 +5,9 @@ using TMPro;
 
 public class TextManager : MonoBehaviour
 {
+    //public enum Lingua { Portugues, Ingles};
+    //public Lingua linguaTexto;
+
     public float typingSpeed;
     public TextMeshProUGUI textDisplay;
 
