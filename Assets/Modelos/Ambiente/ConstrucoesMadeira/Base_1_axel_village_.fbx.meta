@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 1c067a5e6b76d12488477ea62ec04461
+guid: 5cb85e183c21b6c48b4edd8167bdfca7
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Solo_com_pilares__Material.107
+    second: {fileID: 2100000, guid: 95e2947c717c5ec4cb98f4a3fc9b3273, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Solo_com_pilares__lambert2
+    second: {fileID: 2100000, guid: 5f3aa189ceed92143b04a981fa1a21f7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -81,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
