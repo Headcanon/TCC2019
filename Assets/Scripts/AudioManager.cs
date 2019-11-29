@@ -6,7 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [FMODUnity.EventRef]
-    public string jumpSound, fallSound;
+    public string jumpSound, fallSound, walkSound;
 
     public void JumpSound()
     {
@@ -16,5 +16,10 @@ public class AudioManager : MonoBehaviour
     public void FallSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot(fallSound);
+    }
+
+    public void WalkSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(walkSound);
     }
 }

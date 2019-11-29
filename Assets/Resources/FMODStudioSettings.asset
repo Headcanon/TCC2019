@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Fmod\FMOD Axle\FMOD Axle.fspro
-  SourceProjectPathUnformatted: Fmod\FMOD Axle\FMOD Axle.fspro
-  SourceBankPathUnformatted: Fmod\FMOD Axle\Build
+  sourceProjectPath: FMOD_Axel\FMOD AXEL OFICIAL.fspro
+  SourceProjectPathUnformatted: FMOD_Axel\FMOD AXEL OFICIAL.fspro
+  SourceBankPathUnformatted: FMOD_Axel\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -56,5 +56,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: 
+  MasterBank: Master Bank
   Banks: []

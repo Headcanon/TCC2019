@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b0daf89c-4826-4fda-9d38-2d5267fd5d66}">
+        <property name="assetPath">
+            <value>switch_gate.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>22.0499992</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.8281632653061225</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{1b8e0839-70d4-4c94-8a2e-4451c0416b12}</destination>
+        </relationship>
+    </object>
+</objects>
