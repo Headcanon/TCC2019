@@ -156,7 +156,7 @@ public class InteractionManager : MonoBehaviour
         #region Texto
         // Se o texto dessa frase não for vazio...
         // Isso é usado pra possibilitar frases que não tenham texto
-        if (dialogo.GetTexto(sentenceIndex) != "")
+        if (dialogo.GetTexto(sentenceIndex) != "" && p.balao !=null)
         {
             // Ativa a imagem do balão
             p.balao.SetActive(true);

@@ -144,7 +144,7 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 1
-    esperar: 10
+    esperar: 7
     reduzirPontos: 0
   - texto: '...'
     falante: 1
@@ -161,9 +161,23 @@ MonoBehaviour:
     esperar: 0
     reduzirPontos: 0
   - texto: 
-    falante: 1
-    animacao: 
-    tempoDesativar: 0.1
-    autoPassar: 0
+    falante: 3
+    animacao: FadeIn
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: Continua...
+    falante: 3
+    animacao: FadeIn
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: 
+    falante: 4
+    animacao: Creditos
+    tempoDesativar: 0
+    autoPassar: 1
     esperar: 0
     reduzirPontos: 0

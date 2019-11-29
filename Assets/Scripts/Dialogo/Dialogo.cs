@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogo", menuName = "ScriptableObjects/Dialogo", order = 1)]
 public class Dialogo : ScriptableObject
 {
-    public enum Personagem { Ashley, Rival, Camera };    
+    public enum Personagem { Ashley, Rival, Camera, Fade, UI };    
 
     public Frase[] listaFrases;
 
