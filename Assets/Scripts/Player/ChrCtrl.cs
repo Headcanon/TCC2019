@@ -198,8 +198,11 @@ public class ChrCtrl : MonoBehaviour
             {
                 if (!hit.collider.CompareTag("Dano"))
                 {
-                    // Zera o vetor de movimento
-                    moveDirection = Vector3.zero;
+                    // Reverte a força vertical
+                    moveDirection.y = -1;
+
+                    // Coloca os pulos dados como 1
+                    pulosDados = 1;
                 }
             }
             #endregion
