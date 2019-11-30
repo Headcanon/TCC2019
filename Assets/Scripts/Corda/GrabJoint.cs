@@ -8,6 +8,9 @@ public class GrabJoint : MonoBehaviour
     public ListaJoints paiDeTodos;
     private ListaGrabJoints listaGrabJoints;
 
+    [FMODUnity.EventRef]
+    public string grabSound;
+
     private Animator anim;
 
     // Quando a Ashley entra no trigger...
@@ -20,6 +23,10 @@ public class GrabJoint : MonoBehaviour
             anim = other.transform.GetChild(0).GetComponent<Animator>();
             // Ativa o ciclo de animações de corda
             anim.SetTrigger("EntraCorda");
+
+            // Ativa o som de enganchar
+            FMODUnity.RuntimeManager.PlayOneShot(grabSound);
+            paiDeTodos.range.start();
 
             // Reseta o momento dela
             paiDeTodos.ashCtrl.moveDirection = Vector3.zero;

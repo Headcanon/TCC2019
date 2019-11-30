@@ -30,6 +30,10 @@ public class TextManager : MonoBehaviour
         {
             // Adiciona uma letra no texto de display
             textDisplay.text += letra;
+
+            if(speechSound != null && speechSound != "")
+            FMODUnity.RuntimeManager.PlayOneShot(speechSound);
+
             // Espera o tempo determinado
             yield return new WaitForSeconds(typingSpeed);
         }
