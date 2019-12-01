@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196056784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0252, y: 0.0279, z: 0.0027000047}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.025199998, y: 0.0279, z: 0.002700007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8229210149308581267}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3470090816170925560
 GameObject:
@@ -58,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8229210149308581267}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4428208454800116772
 MonoBehaviour:
@@ -83,8 +83,6 @@ MonoBehaviour:
   speed: 6
   highSpeed: 9
   aceleTime: 1.5
-  walkRepeatRate: 0
-  passosSound: {fileID: 0}
   gravidadeSecundaria: 0
 --- !u!1001 &8585942043557170118
 PrefabInstance:
@@ -93,6 +91,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+        type: 3}
+      propertyPath: m_Name
+      value: AshGanchavel Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 365745721292541525, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -148,11 +151,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
-        type: 3}
-      propertyPath: m_Name
-      value: AshGanchavel Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 134183799155900560, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -172,6 +170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819592397571521128, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+        type: 3}
+      propertyPath: climbSound
+      value: event:/sfx/cipo_climbing
       objectReference: {fileID: 0}
     - target: {fileID: 4972639113314385608, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}

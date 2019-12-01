@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerGroup" id="{903fad05-1d2e-4972-80cc-b536ee4e49e8}">
+        <property name="name">
+            <value>VITORIA</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{794e6684-a9be-4b8b-8fdb-51e610f8a2f8}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{4d498438-b627-4277-ac8f-aae38637869a}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{082ddded-92fd-4ba7-bbb9-8ff72e2b3bc5}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{794e6684-a9be-4b8b-8fdb-51e610f8a2f8}">
+        <relationship name="effects">
+            <destination>{e6089294-4242-4d41-b605-5940ab2e95b3}</destination>
+            <destination>{65950dc9-f478-4a3a-a7c0-52fe13c84503}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{4d498438-b627-4277-ac8f-aae38637869a}"/>
+    <object class="MixerBusFader" id="{e6089294-4242-4d41-b605-5940ab2e95b3}"/>
+    <object class="Sidechain" id="{65950dc9-f478-4a3a-a7c0-52fe13c84503}">
+        <relationship name="targets">
+            <destination>{a2de26cb-07e9-4ae2-b2bc-60b1fa97ff11}</destination>
+        </relationship>
+    </object>
+</objects>

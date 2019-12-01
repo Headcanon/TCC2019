@@ -27,6 +27,20 @@ MonoBehaviour:
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Andar
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 5
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Idle
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
   - texto: "Ei! O que voc\xEA t\xE1 fazendo?"
     falante: 1
     animacao: 
@@ -144,7 +158,7 @@ MonoBehaviour:
     animacao: 
     tempoDesativar: 0
     autoPassar: 1
-    esperar: 10
+    esperar: 5
     reduzirPontos: 0
   - texto: '...'
     falante: 1
@@ -157,13 +171,20 @@ MonoBehaviour:
     falante: 1
     animacao: 
     tempoDesativar: 0
-    autoPassar: 0
-    esperar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: Continua...
+    falante: 3
+    animacao: FadeIn
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
     reduzirPontos: 0
   - texto: 
-    falante: 1
-    animacao: 
-    tempoDesativar: 0.1
-    autoPassar: 0
+    falante: 4
+    animacao: Creditos
+    tempoDesativar: 0
+    autoPassar: 1
     esperar: 0
     reduzirPontos: 0
