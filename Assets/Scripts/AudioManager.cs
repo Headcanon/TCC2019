@@ -6,7 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [FMODUnity.EventRef]
-    public string jumpSound, fallSound, walkSound, climbSound;
+    public string jumpSound, fallSound, walkSound, climbSound, hookSound;
 
     public void JumpSound()
     {
@@ -26,5 +26,11 @@ public class AudioManager : MonoBehaviour
     public void ClimbSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot(climbSound);
+    }
+
+    public void HookSound()
+    {
+        // Ativa o som do gancho
+        FMODUnity.RuntimeManager.PlayOneShot(hookSound);
     }
 }

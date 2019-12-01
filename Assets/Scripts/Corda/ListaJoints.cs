@@ -22,6 +22,7 @@ public class ListaJoints : MonoBehaviour
     // Velocidade de escalada da corda
     public float velocidadeEscalada;
 
+    public float volumeMultiplier = 10;
     [FMODUnity.EventRef]
     public string rangeSound;
     public FMOD.Studio.EventInstance range;
@@ -74,9 +75,7 @@ public class ListaJoints : MonoBehaviour
             {
                 // Move na direção do child do joint mais próximo
                 ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmpTransform.GetChild(0).position, Mathf.Abs(vertical));
-            }
-
-            //range.setVolume()
+            }            
 
             // Ativa a animação
             anim.SetFloat("DireCorda", Input.GetAxis("LeftVertical"));
@@ -87,9 +86,11 @@ public class ListaJoints : MonoBehaviour
             // Adiciona força de acordo com o eixo horizontal pra fazer a corda se movimentar lateralmente
             float horizontal = Input.GetAxis("LeftHorizontal");            
             rbAtual.AddForce(new Vector3(horizontal * forcaBalango, 0, 0));
+
+            range.setVolume(Mathf.Abs(horizontal) * volumeMultiplier);
             #endregion
 
-            if(Input.GetButton("FaceA"))
+            if (Input.GetButton("FaceA"))
             {
                 Abortar();
             }

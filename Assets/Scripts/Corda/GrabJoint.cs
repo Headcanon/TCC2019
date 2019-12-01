@@ -28,6 +28,7 @@ public class GrabJoint : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(grabSound);
             paiDeTodos.range.start();
 
+
             // Reseta o momento dela
             paiDeTodos.ashCtrl.moveDirection = Vector3.zero;
             // Tira o controle do Player
