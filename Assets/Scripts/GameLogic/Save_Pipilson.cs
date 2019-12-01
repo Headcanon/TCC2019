@@ -73,13 +73,13 @@ public class Save_Pipilson : MonoBehaviour
     void Update()
     {
         #region Debug
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.Z)) //Save
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.Z)) //Save
         {
             PlayerPrefsX.SetVector3("pos", player.transform.position);
             print("Save");
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.X)) //Load
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.X)) //Load
         {
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos");
@@ -87,21 +87,27 @@ public class Save_Pipilson : MonoBehaviour
             print("Load");
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.P)) //Delete
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.P)) //Delete
         {
             PlayerPrefs.DeleteAll();
             print("Delete");
         }
+
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.R)) //Reset
+        {
+            Resetar();
+            print("Reset");
+        }
         #endregion
     }
 
-    public void CheckPoint()
+    public void CheckPoint(Vector3 pos)
     {
         // Som de save
         FMODUnity.RuntimeManager.PlayOneShot(saveSound);
 
         // Salva posição de player
-        PlayerPrefsX.SetVector3("pos", player.transform.position);
+        PlayerPrefsX.SetVector3("pos", pos);
 
         // Salva o indice da última cena acessada
         PlayerPrefs.SetInt("lastSceneIndex", SceneManager.GetActiveScene().buildIndex);
