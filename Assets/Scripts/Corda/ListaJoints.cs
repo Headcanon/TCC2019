@@ -90,7 +90,7 @@ public class ListaJoints : MonoBehaviour
             range.setVolume(Mathf.Abs(horizontal) * volumeMultiplier);
             #endregion
 
-            if (Input.GetButton("FaceA"))
+            if (Input.GetButtonDown("FaceA"))
             {
                 Abortar();
             }
