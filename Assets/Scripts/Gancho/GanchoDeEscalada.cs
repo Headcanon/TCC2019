@@ -24,8 +24,8 @@ public class GanchoDeEscalada : MonoBehaviour
 
     public GameObject ganchoPrefab;
 
-    [FMODUnity.EventRef]
-    public string hookSound;
+    //[FMODUnity.EventRef]
+    //public string hookSound;
 
     //public GameObject seta;
     private GameObject ganchoAtual;
@@ -66,8 +66,7 @@ public class GanchoDeEscalada : MonoBehaviour
             // Conecta o Hinjejoint ao Rigidbody identificado
             dj3D.penduradoEm = conectadoEm.transform;
 
-            // Ativa o som do gancho
-            FMODUnity.RuntimeManager.PlayOneShot(hookSound);
+            
         }
         else if (!jointado && rb != null && dj3D != null)
         {
@@ -81,6 +80,9 @@ public class GanchoDeEscalada : MonoBehaviour
 
         if (!ganchoAtivo && ganchoAtual == null && Input.GetButtonDown("FaceY"))
         {
+            // Ativa o som do gancho
+            FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/launching_hook");
+
             anim.SetTrigger("LancaGancho");
             ganchoAtual = Instantiate(ganchoPrefab, mao.position, rotacao, mao);
             ganchoAtivo = true;
@@ -93,6 +95,7 @@ public class GanchoDeEscalada : MonoBehaviour
 
     public void Abortar()
     {
+        Invoke("RecobrarColisao", 5);
         // Desativa animação de gancho
         anim.SetBool("Enganchado", false);
 
@@ -110,6 +113,11 @@ public class GanchoDeEscalada : MonoBehaviour
         ganchoAtivo = false;
         jointado = false;
         Destroy(ganchoAtual);
+    }
+
+    private void RecobrarColisao()
+    {
+        Physics.IgnoreLayerCollision(0, 2, false);
     }
 
     float angulo = 0;

@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76602fb6b3ef1ce458b2a44d0dd10cd9, type: 3}
+  m_Name: 3_BrigaFinal
+  m_EditorClassIdentifier: 
+  listaFrases:
+  - texto: Cheguei!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Deve estar no meio desses pap\xE9is..."
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Andar
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 5
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Idle
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Ei! O que voc\xEA t\xE1 fazendo?"
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Eu... Uh...
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Era isso que voc\xEA queria dizer?"
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Voc\xEA invadiu o meu acampamento"
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: pra roubar meu experimento?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Eu n\xE3o tava roubando!"
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Eu s\xF3..."
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Olha, me contaram o que aconteceu
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Que a sua inven\xE7\xE3o deu errado..."
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Eu podia ter consertado!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "S\xF3 precisava de mais tempo!"
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Se voc\xEA n\xE3o tivesse me plagiado..."
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Pl\xE1gio!?"
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "\xC9 voc\xEA quem veio roubar minhas coisas!"
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Eu n\xE3o t\xF4 roubando!"
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: "Voc\xEA t\xE1 roubando!"
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 5
+    reduzirPontos: 0
+  - texto: '...'
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Que barulho foi esse?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: Continua...
+    falante: 3
+    animacao: FadeIn
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: 
+    falante: 4
+    animacao: Creditos
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0

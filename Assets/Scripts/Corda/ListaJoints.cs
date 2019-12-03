@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ListaJoints : MonoBehaviour
 {
-    private enum Estados { Subindo, Descendo, Fora, Parado}
-    private Estados estadoAtual;
+    //private enum Estados { Subindo, Descendo, Fora, Parado}
+    //private Estados estadoAtual;
 
     public float forcaBalango = 2;
 
@@ -22,11 +22,17 @@ public class ListaJoints : MonoBehaviour
     // Velocidade de escalada da corda
     public float velocidadeEscalada;
 
+    public float volumeMultiplier = 10;
+    [FMODUnity.EventRef]
+    public string rangeSound;
+    public FMOD.Studio.EventInstance range;
+    
     private Animator anim;
 
     // Start is called before the first frame update
     private void Start()
     {
+        range = FMODUnity.RuntimeManager.CreateInstance(rangeSound);
         // Cria a lista
         listaJoints = GetComponent<ListaGrabJoints>();
 
@@ -69,7 +75,7 @@ public class ListaJoints : MonoBehaviour
             {
                 // Move na direção do child do joint mais próximo
                 ash.transform.position = Vector3.MoveTowards(ash.transform.position, jmpTransform.GetChild(0).position, Mathf.Abs(vertical));
-            }
+            }            
 
             // Ativa a animação
             anim.SetFloat("DireCorda", Input.GetAxis("LeftVertical"));
@@ -80,9 +86,11 @@ public class ListaJoints : MonoBehaviour
             // Adiciona força de acordo com o eixo horizontal pra fazer a corda se movimentar lateralmente
             float horizontal = Input.GetAxis("LeftHorizontal");            
             rbAtual.AddForce(new Vector3(horizontal * forcaBalango, 0, 0));
+
+            range.setVolume(Mathf.Abs(horizontal) * volumeMultiplier);
             #endregion
 
-            if(Input.GetButton("FaceA"))
+            if (Input.GetButtonDown("FaceA"))
             {
                 Abortar();
             }
@@ -121,6 +129,8 @@ public class ListaJoints : MonoBehaviour
         ashCC.enabled = true;
 
         ashCtrl.transform.parent = null;
+
+        range.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         // Avisa o paiDeTodos pra parar de funcionar
         naAtiva = false;

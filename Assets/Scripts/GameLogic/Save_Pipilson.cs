@@ -18,7 +18,7 @@ public class Save_Pipilson : MonoBehaviour
     private BotaoPlataforma[] alavancas;
     private Pontuacao pontos;
 
-    private int contagemDeLevels = 0;
+    private int contagemDeLevels;
 
     void Awake()
     {        
@@ -37,13 +37,15 @@ public class Save_Pipilson : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        // Mais um level carregado nesse playthrough
-        contagemDeLevels++;
 
         // Encontra player e seu character controller
         player = GameObject.FindGameObjectWithTag("Player");
         charCtrl = player.GetComponent<CharacterController>();
         vida = player.GetComponent<Vida>();
+
+        // Mais um level carregado nesse playthrough
+        contagemDeLevels++;
+        Debug.Log("contou mais um - " + contagemDeLevels);
 
         // Acha todas as paredes com a tag
         paredes = GameObject.FindGameObjectsWithTag("Parede");
@@ -55,6 +57,7 @@ public class Save_Pipilson : MonoBehaviour
         // Se já existe um save da posição de player e ainda não carregou dois levels nesse playthrough...
         if (PlayerPrefs.HasKey("pos") && contagemDeLevels < 2)
         {
+            Debug.Log("carregou player - " + contagemDeLevels);
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos"); // Carrega a posição de player
             charCtrl.enabled = true;
@@ -70,13 +73,13 @@ public class Save_Pipilson : MonoBehaviour
     void Update()
     {
         #region Debug
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.Z)) //Save
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.Z)) //Save
         {
             PlayerPrefsX.SetVector3("pos", player.transform.position);
             print("Save");
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.X)) //Load
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.X)) //Load
         {
             charCtrl.enabled = false;
             player.transform.position = PlayerPrefsX.GetVector3("pos");
@@ -84,21 +87,27 @@ public class Save_Pipilson : MonoBehaviour
             print("Load");
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && Input.GetKeyDown(KeyCode.P)) //Delete
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.P)) //Delete
         {
             PlayerPrefs.DeleteAll();
             print("Delete");
         }
+
+        if (Input.GetKey(KeyCode.G) && Input.GetKeyDown(KeyCode.R)) //Reset
+        {
+            Resetar();
+            print("Reset");
+        }
         #endregion
     }
 
-    public void CheckPoint()
+    public void CheckPoint(Vector3 pos)
     {
         // Som de save
         FMODUnity.RuntimeManager.PlayOneShot(saveSound);
 
         // Salva posição de player
-        PlayerPrefsX.SetVector3("pos", player.transform.position);
+        PlayerPrefsX.SetVector3("pos", pos);
 
         // Salva o indice da última cena acessada
         PlayerPrefs.SetInt("lastSceneIndex", SceneManager.GetActiveScene().buildIndex);

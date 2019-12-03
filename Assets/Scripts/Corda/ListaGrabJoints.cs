@@ -6,6 +6,9 @@ public class ListaGrabJoints : MonoBehaviour
 {
     public List<GrabJoint> listaJoints;
 
+    [FMODUnity.EventRef]
+    public string grabSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,9 @@ public class ListaGrabJoints : MonoBehaviour
             gj.rb = child.gameObject.GetComponent<Rigidbody>();
             gj.rb.centerOfMass = new Vector3(0, 0, 0);
             gj.rb.inertiaTensor = new Vector3(1, 1, 1);
+
+            // Define o som de enganchar
+            gj.grabSound = grabSound;
 
             // Define o parametro paiDeTodos como essa lista
             gj.paiDeTodos = GetComponent<ListaJoints>();

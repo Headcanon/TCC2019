@@ -51,6 +51,7 @@ public class BlendCorda : MonoBehaviour
             gde.conectadoEm = other.transform;
             gde.jointado = true;
             procurando = false;
+            Physics.IgnoreLayerCollision(0, 2, true);
         }
     }
 }

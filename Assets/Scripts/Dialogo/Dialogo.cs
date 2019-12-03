@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogo", menuName = "ScriptableObjects/Dialogo", order = 1)]
 public class Dialogo : ScriptableObject
 {
-    public enum Personagem { Ashley, Rival, Camera };    
+    public enum Personagem { Ashley, Rival, Camera, Fade, UI };    
 
     public Frase[] listaFrases;
 
@@ -17,7 +17,7 @@ public class Dialogo : ScriptableObject
         public string animacao;
         public float tempoDesativar;
         public bool autoPassar;
-        public float tempoChegar;
+        public float esperar;
         public int reduzirPontos;
     }
 
@@ -51,9 +51,9 @@ public class Dialogo : ScriptableObject
         return listaFrases[index].autoPassar;
     }
 
-    public float GetTempoChegar(int index)
+    public float GetTempoEsperar(int index)
     {
-        return listaFrases[index].tempoChegar;
+        return listaFrases[index].esperar;
     }
 
     public int GetReducao(int index)

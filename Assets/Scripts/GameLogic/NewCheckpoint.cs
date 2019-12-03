@@ -5,6 +5,7 @@ using UnityEngine;
 /* Quando o player passa por esse GameObject ele se torno seu novo checkpoint */
 public class NewCheckpoint : MonoBehaviour
 {
+    public Transform spawnPoint;
     private Vida pl;
     private Save_Pipilson save;
 
@@ -19,8 +20,8 @@ public class NewCheckpoint : MonoBehaviour
 
         if(pl != null )
         {
-            pl.spawnPoint = gameObject.transform;
-            save.CheckPoint();
+            pl.spawnPoint = spawnPoint;
+            save.CheckPoint(spawnPoint.position);
         }
     }
 }

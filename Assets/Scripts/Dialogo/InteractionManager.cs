@@ -40,6 +40,8 @@ public class InteractionManager : MonoBehaviour
             chr.moveDirection = Vector3.zero;
             // Tira o controle de Player
             chr.sobControle = false;
+            // Ativa a gravidade secundária para que player não fique flutuando
+            chr.gravidadeSecundaria = true;
 
             conversaAtiva = true;
 
@@ -56,7 +58,7 @@ public class InteractionManager : MonoBehaviour
         if (PermitePassar())
         {           
             // Chama a próxima frase
-            Invoke("Avancar", dialogo.GetTempoChegar(sentenceIndex +1));
+            Invoke("Avancar", 0);
         }
     }
 
@@ -102,10 +104,15 @@ public class InteractionManager : MonoBehaviour
     {
         // Retorna o controle de Player
         chr.sobControle = true;
+        // Desativa a gravidade secundária
+        chr.gravidadeSecundaria = false;
+
         conversaAtiva = false;
         gameObject.SetActive(false);
     }
     #endregion
+
+    private float timeCounter;
 
     private bool PermitePassar()
     {
@@ -122,15 +129,20 @@ public class InteractionManager : MonoBehaviour
                 {
                     //Debug.Log("Confirmou " + p.personagem);
                     // Se o texto em display for igual ao previsto na frase atual...
-                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex))
+                    if (p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex) && timeCounter >= dialogo.GetTempoEsperar(sentenceIndex))
                     {
                         Debug.Log("O texto é igual");
                         // Se apertar o botão de interação...
                         if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
                         {
+                            timeCounter = 0;
                             Debug.Log("Foi liberado");
                             permite = true;
                         }
+                    }
+                    else if(p.tm.textDisplay.text == dialogo.GetTexto(sentenceIndex))
+                    {
+                        timeCounter += Time.deltaTime;
                     }
                 }
             }
@@ -144,7 +156,7 @@ public class InteractionManager : MonoBehaviour
         #region Texto
         // Se o texto dessa frase não for vazio...
         // Isso é usado pra possibilitar frases que não tenham texto
-        if (dialogo.GetTexto(sentenceIndex) != "")
+        if (dialogo.GetTexto(sentenceIndex) != "" && p.balao !=null)
         {
             // Ativa a imagem do balão
             p.balao.SetActive(true);

@@ -15,6 +15,8 @@ public class Vida : MonoBehaviour
 
     // Slider que representa a vida
     private Slider barraVida;
+    // Animador pro fade
+    private Animator anim;
 
     #region Slider
     // Update is called once per frame
@@ -44,6 +46,8 @@ public class Vida : MonoBehaviour
         // Se a vida ainda for maior que zero e houver um spawnpoint indicado...
         if (vida > 0 && spawnPoint != null)
         {
+            anim = GameObject.Find("Fade").GetComponent<Animator>();
+            anim.SetTrigger("FadeIn");
             // Desativa o Game Object
             gameObject.SetActive(false);
             // Espera o tempo indicado para ativar o respawn
@@ -72,5 +76,7 @@ public class Vida : MonoBehaviour
         transform.position = spawnPoint.position;
         // Reativa o Game Object
         gameObject.SetActive(true);
+
+        anim.SetTrigger("FadeOut");
     }
 }
