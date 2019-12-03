@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76602fb6b3ef1ce458b2a44d0dd10cd9, type: 3}
+  m_Name: 3_BrigaFinal EN
+  m_EditorClassIdentifier: 
+  listaFrases:
+  - texto: Made it!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I bet it is in this pile of papers...
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Andar
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 5
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: Idle
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Hey! What are you doing?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I... Um...
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Is this what you were talking about?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: You broke into my camp
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: to steal my experiment?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I wasn't stealing it!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I just...
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Look, they told me what happened
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Your invention went wrong...
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I could fix it!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I just needed more time!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: If only you hadn't plagiarised me...
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: Plagiarise!?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: You are the one stealing my stuff!
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: I am not stealing!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: You are stealing!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: 
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 5
+    reduzirPontos: 0
+  - texto: '...'
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+  - texto: What was that noise?
+    falante: 1
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: To be continued...
+    falante: 3
+    animacao: FadeIn
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 2
+    reduzirPontos: 0
+  - texto: 
+    falante: 4
+    animacao: Creditos
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
