@@ -64,8 +64,11 @@ public class BotaoPlataforma : MonoBehaviour {
         {
             Invoke("PlatComand", delay);
 
-            // Ativa o som
-            FMODUnity.RuntimeManager.PlayOneShot(buttSound);
+            if (!apertado)
+            {
+                // Ativa o som
+                FMODUnity.RuntimeManager.PlayOneShot(buttSound);
+            }
 
             // Ativa animação
             anim.SetTrigger("Ativar");

@@ -133,7 +133,7 @@ public class InteractionManager : MonoBehaviour
                     {
                         Debug.Log("O texto é igual");
                         // Se apertar o botão de interação...
-                        if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") && chr != null)
+                        if (dialogo.GetPassar(sentenceIndex) || Input.GetButtonDown("FaceX") || Input.GetButtonDown("FaceA") || Input.anyKey && chr != null)
                         {
                             timeCounter = 0;
                             Debug.Log("Foi liberado");

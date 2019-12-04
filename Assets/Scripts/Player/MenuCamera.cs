@@ -10,6 +10,7 @@ public class MenuCamera : MonoBehaviour
     public string clickSound;
 
     private ChrCtrl player;
+    private Animator cameraAnim;
     private bool activeMenu;
     private int contagemDeLevels = 0;
 
@@ -19,9 +20,10 @@ public class MenuCamera : MonoBehaviour
         contagemDeLevels++;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<ChrCtrl>();
+        cameraAnim = GameObject.Find("CM vcam1").GetComponent<Animator>();
 
         // Se ainda não carregou dois levels nesse playthrough...
-        if (contagemDeLevels < 2)
+        if (contagemDeLevels == 1)
         {
             PauseCamera();
         }
@@ -31,21 +33,20 @@ public class MenuCamera : MonoBehaviour
     private void Update()
     {
         if(Input.GetButtonDown("Start") && !activeMenu)
-        {
-            menuScreen.gameObject.SetActive(true);
-            ui.gameObject.SetActive(false);
+        {           
             PauseCamera();
         }
         else if (Input.GetButtonDown("Start") && activeMenu)
         {
-            menuScreen.gameObject.SetActive(false);
-            ui.gameObject.SetActive(true);
             PlayCamera();
         }
     }
 
     public void PauseCamera()
     {
+        menuScreen.gameObject.SetActive(true);
+        ui.gameObject.SetActive(false);
+
         player.moveDirection = Vector3.zero;
         player.gravidadeSecundaria = true;
         player.sobControle = false;
@@ -55,6 +56,10 @@ public class MenuCamera : MonoBehaviour
 
     public void PlayCamera()
     {
+
+        menuScreen.gameObject.SetActive(false);
+        ui.gameObject.SetActive(true);
+
         player.moveDirection = Vector3.zero;
         player.gravidadeSecundaria = false;
         player.sobControle = true;

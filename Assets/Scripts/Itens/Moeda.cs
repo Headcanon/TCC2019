@@ -19,7 +19,7 @@ public class Moeda : MonoBehaviour
 
     private void Update()
     {
-        modelo.Rotate(rotacao);
+        modelo.Rotate(rotacao * Time.deltaTime);
     }
 
     void FixedUpdate()
