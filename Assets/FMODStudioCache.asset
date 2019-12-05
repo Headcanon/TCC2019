@@ -2661,38 +2661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -3389900520823996284}
-  - {fileID: 701292008734014541}
-  EditorEvents:
-  - {fileID: 6205836563896283113}
-  - {fileID: -7940197425719453298}
-  - {fileID: 8454889989073085922}
-  - {fileID: -6229231625611196924}
-  - {fileID: -7018353058973911227}
-  - {fileID: -6431992082437405186}
-  - {fileID: -6501957731259488858}
-  - {fileID: 1689009035754279753}
-  - {fileID: -3333615977487685279}
-  - {fileID: -6945901948820480917}
-  - {fileID: -3440628971285049771}
-  - {fileID: -2162611227750443095}
-  - {fileID: 6297344389808105474}
-  - {fileID: -509336484449001637}
-  - {fileID: -8203088140347202310}
-  - {fileID: 8330382511996190380}
-  - {fileID: 5056127607943702409}
-  - {fileID: 1812823258523863266}
-  - {fileID: -6233329095758274590}
-  - {fileID: -5433014615925003248}
-  - {fileID: 2800777868520544673}
-  - {fileID: 56168410463746530}
-  - {fileID: -539009000810373181}
-  - {fileID: -585249765232719167}
-  - {fileID: 8412816426662037078}
-  MasterBankRef: {fileID: 701292008734014541}
-  StringsBankRef: {fileID: -3389900520823996284}
-  stringsBankWriteTime: 637106618860000000
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
   cacheVersion: 2
 --- !u!114 &56168410463746530
 MonoBehaviour:
