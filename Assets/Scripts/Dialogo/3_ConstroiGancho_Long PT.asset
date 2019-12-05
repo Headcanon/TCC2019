@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76602fb6b3ef1ce458b2a44d0dd10cd9, type: 3}
+  m_Name: 3_ConstroiGancho_Long PT
+  m_EditorClassIdentifier: 
+  listaFrases:
+  - texto: "Aquela parede \xE9 muito alta...."
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+    som: 
+  - texto: Preciso achar outro jeito!
+    falante: 0
+    animacao: 
+    tempoDesativar: 0
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 0
+    animacao: Construir
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+    som: event:/music/fanf_vitoria
+  - texto: 
+    falante: 2
+    animacao: Cam3
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 3.3
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 2
+    animacao: Cam4
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 4.3
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 2
+    animacao: Cam5
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 3.3
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 0
+    animacao: Idle
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 2
+    animacao: Cam2
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+    som: 
+  - texto: Precione X para atirar Segure para puxar
+    falante: 2
+    animacao: 
+    tempoDesativar: 0.1
+    autoPassar: 0
+    esperar: 0
+    reduzirPontos: 0
+    som: 

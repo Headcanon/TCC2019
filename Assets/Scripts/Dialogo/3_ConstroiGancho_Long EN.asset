@@ -20,6 +20,7 @@ MonoBehaviour:
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+    som: 
   - texto: I need to find another way!
     falante: 0
     animacao: 
@@ -27,20 +28,47 @@ MonoBehaviour:
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 0
+    animacao: Construir
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+    som: event:/music/fanf_vitoria
   - texto: 
     falante: 2
     animacao: Cam3
     tempoDesativar: 0
     autoPassar: 1
-    esperar: 7
+    esperar: 3.3
     reduzirPontos: 0
+    som: 
   - texto: 
     falante: 2
     animacao: Cam4
     tempoDesativar: 0
     autoPassar: 1
-    esperar: 7
+    esperar: 4.3
     reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 2
+    animacao: Cam5
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 3.3
+    reduzirPontos: 0
+    som: 
+  - texto: 
+    falante: 0
+    animacao: Idle
+    tempoDesativar: 0
+    autoPassar: 1
+    esperar: 0
+    reduzirPontos: 0
+    som: 
   - texto: 
     falante: 2
     animacao: Cam2
@@ -48,10 +76,12 @@ MonoBehaviour:
     autoPassar: 1
     esperar: 0
     reduzirPontos: 0
-  - texto: Press X to shoot Hold it to climb
+    som: 
+  - texto: Press X to shoot    Hold it to climb
     falante: 2
     animacao: 
     tempoDesativar: 0.1
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+    som: 

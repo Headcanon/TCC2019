@@ -19,6 +19,8 @@ public class Dialogo : ScriptableObject
         public bool autoPassar;
         public float esperar;
         public int reduzirPontos;
+        [FMODUnity.EventRef]
+        public string som;
     }
 
     public Frase GetFrase(int index)
@@ -59,5 +61,11 @@ public class Dialogo : ScriptableObject
     public int GetReducao(int index)
     {
         return listaFrases[index].reduzirPontos;
+    }
+    
+    
+    public string GetSom(int index)
+    {
+        return listaFrases[index].som;
     }
 }

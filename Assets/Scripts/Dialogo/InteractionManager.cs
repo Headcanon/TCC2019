@@ -185,6 +185,15 @@ public class InteractionManager : MonoBehaviour
         }
         #endregion
 
+        #region Som
+        // Se a animação dessa frase não for vazia...
+        // Isso é usado pra possibilitar frases que não tenham animação
+        if (dialogo.GetSom(sentenceIndex) != "")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(dialogo.GetSom(sentenceIndex));
+        }
+        #endregion
+
         #region Redução de pontuação
         if (dialogo.GetReducao(sentenceIndex) != 0)
         {

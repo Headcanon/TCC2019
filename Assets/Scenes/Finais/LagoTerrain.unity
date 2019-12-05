@@ -13821,7 +13821,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390115906}
-  m_LocalRotation: {x: 0.008563245, y: 0.037403803, z: -0.00032053396, w: 0.9992635}
+  m_LocalRotation: {x: 0.00856893, y: 0.0084742475, z: -0.000072620474, w: 0.9999274}
   m_LocalPosition: {x: -76, y: 45.949997, z: -55.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -21278,6 +21278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881977963}
     m_Modifications:
+    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Ash
+      objectReference: {fileID: 0}
     - target: {fileID: 365745721292541525, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21333,10 +21338,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 365745721292541528, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+    - target: {fileID: 1930205474864084565, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
-      propertyPath: m_Name
-      value: Ash
+      propertyPath: passosSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 365745721292541522, guid: d7c9331d2988eca4283d0794e8f6fe1e,
+        type: 3}
+      propertyPath: barraVida
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 365745721292541529, guid: d7c9331d2988eca4283d0794e8f6fe1e,
         type: 3}
@@ -21352,16 +21362,6 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpSpeed
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 365745721292541522, guid: d7c9331d2988eca4283d0794e8f6fe1e,
-        type: 3}
-      propertyPath: barraVida
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930205474864084565, guid: d7c9331d2988eca4283d0794e8f6fe1e,
-        type: 3}
-      propertyPath: passosSound
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7c9331d2988eca4283d0794e8f6fe1e, type: 3}

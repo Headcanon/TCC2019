@@ -20,13 +20,15 @@ MonoBehaviour:
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+    som: 
   - texto: I need to find another way!
     falante: 0
-    animacao: 
+    animacao: Construir
     tempoDesativar: 0
     autoPassar: 0
     esperar: 0
     reduzirPontos: 0
+    som: 
   - texto: Press X to shoot Hold it to climb
     falante: 2
     animacao: Cam2
@@ -34,3 +36,4 @@ MonoBehaviour:
     autoPassar: 1
     esperar: 7
     reduzirPontos: 10
+    som: 
