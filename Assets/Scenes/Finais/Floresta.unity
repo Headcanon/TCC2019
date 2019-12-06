@@ -4026,7 +4026,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogo
       value: 
-      objectReference: {fileID: 11400000, guid: 7e6bfb462e336084b880afbde9f768bc,
+      objectReference: {fileID: 11400000, guid: 834aecb663a500142a591965d5e9f3ad,
         type: 2}
     - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
@@ -4077,7 +4077,7 @@ PrefabInstance:
         type: 3}
       propertyPath: personagems.Array.data[3].anim
       value: 
-      objectReference: {fileID: 1122600067}
+      objectReference: {fileID: 2105322738}
     - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
       propertyPath: personagems.Array.data[3].tm
@@ -10811,7 +10811,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580498733}
-  m_LocalRotation: {x: 0.048044994, y: -0.00000001732026, z: 8.331231e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.048044976, y: 0.000000017320259, z: -8.3310425e-10, w: 0.9988452}
   m_LocalPosition: {x: -22.6, y: -44.28269, z: -55.60913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -14109,7 +14109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d201df8187484c44b86eef7d1d524b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcaBalango: 4.5
+  forcaBalango: 3
   ashCtrl: {fileID: 0}
   ashCC: {fileID: 0}
   naAtiva: 0
@@ -14270,7 +14270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d201df8187484c44b86eef7d1d524b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcaBalango: 4.5
+  forcaBalango: 3
   ashCtrl: {fileID: 0}
   ashCC: {fileID: 0}
   naAtiva: 0
@@ -20512,7 +20512,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogo
       value: 
-      objectReference: {fileID: 11400000, guid: 564ced7d46403f640ba6caf5a1d6e43e,
+      objectReference: {fileID: 11400000, guid: 1e43407e6a6061c448736e943e5e98ac,
         type: 2}
     - target: {fileID: 8907004787405826377, guid: ed974c57000f52444adbe8fa19e89821,
         type: 3}
@@ -21434,7 +21434,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492951194}
-  m_LocalRotation: {x: 0.048044994, y: -0.00000001732026, z: 8.331231e-10, w: 0.9988452}
+  m_LocalRotation: {x: 0.048044976, y: 0.000000017320259, z: -8.3310425e-10, w: 0.9988452}
   m_LocalPosition: {x: -55.459564, y: -54.4, z: -11.299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

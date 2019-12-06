@@ -1490,7 +1490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &461580619
 Animator:
   serializedVersion: 3
@@ -2297,8 +2297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694bcbc6a6eb0ca438a47d1f7918f9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuScreen: {fileID: 718297207}
-  ui: {fileID: 2019096252}
+  menuScreen: {fileID: 461580618}
+  ui: {fileID: 2040283405}
   clickSound: event:/sfx/menu_click
 --- !u!114 &700410223
 MonoBehaviour:
@@ -2313,7 +2313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontos: 0
-  txtPts: {fileID: 1415455633}
+  txtPts: {fileID: 684825378}
   tempoReducao: 0.1
 --- !u!4 &700410224
 Transform:
@@ -6110,7 +6110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1859676035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6636,7 +6636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2074150911
 RectTransform:
   m_ObjectHideFlags: 0

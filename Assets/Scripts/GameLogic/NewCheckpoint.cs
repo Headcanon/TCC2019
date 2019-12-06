@@ -21,6 +21,7 @@ public class NewCheckpoint : MonoBehaviour
         if(pl != null )
         {
             pl.spawnPoint = spawnPoint;
+            transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.color = Color.green;
             save.CheckPoint(spawnPoint.position);
         }
     }

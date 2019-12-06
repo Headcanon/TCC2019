@@ -43,7 +43,7 @@ MonoBehaviour:
     tempoDesativar: 0
     autoPassar: 1
     esperar: 3.3
-    reduzirPontos: 0
+    reduzirPontos: 4
     som: 
   - texto: 
     falante: 2
@@ -51,7 +51,7 @@ MonoBehaviour:
     tempoDesativar: 0
     autoPassar: 1
     esperar: 4.3
-    reduzirPontos: 0
+    reduzirPontos: 4
     som: 
   - texto: 
     falante: 2
@@ -59,7 +59,7 @@ MonoBehaviour:
     tempoDesativar: 0
     autoPassar: 1
     esperar: 3.3
-    reduzirPontos: 0
+    reduzirPontos: 4
     som: 
   - texto: 
     falante: 0
