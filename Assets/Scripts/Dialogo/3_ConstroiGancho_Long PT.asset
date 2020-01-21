@@ -77,7 +77,7 @@ MonoBehaviour:
     esperar: 0
     reduzirPontos: 0
     som: 
-  - texto: Precione X para atirar Segure para puxar
+  - texto: Pressione X para atirar Segure para puxar
     falante: 2
     animacao: 
     tempoDesativar: 0.1
